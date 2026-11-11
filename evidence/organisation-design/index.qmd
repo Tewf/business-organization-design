@@ -1,0 +1,5 @@
+---
+title: "Organisation design: what a company is, as an organisation"
+---
+
+{{< include README.md >}}

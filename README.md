@@ -7,9 +7,9 @@ What a company is, as an organisation. It holds the **functions** a company must
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-11):** set up; nothing is written yet beyond the scope. The first job is a literature review, not
-> started. The name is provisional until that review's first step says what the field calls this. It is not an
-> official standard, not a peer-reviewed study and not a new result.
+> **Status (2026-11-11):** the first review is written, as a first pass of 59 sources, and ends on a named baseline,
+> B1. The name is kept after the frame step ([record 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)).
+> It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
 > reader-ergonomics was made. Corrections are welcome as issues.
@@ -74,24 +74,32 @@ digraph where_it_sits {
 | out | market size and competition | [business-market](https://github.com/Tewf/business-market) |
 | out | the company forms and filings of one country | they are a lawyer's to read and change by jurisdiction; the legal functions every company needs stay in |
 
-## The first job: a literature review
+## What the review found
 
-Not started. It follows the order of a thesis review, and it is finished when it can name the baseline.
+- **The field splits the subject in two.** Organization design and organization theory study how work is divided and coordinated. The theory of the firm and organizational economics study why a firm exists and who decides ([frame](evidence/organisation-design/frame.md)). The name is kept.
+- **What a company does is listed in practice, not in theory.** A cross-industry process classification is the most adopted list (used for 66 small firms, Cragg 2007, secondary). A handbook organises over 5000 business activities by abstraction and dependency (Malone 1999). No list tested for completeness was found.
+- **Four problems define an organisation.** Task division, task allocation, reward and information are claimed necessary and sufficient (Puranam 2014, as quoted in Martela 2019).
+- **The best-known structure failed its test.** Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance (Doty 1993, secondary).
+- **Decision rights are separable and delegation is measured.** Delegation goes with a high value of local adaptation, centralisation with a high value of coordination (McElheran 2014, secondary).
+- **Adaptation is mostly simulated.** Exploitation crowds out exploration (March 1991), the form at founding persists (Levinthal 1997), and a sequence of structures beats a fixed one (Siggelkow 2005), all in models.
 
-1. **Frame:** the problem in one sentence, and what each field calls it. Leads to verify: theory of the firm, organisation design, organisation theory, the Carnegie school, team theory, coordination theory. The repository may be renamed then.
-2. **Review:** each name, searched by its academic name, its acronym and its author; surveys first.
-   - the leads Coase 1937, March and Simon 1958, Cyert and March 1963, Galbraith 1974, Mintzberg 1979, Marschak and Radner 1972, Radner 1993, March 1991 and Levinthal 1997, screened before they enter the pool;
-   - process frameworks used in practice, such as a cross-industry process classification, as grey sources scored on Garousi 2019's criteria.
-3. **State of the art, and the case against.**
-4. **Position:** what this repository asks that the field does not already answer.
-5. **Baseline:** the description of a company the field already uses, named, that later work is compared against.
+## The questions, answered
 
-## Questions the review must answer
+| Question | Answer | Grade |
+|---|---|---|
+| Needs | a practice classification of processes, plus the legal person; no list shown complete | convention |
+| Roles | four universal problems; ownership, control and decision rights apart; delegation follows the value of adaptation | convention; delegation measured |
+| Representation | limited processors measured by their number and delay, or process models in a standard notation | measured, as a model |
+| Adaptation | search on a rugged landscape, where exploitation crowds out exploration | measured, a simulation |
 
-- **Needs.** What must a company do, as an enumerable list of functions or processes?
-- **Roles.** What roles and what human architecture perform them: structure, governance, who decides what?
-- **Representation.** How is an organisation written as an algorithm or an information-processing system?
-- **Adaptation.** How does an organisation adapt and learn, and change its own design?
+The sources and the open questions are in [position](evidence/organisation-design/position.md).
+
+## The baseline
+
+**B1** is a process list with the four problems of organizing answered for each process ([baseline](evidence/organisation-design/baseline.md)).
+
+- Its rows are the categories of the cross-industry process classification, plus the legal person; its columns are tasks, who, reward, information, who decides and who controls.
+- It is compared with an org chart of the same venture, by the empty cells it finds.
 
 ## Check it
 
@@ -109,6 +117,7 @@ master also renders the site, [tewf.github.io/business-organisation](https://tew
 
 | Part | Summary |
 |---|---|
+| [evidence](evidence/) | the first review, a first pass of 59 sources, ending on the baseline B1, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

@@ -6,7 +6,7 @@ message: >-
   and not a new result.
 title: "business-organisation (work in progress)"
 abstract: >-
-  What a company is, as an organisation: the functions it must perform, the roles and structure that perform them, its description as an information-processing system, and how it adapts. Scope only; the review is not started.
+  What a company is, as an organisation: the functions it must perform, the roles and structure that perform them, its description as an information-processing system, and how it adapts. The first review is written, a first pass of 59 sources ending on a named baseline, B1.
 type: software
 authors:
   - name: "Tewf"

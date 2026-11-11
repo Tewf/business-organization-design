@@ -1,12 +1,14 @@
 # Organisation: what a company is
 
-> What a company is, as an organisation: the functions it must perform (economic, legal, technical, human), the roles and structure that perform them, its description as an information-processing system, and how it adapts. Scope only; the first review is not started.
+> What a company is, as an organisation: the functions it must perform (economic, legal, technical, human), the roles and structure that perform them, its description as an information-processing system, and how it adapts. The first review is written, a first pass of 59 sources ending on the baseline B1.
 
 Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
 
 ## The repository
 
-- [Organisation: what a company is](https://tewf.github.io/business-organisation/README.md): the scope, the first job and the questions
+- [Organisation: what a company is](https://tewf.github.io/business-organisation/README.md): the scope, what the review found and the baseline
+- [Evidence](https://tewf.github.io/business-organisation/evidence/README.md): the review and the bibliography
+- [Organisation design review](https://tewf.github.io/business-organisation/evidence/organisation-design/README.md): frame, protocol, sources, review, state of the art, position, against and the baseline B1
 - [Decisions](https://tewf.github.io/business-organisation/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing

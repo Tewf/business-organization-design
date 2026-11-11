@@ -8,6 +8,7 @@ decision in one sentence under its title, then its status, context, decision and
 | Record | Summary |
 |---|---|
 | [0001 A repository of its own](0001-a-repository-of-its-own.md) | What a company is, as an organisation, is one problem, so it is one repository, set up before any work on it |
+| [0002 Keep the name, and compare with B1](0002-keep-the-name-and-name-the-baseline.md) | The name is kept; the baseline is B1, a process list with the four problems of organizing answered for each process |
 
 ## See also
 

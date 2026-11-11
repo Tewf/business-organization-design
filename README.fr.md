@@ -7,9 +7,10 @@ Ce qu'est une entreprise en tant qu'organisation. Il tient les **fonctions** qu'
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-11) :** mis en place ; rien n'est encore écrit au-delà du périmètre. Le premier travail est une revue
-> de littérature, non commencée. Le nom est provisoire jusqu'à ce que la première étape de cette revue dise comment le
-> domaine nomme le sujet. Ce n'est ni une norme officielle, ni une étude relue par des pairs, ni un résultat nouveau.
+> **État (2026-11-11) :** la première revue est écrite, en première passe de 59 sources, et se termine sur une
+> référence nommée, B1. Le nom est gardé après l'étape de cadrage
+> ([fiche 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)). Ce n'est ni une norme officielle, ni une
+> étude relue par des pairs, ni un résultat nouveau.
 >
 > **Comment il est fait :** avec Claude, un assistant IA d'Anthropic, sous la direction du mainteneur, comme
 > reader-ergonomics. Les corrections sont bienvenues sous forme d'issues.
@@ -74,24 +75,32 @@ digraph where_it_sits {
 | dehors | la taille du marché et la concurrence | [business-market](https://github.com/Tewf/business-market) |
 | dehors | les formes de société et les formalités d'un pays | elles relèvent d'un juriste et changent selon le pays ; les fonctions juridiques dont toute entreprise a besoin restent dedans |
 
-## Le premier travail : une revue de littérature
+## Ce que la revue a trouvé
 
-Non commencée. Elle suit l'ordre d'une revue de thèse, et elle est finie quand elle peut nommer la référence.
+- **Le domaine coupe le sujet en deux.** Le design organisationnel et la théorie des organisations étudient comment le travail est divisé et coordonné. La théorie de la firme et l'économie des organisations étudient pourquoi une firme existe et qui décide ([cadrage](evidence/organisation-design/frame.md)). Le nom est gardé.
+- **Ce que fait une entreprise est listé par la pratique, pas par la théorie.** La liste la plus adoptée est une classification de processus commune aux secteurs (Cragg 2007, secondaire, pour 66 petites entreprises). Un recueil range plus de 5000 activités par abstraction et par dépendance (Malone 1999). Aucune liste testée pour sa complétude n'a été trouvée.
+- **Quatre problèmes définissent une organisation.** La division des tâches, leur attribution, la récompense et l'information sont dites nécessaires et suffisantes (Puranam 2014, cité par Martela 2019).
+- **La structure la plus connue a échoué à son test.** Les cinq types idéaux de Mintzberg n'ont pas prédit l'efficacité. Ceux de Miles et Snow en ont prédit 24 % de la variance (Doty 1993, secondaire).
+- **Les droits de décision se séparent, et la délégation est mesurée.** La délégation va avec une forte valeur de l'adaptation locale, la centralisation avec une forte valeur de la coordination (McElheran 2014, secondaire).
+- **L'adaptation est surtout simulée.** L'exploitation évince l'exploration (March 1991), la forme de départ persiste (Levinthal 1997), et une suite de structures bat une structure fixe (Siggelkow 2005), tous dans des modèles.
 
-1. **Cadrer :** le problème en une phrase, et comment chaque domaine le nomme. Pistes à vérifier : théorie de la firme, design organisationnel, théorie des organisations, école de Carnegie, théorie des équipes, théorie de la coordination. Le dépôt peut être renommé alors.
-2. **Revue :** chaque nom, cherché par son nom académique, son acronyme et son auteur ; les synthèses d'abord.
-   - les pistes Coase 1937, March et Simon 1958, Cyert et March 1963, Galbraith 1974, Mintzberg 1979, Marschak et Radner 1972, Radner 1993, March 1991 et Levinthal 1997, triées avant d'entrer dans le corpus ;
-   - les référentiels de processus de la pratique, comme une classification de processus commune aux secteurs, en sources grises notées selon les critères de Garousi 2019.
-3. **État de l'art, et le dossier contre.**
-4. **Positionnement :** ce que ce dépôt demande et que le domaine ne répond pas déjà.
-5. **Référence :** la description d'une entreprise que le domaine utilise déjà, nommée, à laquelle le travail suivant se compare.
+## Les questions, avec leur réponse
 
-## Questions auxquelles la revue doit répondre
+| Question | Réponse | Niveau |
+|---|---|---|
+| Besoins | une classification de processus de la pratique, plus la personne morale ; aucune liste montrée complète | convention |
+| Rôles | quatre problèmes universels ; propriété, contrôle et droits de décision séparés ; la délégation suit la valeur de l'adaptation | convention ; délégation mesurée |
+| Représentation | des processeurs limités, mesurés par leur nombre et leur délai, ou des modèles de processus dans une notation standard | mesuré, dans un modèle |
+| Adaptation | une recherche sur un paysage accidenté, où l'exploitation évince l'exploration | mesuré, par simulation |
 
-- **Besoins.** Que doit faire une entreprise, en liste dénombrable de fonctions ou de processus ?
-- **Rôles.** Quels rôles et quelle architecture humaine les remplissent : structure, gouvernance, qui décide quoi ?
-- **Représentation.** Comment écrit-on une organisation comme un algorithme ou un système qui traite l'information ?
-- **Adaptation.** Comment une organisation s'adapte-t-elle, apprend-elle, et change-t-elle son propre plan ?
+Les sources et les questions ouvertes sont dans le [positionnement](evidence/organisation-design/position.md).
+
+## La référence
+
+**B1** est une liste de processus où les quatre problèmes d'organisation reçoivent une réponse pour chaque processus ([référence](evidence/organisation-design/baseline.md)).
+
+- Ses lignes sont les catégories de la classification de processus commune aux secteurs, plus la personne morale ; ses colonnes sont les tâches, qui, la récompense, l'information, qui décide et qui contrôle.
+- Elle est comparée à un organigramme de la même jeune entreprise, par les cases vides qu'elle trouve.
 
 ## Vérifier
 
@@ -109,6 +118,7 @@ master construit aussi le site, [tewf.github.io/business-organisation](https://t
 
 | Partie | Résumé |
 |---|---|
+| [evidence](evidence/) | la première revue, en première passe de 59 sources, finie sur la référence B1, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

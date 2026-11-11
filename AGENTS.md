@@ -7,8 +7,8 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2
 
 1. Read the standard at the release this repository checks against (v1.24.2), and the front page's scope: what is in,
    what is out, and which neighbour holds what is out.
-2. The first job is the literature review the front page describes, in the shapes of
-   [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review/tree/39d3b25cd822a20277ee39c37b9e0130439802f2/shapes) v0.1.1; it is finished when it names its baseline.
+2. The first review is in [evidence/organisation-design](evidence/organisation-design/) and names its baseline, B1;
+   the next work is named in the last section of its [baseline](evidence/organisation-design/baseline.md).
 3. A fact that belongs to a neighbour is linked, never copied. A choice that shapes the repository gets a record in
    [decisions/](decisions/).
 

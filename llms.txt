@@ -1,0 +1,15 @@
+# Organisation: what a company is
+
+> What a company is, as an organisation: the functions it must perform (economic, legal, technical, human), the roles and structure that perform them, its description as an information-processing system, and how it adapts. Scope only; the first review is not started.
+
+Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
+
+## The repository
+
+- [Organisation: what a company is](https://tewf.github.io/business-organisation/README.md): the scope, the first job and the questions
+- [Decisions](https://tewf.github.io/business-organisation/decisions/README.md): one record per choice that shapes the repository
+
+## Contributing
+
+- [Contributing](https://tewf.github.io/business-organisation/AGENTS.md): rules for changing this repository
+- [Standard](https://tewf.github.io/reader-ergonomics/standard.md): the reader-ergonomics card this repository obeys

@@ -1,0 +1,15 @@
+# Answers to the judgment questions of checks/out/needs-judgment.md, one [[answer]] per question.
+
+[[answer]]
+check = "tree-shape"
+path = "checks"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `checks` is the folder the extension contract names (reader-ergonomics extending.md, the layout table) for the config and the answers, and the standard's runner reads it there."
+
+[[answer]]
+check = "tree-shape"
+path = "decisions"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `decisions` is the folder the decision-record shape names for its records; it holds the README and record 0001 today, and grows one file per choice."

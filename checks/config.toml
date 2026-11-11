@@ -1,0 +1,42 @@
+# Merged onto reader-ergonomics' own config, table by table; a value here wins (extending.md, the interface).
+extends = "reader-ergonomics"
+
+# The standard's three, and the answers file: it changes with every file it answers for, so it co-changes by construction.
+[co_change]
+exempt = ["standard.md", "llms.txt", "checks/judgments.toml"]
+
+# The site loads the standard's own stylesheet (_standard/site.css, checked out in pages.yml), so there is none here
+# to measure; reader-ergonomics extending.md asks such a repository to list none.
+[readable_measure]
+stylesheets = []
+
+[sufficient_contrast]
+stylesheets = []
+
+# The headings the standard's decision-record shape requires (reader-ergonomics v1.24.2, shapes/decision-record.md),
+# and the headings each shape of a review's files asks (reader-ergonomics-review v0.1.1, shapes/*.md).
+[shape_conformance]
+shapes = [
+  { name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] },
+  { name = "frame", files = ["evidence/*/frame.md"], required = ["The problem in one sentence", "What the field calls it", "What practice calls it", "Does the repository's name match", "Sub-questions"] },
+  { name = "protocol", files = ["evidence/*/protocol.md"], required = ["Why grey literature", "Questions", "Existing reviews", "Formal search", "Grey search", "Stopping rule", "Selection", "Quality of grey sources", "Extraction and synthesis", "Not searched"] },
+  { name = "sources", files = ["evidence/*/sources.md"], required = ["Flow", "Formal", "Grey", "Left out"] },
+  { name = "review", files = ["evidence/*/review.md"], required = ["Strand 0"] },
+  { name = "against", files = ["evidence/*/against.md"], required = ["Against", "Disagreements", "Against the sources themselves"] },
+  { name = "state of the art", files = ["evidence/*/state-of-the-art.md"], required = ["Q1"] },
+  { name = "position", files = ["evidence/*/position.md"], required = ["Known", "Not found", "questions", "What this repository asks"] },
+  { name = "baseline", files = ["evidence/*/baseline.md"], required = ["Compared with", "lacks", "measured", "finished"] },
+]
+
+# Path questions are answered with their path quoted, so the quotes check stays strict.
+[judgment_quotes]
+optional = []
+
+[bibliography_keys]
+# A key names one work across the family (reader-ergonomics decision 0003); CI clones each name beside this repository.
+family = ["reader-ergonomics",
+          "reader-ergonomics-review",
+          "ai-augmented-project",
+          "ai-augmented-agents",
+          "business-customer"]
+shared_links = []

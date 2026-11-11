@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: >-
+  If this repository helps you, you may cite it as below. It is an informal,
+  work-in-progress synthesis of published research, written with Claude, an AI
+  assistant by Anthropic. It is not an official standard, not peer-reviewed,
+  and not a new result.
+title: "business-organisation (work in progress)"
+abstract: >-
+  What a company is, as an organisation: the functions it must perform, the roles and structure that perform them, its description as an information-processing system, and how it adapts. Scope only; the review is not started.
+type: software
+authors:
+  - name: "Tewf"
+repository-code: "https://github.com/Tewf/business-organisation"
+license:
+  - Apache-2.0
+  - CC-BY-4.0
+keywords:
+  - theory of the firm
+  - organization design
+  - organization theory
+  - business process
+  - organizational learning
+  - literature review

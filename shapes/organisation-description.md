@@ -5,8 +5,8 @@ that answer them defined once. Its reader is whoever must run the organisation o
 the company must do, who does it, for what reward, with what information, who decides and who controls? It is a page,
 and a program reads it.
 
-**Status:** proposed, 2026-11-12. It builds on B1, named by record 0002; whether further work is built on B1 is asked
-of the maintainer, and this shape waits on that answer ([record 0003](../decisions/0003-describe-an-organisation-as-b1s-table.md)).
+**Status:** accepted, 2026-11-12. It builds on B1, named by record 0002 and accepted by the maintainer
+([record 0003](../decisions/0003-describe-an-organisation-as-b1s-table.md)).
 
 ## Skeleton
 

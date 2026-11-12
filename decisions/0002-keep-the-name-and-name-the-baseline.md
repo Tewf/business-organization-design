@@ -2,7 +2,8 @@
 
 **Decision:** The repository keeps its name after the frame step. The baseline of its first review is B1, a process list with the four universal problems of organizing answered for each process, compared with an org chart.
 
-**Status:** accepted, 2026-11-11. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
+**Status:** accepted, 2026-11-12, by the maintainer on [issue 1](https://github.com/Tewf/business-organisation/issues/1); first written as accepted on 2026-11-11,
+before that answer. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
 
 ## Context
 

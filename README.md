@@ -8,7 +8,9 @@ What a company is, as an organisation. It holds the **functions** a company must
 This page in French: [README.fr.md](README.fr.md).
 
 > **Status (2026-11-12):** the first review is written, as a first pass of 64 sources, and ends on a named baseline,
-> B1. The name is kept after the frame step ([record 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)).
+> B1, accepted by the maintainer as the baseline further work builds on. The name is kept after the frame step
+> ([record 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)). The first shape built on B1, an organisation
+> description with its check, follows ([record 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)).
 > It is not an official standard, not a peer-reviewed study and not a new result.
 >
 > **How it is made:** with Claude, an AI assistant by Anthropic, under the maintainer's direction, the way
@@ -118,7 +120,7 @@ master also renders the site, [tewf.github.io/business-organisation](https://tew
 | Part | Summary |
 |---|---|
 | [evidence](evidence/) | the first review, a first pass of 64 sources, ending on the baseline B1, and the bibliography |
-| [shapes](shapes/) | proposed: the organisation description, B1's table for one organisation, with a fixture and the check that reads it |
+| [shapes](shapes/) | the organisation description, B1's table for one organisation, with a fixture and the check that reads it |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

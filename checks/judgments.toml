@@ -76,3 +76,10 @@ path = "README.md"
 question = "changed together with decisions/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "22690da43447"
 answer = "They stay apart: `decisions/README.md` lists every record, and `README.md` links that folder; they changed together when a record was added and the front page reported it. The link already runs from the front page to the folder."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "97af57e7b596"
+answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`, and the standard's runner reads checks/config.toml; they changed together when the pin moved and when the local check was added (`This repository's own check is in checks/local/`), and the workflow names the checks it runs."

@@ -5,8 +5,8 @@ that answer them defined once. Its reader is whoever must run the organisation o
 the company must do, who does it, for what reward, with what information, who decides and who controls? It is a page,
 and a program reads it.
 
-**Status:** proposed, 2026-11-12. It builds on B1, which waits on the maintainer's acceptance
-([record 0003](../decisions/0003-describe-an-organisation-as-b1s-table.md)).
+**Status:** proposed, 2026-11-12. It builds on B1, named by record 0002; whether further work is built on B1 is asked
+of the maintainer, and this shape waits on that answer ([record 0003](../decisions/0003-describe-an-organisation-as-b1s-table.md)).
 
 ## Skeleton
 
@@ -56,7 +56,8 @@ and a program reads it.
 ## Where the file goes
 
 One organisation is one file, `organisations/<name>/organisation.md`; the check reads every file that matches
-`[organisation_description] files` in `checks/config.toml`, which also holds the worked example's folder.
+the files of the "organisation description" entry of `[shape_conformance]` in `checks/config.toml`, which also lists
+the worked example's folder.
 
 ## Worked example
 
@@ -67,9 +68,11 @@ One organisation is one file, `organisations/<name>/organisation.md`; the check 
 1. The Processes table has the eight columns in the order of the skeleton.
 2. One row holds the legal person, and its Process name contains the words "legal person".
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
-   the table has at least one role.
+   the table has at least one role. Several roles in one cell are joined by a comma or "and"; a role whose name holds
+   "and" is matched whole first.
 4. Delegated is yes, no, in part, or left empty; case is not significant.
-5. An empty cell is left blank or written `?` or `-`; a program counts it, and the count is the description's first finding.
+5. An empty cell is left blank or written `?` or `-`; a program counts it and reports the count as a warning, with
+   coverage and completeness. A description with no empty cell gets no warning.
 
 ## The principles it applies
 
@@ -83,4 +86,4 @@ One organisation is one file, `organisations/<name>/organisation.md`; the check 
 
 `organisation-description` (exact): the eight columns, the legal row, roles defined and used by name, Delegated's
 values, the configured rows; a warning gives the empty cells with coverage and completeness. Whether the rows are
-complete and the answers true is judgment.
+complete, the answers true, and a role in the Roles table a role rather than a person's name is judgment.

@@ -79,6 +79,12 @@ class OrganisationDescriptionTest(unittest.TestCase):
     def test_missing_roles_section_fails(self):
         self.assertTrue(any("no Roles section" in f.message for f in errors(run(GOOD.split("## Roles")[0]))))
 
+    def test_a_role_whose_name_holds_and_is_matched_whole(self):
+        text = GOOD.replace("| maker | the product is made | one person |",
+                            "| maker | the product is made | one person |\n| research and development | new recipes | one person |")
+        text = text.replace("| cut, assemble | maker |", "| cut, assemble | research and development |")
+        self.assertEqual(errors(run(text)), [])
+
     def test_a_role_defined_twice_fails(self):
         twice = GOOD.replace("| maker | the product is made | one person |",
                              "| maker | the product is made | one person |\n| maker | again | one person |")

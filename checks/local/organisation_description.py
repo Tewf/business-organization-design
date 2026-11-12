@@ -71,6 +71,13 @@ def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[
     return header, rows
 
 
+def role_names_in(cell: str, roles: set[str]) -> list[str]:
+    """The role names a cell holds: the whole cell when it is a role, else its parts split on commas and "and"."""
+    if cell.strip().lower() in roles:
+        return [cell.strip()]
+    return [name for name in JOIN.split(cell) if name]
+
+
 def check(root: Path, config: dict) -> list[Finding]:
     """Errors for a missing column, row or role; one warning per file with its empty cells counted."""
     settings = config.get("organisation_description", {})
@@ -128,7 +135,7 @@ def check(root: Path, config: dict) -> list[Finding]:
                 value = cell[column]
                 if value in EMPTY or roles is None:
                     continue
-                for name in filter(None, JOIN.split(value)):
+                for name in role_names_in(value, role_names):
                     if name.lower() not in role_names:
                         fail(number, f"{column.capitalize()} names {name!r}, which the Roles table does not define")
             if cell["delegated"].lower() not in DELEGATED | EMPTY:

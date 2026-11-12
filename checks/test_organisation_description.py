@@ -126,6 +126,32 @@ class OrganisationDescriptionTest(unittest.TestCase):
         text = GOOD.replace("Hold assets as a legal person", "Screen out illegal personnel")
         self.assertTrue(any("no row for the legal person" in f.message for f in errors(run(text))))
 
+    def test_a_fenced_description_fails(self):
+        self.assertTrue(any("code fence" in f.message for f in errors(run("```text\n" + GOOD + "\n```\n"))))
+
+    def test_an_html_comment_fails(self):
+        text = GOOD.replace("\n## Roles", "\n<!--\n## Note\n-->\n\n## Roles")
+        self.assertTrue(any("HTML comment" in f.message for f in errors(run(text))))
+
+    def test_a_setext_heading_fails(self):
+        self.assertTrue(any("underlined" in f.message for f in errors(run(GOOD + "\nProcesses\n---------\n"))))
+
+    def test_a_short_delimiter_second_table_fails(self):
+        text = GOOD.replace("\n## Roles", "\n| Note | Text |\n|-|-|\n| a | b |\n\n## Roles")
+        self.assertTrue(any("second table" in f.message for f in errors(run(text))))
+
+    def test_a_delimiter_that_does_not_match_the_header_makes_no_table(self):
+        text = GOOD.replace("|---|---|---|---|---|---|---|---|", "|---|---|", 1)
+        self.assertTrue(any("header is not" in f.message for f in errors(run(text))))
+
+    def test_another_section_holding_the_word_processes_fails(self):
+        text = GOOD + "\n## Other processes\n\nNone.\n"
+        self.assertTrue(any("second Processes section" in f.message for f in errors(run(text))))
+
+    def test_a_repeated_process_row_fails(self):
+        row = "| Make the product | cut, assemble | maker | salary | orders | maker | founder | yes |"
+        self.assertTrue(any("second row for the process" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + row)))))
+
     def test_coverage_and_completeness_are_reported(self):
         findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))
         self.assertIn("coverage 0.50, completeness 0.92", findings[0].message)

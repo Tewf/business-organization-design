@@ -68,7 +68,7 @@ digraph where_it_sits {
 | dedans | les rôles et l'architecture humaine : division du travail, coordination, structure, gouvernance et droits de décision | qui décide quoi est la part d'une entreprise qu'un outil ne fournit pas |
 | dedans | l'organisation comme système qui traite l'information : qui sait quoi, qui informe qui, qui décide, écrit pour qu'un programme le lise | un plan écrit ainsi peut être comparé à un autre et vérifié |
 | dedans | l'adaptation et l'apprentissage : comment une organisation cherche, exploite ce qu'elle sait et change son propre plan | un plan qui ne peut pas changer n'est juste qu'une fois |
-| plus tard | une forme pour la description d'une organisation, avec un programme qui la lit | une forme suit la référence de la revue, pas l'inverse |
+| dedans | une forme pour la description d'une organisation, avec un programme qui la lit | bâtie sur B1 une fois acceptée ([fiche 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)) |
 | dehors | les briques du modèle d'affaires : valeur, canaux, revenus, coûts | [business-model](https://github.com/Tewf/business-model) |
 | dehors | la trésorerie, l'autonomie financière et le financement | [business-finance](https://github.com/Tewf/business-finance) |
 | dehors | la demande et ce que les clients achèteront | [business-customer](https://github.com/Tewf/business-customer) |
@@ -78,8 +78,8 @@ digraph where_it_sits {
 
 ## Ce que la revue a trouvé
 
-- **Le domaine coupe le sujet en deux.** Le design organisationnel et la théorie des organisations étudient comment le travail est divisé et coordonné. La théorie de la firme et l'économie des organisations étudient pourquoi une firme existe et qui décide ([cadrage](evidence/organisation-design/frame.md)). Le nom est gardé.
-- **Ce que fait une entreprise est listé par la pratique, pas par la théorie.** La liste la plus adoptée est une classification de processus commune aux secteurs (Cragg 2007, secondaire, pour 66 petites entreprises). Un recueil range plus de 5000 activités par abstraction et par dépendance (Malone 1999). Aucune liste testée pour sa complétude n'a été trouvée.
+- **Le domaine coupe le sujet en deux.** Le design organisationnel et la théorie des organisations étudient comment le travail est divisé et coordonné. La théorie de la firme et l'économie des organisations étudient pourquoi une firme existe et qui décide ([cadrage](evidence/organisation-design/frame.md)). Le dépôt prend le nom du côté design ([fiche 0004](decisions/0004-rename-to-business-organization-design.md)).
+- **Ce que fait une entreprise est listé par la pratique, pas par la théorie.** La liste de la pratique est une classification de processus commune aux secteurs, version 8.0 en 13 catégories. Un instrument de 24 items bâti sur elle a servi pour 66 petites entreprises (Cragg 2007, secondaire). Un recueil range plus de 5000 activités par abstraction et par dépendance (Malone 1999 ; le chiffre vient de la page de son recueil de 2003). Aucune liste testée pour sa complétude n'a été trouvée.
 - **Quatre problèmes définissent une organisation.** La division des tâches, leur attribution, la récompense et l'information sont dites nécessaires et suffisantes (Puranam 2014, p. 165-166).
 - **La structure la plus connue a échoué à son test.** Les cinq types idéaux de Mintzberg n'ont pas prédit l'efficacité. Ceux de Miles et Snow en ont prédit 24 % de la variance (Doty 1993, secondaire).
 - **Les droits de décision se séparent, et la délégation est mesurée.** La délégation va avec une forte valeur de l'adaptation locale, la centralisation avec une forte valeur de la coordination (McElheran 2014, secondaire).
@@ -100,7 +100,7 @@ Les sources et les questions ouvertes sont dans le [positionnement](evidence/org
 
 **B1** est une liste de processus où les quatre problèmes d'organisation reçoivent une réponse pour chaque processus ([référence](evidence/organisation-design/baseline.md)).
 
-- Ses lignes sont les catégories de la classification de processus commune aux secteurs, plus la personne morale ; ses colonnes sont les tâches, qui, la récompense, l'information, qui décide et qui contrôle.
+- Ses lignes sont les catégories de la classification de processus commune aux secteurs, plus la personne morale. Ses colonnes sont les tâches, qui, la récompense, l'information, qui décide, qui contrôle et si la décision est déléguée.
 - Elle est comparée à un organigramme de la même jeune entreprise, par les cases vides qu'elle trouve.
 
 ## Vérifier

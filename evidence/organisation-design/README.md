@@ -3,7 +3,7 @@
 A first-pass multivocal review, read on 2026-11-11. It asks what a company must do, what its human architecture must solve and who decides, how an organisation is written as an information-processing system, and how it adapts. It ends on a named baseline.
 
 - It holds 64 sources: 58 formal and 6 grey, two of the grey below the threshold and serving as examples of practice only.
-- Formal: 43 read from the abstract (secondary), 6 books from their contents or blurb, 2 in part, 7 located only. Most figures are marked (secondary).
+- Formal: 42 read from the abstract (secondary), 6 books from their contents or blurb, 3 in part, 7 located only. Most figures are marked (secondary).
 - A second rater from another model family agreed on 23 of 24 selection calls (kappa 0.90) and on the threshold side of all 6 grey scores. On the forward pass of 2026-11-12, it agreed on 18 of 26 (kappa 0.41).
 - The business model, cash, demand, prices and markets are held by the neighbours and linked, not repeated.
 
@@ -25,7 +25,7 @@ A first-pass multivocal review, read on 2026-11-11. It asks what a company must 
 
 | Claim | Grade | Where |
 |---|---|---|
-| Every organisation must solve four problems: task division, task allocation, reward and information | convention (secondary) | review.md Strand 2 |
+| Every organisation must solve four problems: task division, task allocation, reward and information | convention (original, pp. 165-166) | review.md Strand 2 |
 | Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance | measured (secondary) | review.md Strand 2, against.md |
 | Delegation goes with a high value of local adaptation, centralisation with a high value of coordination | measured (secondary) | review.md Strand 2 |
 | Over 239 effect sizes from 65 studies, bundles of HR practices beat single practices | measured (secondary) | review.md Strand 2 |
@@ -38,7 +38,7 @@ A first-pass multivocal review, read on 2026-11-11. It asks what a company must 
 ## Named baseline
 
 - **B1, a process list with the four problems of organizing answered for each process.**
-- Rows: the level-1 categories of the cross-industry process classification, plus the legal person; columns: tasks, who, reward, information, who decides, who controls ([baseline](baseline.md)).
+- Rows: the level-1 categories of the cross-industry process classification, plus the legal person; columns: tasks, who, reward, information, who decides, who controls, and whether the decision is delegated ([baseline](baseline.md)).
 - It is compared with an org chart of the same venture, by coverage, completeness and the empty cells it finds.
 
 ## Status
@@ -46,4 +46,4 @@ A first-pass multivocal review, read on 2026-11-11. It asks what a company must 
 The first pass is in: five steps written, each number read at the depth the sources table gives.
 
 - The process classification's 13 categories are read in its file, version 8.0, opened by the maintainer on 12 Nov. 2026 ([protocol](protocol.md), G7).
-- The cap of 40 strings was passed by five, and no forward pass on citations was run ([protocol](protocol.md), sections 6 and 10).
+- The cap of 40 strings was passed by five, and a forward pass on citations was run on 12 Nov. 2026 ([protocol](protocol.md), sections 6, 10 and 12).

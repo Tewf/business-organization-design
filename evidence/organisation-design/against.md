@@ -40,7 +40,7 @@ The evidence against what the front page assumes, and the disagreements. Sources
 
 ## Against the sources themselves
 
-- 43 of the 58 formal sources were read from their abstracts and 7 were located only; six books were read from their contents or a publisher's blurb. Most figures are marked (secondary).
+- 42 of the 58 formal sources were read from their abstracts and 7 were located only; six books were read from their contents or a publisher's blurb. Most figures are marked (secondary).
 - Four of the key results are simulations or models (March 1991, Levinthal 1997, Siggelkow 2005, Fang 2009), and three more are models (Radner 1993, Van Zandt 1999, Garicano 2000).
 - The four universal problems are argued, not tested: the original states them as a definition and a claim of sufficiency (Puranam 2014, pp. 165-166).
 - The grey sources are standards bodies and practice sellers on their own methods; two are below the threshold.

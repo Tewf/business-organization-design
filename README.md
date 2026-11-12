@@ -68,7 +68,7 @@ digraph where_it_sits {
 | in | roles and human architecture: the division of labour, coordination, structure, governance and decision rights | who decides what is the part of a company a tool does not supply |
 | in | the organisation as an information-processing system: who knows what, who tells whom, who decides, written so a program can read it | a design written that way can be compared with another and checked |
 | in | adaptation and learning: how an organisation searches, exploits what it knows and changes its own design | a design that cannot change is right only once |
-| later | a shape for the description of one organisation, with a check that reads it | a shape follows the review's baseline, not the reverse |
+| in | a shape for the description of one organisation, with a check that reads it | built on B1 once it was accepted ([record 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)) |
 | out | the business model's building blocks: value, channels, revenue, costs | [business-model](https://github.com/Tewf/business-model) |
 | out | cash, runway and funding | [business-finance](https://github.com/Tewf/business-finance) |
 | out | demand and what customers will buy | [business-customer](https://github.com/Tewf/business-customer) |
@@ -78,8 +78,8 @@ digraph where_it_sits {
 
 ## What the review found
 
-- **The field splits the subject in two.** Organization design and organization theory study how work is divided and coordinated. The theory of the firm and organizational economics study why a firm exists and who decides ([frame](evidence/organisation-design/frame.md)). The name is kept.
-- **What a company does is listed in practice, not in theory.** A cross-industry process classification is the most adopted list (used for 66 small firms, Cragg 2007, secondary). A handbook organises over 5000 business activities by abstraction and dependency (Malone 1999). No list tested for completeness was found.
+- **The field splits the subject in two.** Organization design and organization theory study how work is divided and coordinated. The theory of the firm and organizational economics study why a firm exists and who decides ([frame](evidence/organisation-design/frame.md)). The repository takes the design side's name ([record 0004](decisions/0004-rename-to-business-organization-design.md)).
+- **What a company does is listed in practice, not in theory.** A cross-industry process classification is the practice list, version 8.0 with 13 categories. A 24-item instrument built from it was used with 66 small firms (Cragg 2007, secondary). A handbook organises over 5000 business activities by abstraction and dependency (Malone 1999; the figure from its 2003 handbook page). No list tested for completeness was found.
 - **Four problems define an organisation.** Task division, task allocation, reward and information are claimed necessary and sufficient (Puranam 2014, pp. 165-166).
 - **The best-known structure failed its test.** Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance (Doty 1993, secondary).
 - **Decision rights are separable and delegation is measured.** Delegation goes with a high value of local adaptation, centralisation with a high value of coordination (McElheran 2014, secondary).
@@ -100,7 +100,7 @@ The sources and the open questions are in [position](evidence/organisation-desig
 
 **B1** is a process list with the four problems of organizing answered for each process ([baseline](evidence/organisation-design/baseline.md)).
 
-- Its rows are the categories of the cross-industry process classification, plus the legal person; its columns are tasks, who, reward, information, who decides and who controls.
+- Its rows are the categories of the cross-industry process classification, plus the legal person; its columns are tasks, who, reward, information, who decides, who controls and whether the decision is delegated.
 - It is compared with an org chart of the same venture, by the empty cells it finds.
 
 ## Check it

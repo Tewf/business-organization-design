@@ -18,13 +18,14 @@
 | Included, formal | 58 |
 | Included, grey | 6 |
 | Grey below 10 of 20, examples only | 2 |
-| Formal read from the abstract (secondary) | 43 |
+| Formal read from the abstract (secondary) | 42 |
 | Formal read from the contents or the publisher's blurb | 6 |
-| Formal read in part, full text or opening | 2 |
+| Formal read in part, full text, opening or pages | 3 |
 | Formal located only, not read | 7 |
 | Grey pages not read (403, 404) | 4 |
 
 - Garousi 2019 is cited for the method and is not part of the 64.
+- APQC 2026 Classification, version 8.0, is read as data: its 13 level-1 categories are B1's rows. It is not part of the 64; what it is worth as evidence comes from the formal sources that used it (Cragg 2007).
 
 ## Formal
 
@@ -106,7 +107,7 @@ Score is out of 20, then the groups in the order authority, methodology, objecti
 
 ## Left out, with the reason
 
-- The benchmarking association's process classification page and the governance principles of an intergovernmental organisation: HTTP 403, so unread; two encyclopaedia pages: HTTP 404.
+- The governance principles of an intergovernmental organisation: HTTP 403, so unread; two encyclopaedia pages: HTTP 404. The benchmarking association's classification page refused a reader too; its file was then read by the maintainer, as below.
 - Simon's Administrative Behavior (L12): located, and left out because the pool cites Simon 1962 and March 1958 for bounded rationality.
 - Titles that added a concept and were left out to keep the pool near 50, by string:
   - teams and absorptive capacity (F2); culture and institutions (F4); stakeholder bargaining and company law (F10);

@@ -7,7 +7,8 @@ A fixture with no real venture, written on 2026-11-12 to show the shape and its 
 ## Processes
 
 The rows are the classification's 13 level-1 categories, version 8.0, then the legal person
-([baseline](../../../evidence/organisation-design/baseline.md), items 1 and 2).
+([baseline](../../../evidence/organisation-design/baseline.md), items 1 and 2). The category names are APQC's; their
+notice is in the [bibliography](../../../evidence/bibliography.md), APQC 2026 Classification.
 
 | Process | Tasks | Who | Reward | Information | Decides | Controls | Delegated |
 |---|---|---|---|---|---|---|---|

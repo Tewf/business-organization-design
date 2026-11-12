@@ -26,9 +26,9 @@ before that answer. Its name part is superseded by [record 0004](0004-rename-to-
 ## Consequences
 
 - A later description of a company, by a person or a program, can be compared with B1 cell by cell.
-- **Bad:** the rows rest on a classification whose categories were not read at their source; the maintainer reads them before the shape is written.
+- **Bad:** the rows rest on a classification whose categories were not read at their source; the maintainer reads them before the shape is written. (They were read on 12 Nov. 2026, [record 0003](0003-describe-an-organisation-as-b1s-table.md).)
 - **Bad:** B1 has no dependencies between processes, no measure of delay and no rule for changing the design; the review names each as a gap.
-- **Bad:** 38 of 53 formal sources were read from their abstracts and 7 located only, so many figures are secondary.
+- **Bad:** 38 of 53 formal sources were read from their abstracts and 7 located only, so many figures are secondary (the counts when this record was written).
 
 ## See also
 

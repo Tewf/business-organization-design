@@ -38,7 +38,7 @@ What must a company do, which people and roles must do it and decide it, how can
 ## Does the repository's name match?
 
 - In part. The field says **organization**, in American spelling, and splits the subject in two: organization design and organization theory on one side, the theory of the firm and organizational economics on the other.
-- "Organisation" names the shared object of both halves, and the subtitle "what a company is" restricts it to the firm. No rename is proposed; the maintainer decides.
+- "Organisation" names the shared object of both halves, and the subtitle "what a company is" restricts it to the firm. The maintainer later renamed the repository after the design side ([record 0004](../../decisions/0004-rename-to-business-organization-design.md)).
 
 ## Sub-questions
 

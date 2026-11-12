@@ -6,7 +6,7 @@ Step 5 of the review: the baseline the work is compared against. Evidence is in 
 
 ## B1: a process list with the four problems of organizing answered for each process
 
-![B1 is a table with one row per process category and one column per problem: tasks, who, reward, information, who decides and who controls; it is compared, on the same venture, with an org chart of boxes and reporting lines.](b1.svg)
+![B1 is a table with one row per process category and one column per problem: tasks, who, reward, information, who decides, who controls and whether it is delegated; it is compared, on the same venture, with an org chart of boxes and reporting lines.](b1.svg)
 
 <details>
 <summary>Graphviz source</summary>
@@ -18,11 +18,11 @@ digraph b1 {
   node  [shape=plaintext, fontname="Inter", fontsize=12, fontcolor="#1F2328"];
   edge  [fontname="Inter", fontsize=11, color="#3D434B", fontcolor="#55575F", penwidth=1.3, arrowsize=0.8];
   B1 [label=<<table border="1" cellborder="1" cellspacing="0" cellpadding="6" color="#7A4FA3" bgcolor="#F1EAF7">
-    <tr><td colspan="7"><b>B1: one row per process, one column per problem</b></td></tr>
-    <tr><td><b>process</b></td><td>tasks</td><td>who</td><td>reward</td><td>information</td><td>decides</td><td>controls</td></tr>
-    <tr><td>category 1</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
-    <tr><td>category 2</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
-    <tr><td>...</td><td colspan="6"><font color="#55575F">an empty cell is counted by a program</font></td></tr>
+    <tr><td colspan="8"><b>B1: one row per process, one column per problem</b></td></tr>
+    <tr><td><b>process</b></td><td>tasks</td><td>who</td><td>reward</td><td>information</td><td>decides</td><td>controls</td><td>delegated</td></tr>
+    <tr><td>category 1</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+    <tr><td>category 2</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+    <tr><td>...</td><td colspan="7"><font color="#55575F">an empty cell is counted by a program</font></td></tr>
   </table>>];
   OC [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="6" color="#6A6D77" bgcolor="#FFFFFF">
     <tr><td><b>the practice: an org chart</b></td></tr>
@@ -49,9 +49,11 @@ digraph b1 {
    - 11.0 Manage Enterprise Risk, Compliance, Remediation, and Resiliency
    - 12.0 Manage External Relationships
    - 13.0 Develop and Manage Business Capabilities
+
+   The category names are APQC's; their notice is in the [bibliography](../bibliography.md), APQC 2026 Classification.
 2. One row is added for the legal function the classification does not hold at level 1. It has a board and governance only lower down (9.8.1.1, 12.3, 12.4.2). The added row is the firm as a person holding assets apart from its owners (Hansmann 2000).
 3. The columns are the four universal problems of organizing for that process: its tasks, who does them, how they are rewarded and what information they receive (Puranam 2014). The "who" is a role, defined apart from the person who fills it (HolacracyOne 2026 Constitution).
-4. Two more columns name who decides and who controls each process, kept apart (Fama 1983), and whether the decision is delegated (McElheran 2014).
+4. Three more columns name who decides and who controls each process, kept apart (Fama 1983), and whether the decision is delegated (McElheran 2014).
 5. The table is data a program reads, so that a missing cell is counted, not noticed.
 6. It is compared with the practice, an org chart of the same venture: boxes for people and lines for reporting (Mintzberg 1979 for the parts it draws).
 

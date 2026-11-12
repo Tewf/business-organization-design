@@ -8,7 +8,8 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2
 1. Read the standard at the release this repository checks against (v1.24.2), and the front page's scope: what is in,
    what is out, and which neighbour holds what is out.
 2. The first review is in [evidence/organisation-design](evidence/organisation-design/) and names its baseline, B1;
-   the next work is named in the last section of its [baseline](evidence/organisation-design/baseline.md).
+   the first work built on it is the shape [organisation-description](shapes/organisation-description.md), with its
+   check and an example ([record 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)).
 3. A fact that belongs to a neighbour is linked, never copied. A choice that shapes the repository gets a record in
    [decisions/](decisions/).
 

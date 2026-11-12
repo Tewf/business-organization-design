@@ -37,6 +37,7 @@ example_headings = ["Worked example"]
 
 # The local check organisation-description (record 0003). `rows` is the classification's
 # level-1 categories, version 8.0, read in its file on 2026-11-12 (baseline.md, item 1).
+# The names are APQC's; their notice is in evidence/bibliography.md, APQC 2026 Classification.
 [organisation_description]
 # The files are those of the "organisation description" entry of [shape_conformance] above, read from there.
 rows = [

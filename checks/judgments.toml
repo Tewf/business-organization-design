@@ -24,8 +24,8 @@ answer = "Its role in one sentence: it records how the pool was built, from the 
 [[answer]]
 check = "logical-lines"
 path = "evidence/organisation-design/sources.md"
-question = "107 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
-file = "20e69e1706fd"
+question = "108 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
+file = "2bd72660919b"
 answer = "Its role in one sentence: it lists the pool, each source once with how far it was read; the flow, the two tables and the left-out list, the forward pass's rows among them, are parts of that one list, so it stays whole under `Sources`."
 
 [[answer]]
@@ -67,14 +67,14 @@ answer = "It stays: `shapes/examples/a-venture-that-personalises-a-product` is o
 check = "co-change"
 path = "README.fr.md"
 question = "changed together with decisions/README.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "3534bbcb203b"
+file = "ad09eee53b6a"
 answer = "They stay apart: `decisions/README.md` lists every record, and `README.fr.md` links that folder; they changed together when a record was added and the front page reported it. The link already runs from the front page to the folder."
 
 [[answer]]
 check = "co-change"
 path = "README.md"
 question = "changed together with decisions/README.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "1cf896071836"
+file = "b199642bf31d"
 answer = "They stay apart: `decisions/README.md` lists every record, and `README.md` links that folder; they changed together when a record was added and the front page reported it. The link already runs from the front page to the folder."
 
 [[answer]]
@@ -129,49 +129,49 @@ answer = "They stay apart: the shape states the rules, and this file (`Describe 
 check = "co-change"
 path = "evidence/bibliography.md"
 question = "changed together with evidence/organisation-design/against.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "49c763083d1a"
+file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
 question = "changed together with evidence/organisation-design/protocol.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "49c763083d1a"
+file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
 question = "changed together with evidence/organisation-design/review.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "49c763083d1a"
+file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
 question = "changed together with evidence/organisation-design/sources.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "49c763083d1a"
+file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
 question = "changed together with evidence/organisation-design/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "49c763083d1a"
+file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` and the review's front page says how far each source was read; a source read deeper changes both, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "checks/config.toml"
 question = "changed together with decisions/0003-describe-an-organisation-as-b1s-table.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "74542b5232f1"
+file = "7a5aa5d49b9b"
 answer = "They stay apart: the config holds the rows a program reads (`[organisation_description]`) and the record says why they are the classification's categories; the record names the setting rather than holding the list."
 [[answer]]
 check = "co-change"
 path = "checks/config.toml"
 question = "changed together with shapes/examples/a-venture-that-personalises-a-product/organisation.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "74542b5232f1"
+file = "7a5aa5d49b9b"
 answer = "They stay apart: the config lists the rows the check requires (`[organisation_description]`) and the fixture is one description checked against them; when the rows change, the fixture must follow, which is the check doing its work."
 [[answer]]
 check = "co-change"
 path = "checks/config.toml"
 question = "changed together with shapes/organisation-description.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "74542b5232f1"
+file = "7a5aa5d49b9b"
 answer = "They stay apart: the config holds the rows (`[organisation_description]`) and the shape says where they come from and that the config holds them; one place per fact, the list itself kept in the config."
 [[answer]]
 check = "co-change"
@@ -183,7 +183,7 @@ answer = "They stay apart: the record decides the shape (`Describe an organisati
 check = "co-change"
 path = "shapes/examples/a-venture-that-personalises-a-product/organisation.md"
 question = "changed together with shapes/organisation-description.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "0e7bbfa90a1a"
+file = "810d9d7a0c20"
 answer = "They already share a folder, shapes/, the fixture one level down in examples/ (`A fixture with no real venture`); the shape links the fixture as its worked example."
 [[answer]]
 check = "co-change"
@@ -195,11 +195,11 @@ answer = "They stay apart: the citation names the repository (`repository-code`)
 check = "co-change"
 path = "README.fr.md"
 question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "3534bbcb203b"
+file = "ad09eee53b6a"
 answer = "They stay apart: the front page states the repository's state (`État (2026-11-12)`) and links the record; the record keeps the reasons, and the name and B1 changed both."
 [[answer]]
 check = "co-change"
 path = "README.md"
 question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "1cf896071836"
+file = "b199642bf31d"
 answer = "They stay apart: the front page states the repository's state (`Status (2026-11-12)`) and links the records; the record keeps the reasons, and the name and B1 changed both."

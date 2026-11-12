@@ -79,7 +79,7 @@ digraph where_it_sits {
 
 - **Le domaine coupe le sujet en deux.** Le design organisationnel et la théorie des organisations étudient comment le travail est divisé et coordonné. La théorie de la firme et l'économie des organisations étudient pourquoi une firme existe et qui décide ([cadrage](evidence/organisation-design/frame.md)). Le nom est gardé.
 - **Ce que fait une entreprise est listé par la pratique, pas par la théorie.** La liste la plus adoptée est une classification de processus commune aux secteurs (Cragg 2007, secondaire, pour 66 petites entreprises). Un recueil range plus de 5000 activités par abstraction et par dépendance (Malone 1999). Aucune liste testée pour sa complétude n'a été trouvée.
-- **Quatre problèmes définissent une organisation.** La division des tâches, leur attribution, la récompense et l'information sont dites nécessaires et suffisantes (Puranam 2014, cité par Martela 2019).
+- **Quatre problèmes définissent une organisation.** La division des tâches, leur attribution, la récompense et l'information sont dites nécessaires et suffisantes (Puranam 2014, p. 165-166).
 - **La structure la plus connue a échoué à son test.** Les cinq types idéaux de Mintzberg n'ont pas prédit l'efficacité. Ceux de Miles et Snow en ont prédit 24 % de la variance (Doty 1993, secondaire).
 - **Les droits de décision se séparent, et la délégation est mesurée.** La délégation va avec une forte valeur de l'adaptation locale, la centralisation avec une forte valeur de la coordination (McElheran 2014, secondaire).
 - **L'adaptation est surtout simulée.** L'exploitation évince l'exploration (March 1991), la forme de départ persiste (Levinthal 1997), et une suite de structures bat une structure fixe (Siggelkow 2005), tous dans des modèles.

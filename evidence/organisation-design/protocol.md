@@ -113,12 +113,12 @@ Database: OpenAlex, title and abstract, sorted by citations, the top 8 screened.
 | G4 | an industry standards body | the page of its business process notation, version 2.0.2 | included, 1 page read | y |
 | G5 | a university project | the home page of its process knowledge base | included, 1 page read | n |
 | G6 | an enterprise-architecture author's firm | the page on his classification framework | included, 1 page read | y |
-| G7 | a benchmarking association | the page of its cross-industry process classification | not read: HTTP 403 | not run |
+| G7 | a benchmarking association | the page of its cross-industry process classification | not read: HTTP 403; its Excel file, version 8.0, opened by the maintainer and read on 12 Nov. 2026 | read by the maintainer |
 | G8 | an intergovernmental organisation | the page of its principles of corporate governance | not read: HTTP 403 | not run |
 | G9 | an encyclopaedia | a page on process classification frameworks | not read: HTTP 404 | not run |
 | G10 | an encyclopaedia | a page on the benchmarking association | not read: HTTP 404 | not run |
 
-- The process classification of G7 is the baseline candidate for Q1; its own page refused an automated reader. An archived copy of the page was opened once and is not used, since a page that refuses a reader is not read through a copy. What is said of the classification here comes from formal sources that used it (Cragg 2007, Aitken 2010).
+- The process classification of G7 is the baseline candidate for Q1; its own page refused an automated reader. An archived copy of the page was opened once and is not used, since a page that refuses a reader is not read through a copy. The maintainer then opened it in a browser and downloaded its file, version 8.0; its 13 level-1 categories are read from that file, not from memory or from a copy (12 Nov. 2026).
 
 ## 6. Stopping rule
 
@@ -143,7 +143,7 @@ Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4
 - An abstract was read for each formal source with a figure; a figure from an abstract is marked (secondary) in [review](review.md).
 - A book indexed with its contents or its publisher's blurb is marked so, and gives no figure.
 - A work whose abstract the index did not hold is located only, and no figure is taken from it.
-- One article was read in full text in its first half (Martela 2019); its quotations of Puranam 2014 are marked (secondary).
+- One article was read in full text in its first half (Martela 2019). Puranam 2014 was first read through its quotations, then in the original, pages 165-166, on 12 Nov. 2026.
 - Synthesis is narrative by question, traceable through [sources](sources.md).
 
 ## 10. Not searched, and limits

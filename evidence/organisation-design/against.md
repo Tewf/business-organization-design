@@ -9,7 +9,7 @@ The evidence against what the front page assumes, and the disagreements. Sources
 - No list of what every firm must do, derived from theory and tested for completeness, was found (review, Strand 1). Not found, in these searches.
 - The theory of the firm defines the firm by its boundary and its contracts, not by a list of functions (Coase 1937, Williamson 1985). Convention.
 - A firm's advantage rests on processes distinctive to it and on its path, which a generic list does not hold (Teece 1997, abstract, secondary). Supported with caveat.
-- The cross-industry classification is a practice taxonomy whose own page was not read here (protocol, G7). Its use in 66 small firms shows it can be applied, not that it is complete (Cragg 2007, abstract, secondary). Measured, descriptive.
+- The cross-industry classification is a practice taxonomy, read in its file, version 8.0 (protocol, G7). Its use in 66 small firms shows it can be applied, not that it is complete (Cragg 2007, abstract, secondary). Measured, descriptive.
 
 ## Against "four problems describe the human architecture"
 
@@ -42,6 +42,6 @@ The evidence against what the front page assumes, and the disagreements. Sources
 
 - 43 of the 58 formal sources were read from their abstracts and 7 were located only; six books were read from their contents or a publisher's blurb. Most figures are marked (secondary).
 - Four of the key results are simulations or models (March 1991, Levinthal 1997, Siggelkow 2005, Fang 2009), and three more are models (Radner 1993, Van Zandt 1999, Garicano 2000).
-- The four universal problems are read through a later paper's quotations of page 166, not in the original (Martela 2019).
+- The four universal problems are argued, not tested: the original states them as a definition and a claim of sufficiency (Puranam 2014, pp. 165-166).
 - The grey sources are standards bodies and practice sellers on their own methods; two are below the threshold.
 - OpenAlex sorts by citations, which favours old work, books with many reviews and American management journals.

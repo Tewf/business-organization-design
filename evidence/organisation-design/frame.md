@@ -30,7 +30,7 @@ What must a company do, which people and roles must do it and decide it, how can
 ## What practice calls it
 
 - **Org chart** and **operating model**: the boxes and lines of a company. The field's word is the formal structure, one of Mintzberg's parameters of design.
-- **Process map** or **process framework**: a list of every process, grouped (G7, not read). The field's word is a process classification framework.
+- **Process map** or **process framework**: a list of every process, grouped (G7, version 8.0). The field's word is a process classification framework.
 - **Enterprise architecture**: a description of a company's processes, structures, information and systems, kept as models in a standard language (OpenGroup 2026 TOGAF, OpenGroup 2026 ArchiMate, Zachman 2026 Framework). The field's word is an enterprise model or an enterprise ontology.
 - **Process notation**: a diagram of one process a tool can execute (OMG 2013 BPMN). The field's word is a process model.
 - **Roles, accountabilities and domains**: a role defined apart from the person who fills it (HolacracyOne 2026 Constitution). The field's word is task allocation, one of the four universal problems.

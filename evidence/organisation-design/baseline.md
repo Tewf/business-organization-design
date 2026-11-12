@@ -35,8 +35,21 @@ digraph b1 {
 
 </details>
 
-1. The rows are the level-1 categories of the cross-industry process classification, a practice list of what a company does; a 24-item instrument built from it was used with 66 small firms (Cragg 2007). That it is the most adopted such list is this review's label for the practice, not a count. The maintainer reads them at their source before use, since its page refused an automated reader (protocol, G7).
-2. One row is added for the legal function the classification may not hold: the firm as a person holding assets apart from its owners (Hansmann 2000).
+1. The rows are the level-1 categories of the cross-industry process classification, a practice list of what a company does; a 24-item instrument built from it was used with 66 small firms (Cragg 2007). That it is the most adopted such list is this review's label for the practice, not a count. Version 8.0, generated 25 Feb. 2026, read in its Excel file on 12 Nov. 2026 (APQC 2026 Classification; protocol, G7):
+   - 1.0 Develop Vision and Strategy
+   - 2.0 Develop and Manage Products and Services
+   - 3.0 Market and Sell Products and Services
+   - 4.0 Manage Supply Chain for Physical Products
+   - 5.0 Deliver Services
+   - 6.0 Manage Customer Service
+   - 7.0 Develop and Manage Human Resources
+   - 8.0 Manage Information Technology (IT)
+   - 9.0 Manage Financial Resources
+   - 10.0 Acquire, Construct, and Manage Assets
+   - 11.0 Manage Enterprise Risk, Compliance, Remediation, and Resiliency
+   - 12.0 Manage External Relationships
+   - 13.0 Develop and Manage Business Capabilities
+2. One row is added for the legal function the classification does not hold at level 1. It has a board and governance only lower down (9.8.1.1, 12.3, 12.4.2). The added row is the firm as a person holding assets apart from its owners (Hansmann 2000).
 3. The columns are the four universal problems of organizing for that process: its tasks, who does them, how they are rewarded and what information they receive (Puranam 2014). The "who" is a role, defined apart from the person who fills it (HolacracyOne 2026 Constitution).
 4. Two more columns name who decides and who controls each process, kept apart (Fama 1983), and whether the decision is delegated (McElheran 2014).
 5. The table is data a program reads, so that a missing cell is counted, not noticed.

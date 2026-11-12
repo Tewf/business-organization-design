@@ -78,7 +78,7 @@ digraph where_it_sits {
 
 - **The field splits the subject in two.** Organization design and organization theory study how work is divided and coordinated. The theory of the firm and organizational economics study why a firm exists and who decides ([frame](evidence/organisation-design/frame.md)). The name is kept.
 - **What a company does is listed in practice, not in theory.** A cross-industry process classification is the most adopted list (used for 66 small firms, Cragg 2007, secondary). A handbook organises over 5000 business activities by abstraction and dependency (Malone 1999). No list tested for completeness was found.
-- **Four problems define an organisation.** Task division, task allocation, reward and information are claimed necessary and sufficient (Puranam 2014, as quoted in Martela 2019).
+- **Four problems define an organisation.** Task division, task allocation, reward and information are claimed necessary and sufficient (Puranam 2014, pp. 165-166).
 - **The best-known structure failed its test.** Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance (Doty 1993, secondary).
 - **Decision rights are separable and delegation is measured.** Delegation goes with a high value of local adaptation, centralisation with a high value of coordination (McElheran 2014, secondary).
 - **Adaptation is mostly simulated.** Exploitation crowds out exploration (March 1991), the form at founding persists (Levinthal 1997), and a sequence of structures beats a fixed one (Siggelkow 2005), all in models.

@@ -45,5 +45,5 @@ A first-pass multivocal review, read on 2026-11-11. It asks what a company must 
 
 The first pass is in: five steps written, each number read at the depth the sources table gives.
 
-- The process classification's own page refused an automated reader, so its categories are not yet read ([protocol](protocol.md), G7).
+- The process classification's 13 categories are read in its file, version 8.0, opened by the maintainer on 12 Nov. 2026 ([protocol](protocol.md), G7).
 - The cap of 40 strings was passed by five, and no forward pass on citations was run ([protocol](protocol.md), sections 6 and 10).

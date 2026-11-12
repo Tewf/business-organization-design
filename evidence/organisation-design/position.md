@@ -17,7 +17,6 @@ Step 4 of the review. What is known, what was not found, and what this repositor
 ## Not found in these searches
 
 - A list of what every firm must do, derived from theory and tested for completeness (strings F5, F7, F44, F45).
-- The categories of the cross-industry process classification, read at their source (G7, HTTP 403).
 - A description of one firm that joins its processes, its four problems and its decision rights in one document a program reads (strings F9, F36, F38).
 - A test of a structure designed for a young firm against one that grew without design (strings F35, F25).
 - A rule for when a young firm should change its design, tested on firms (strings F25, F27, F33).

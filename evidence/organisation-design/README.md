@@ -26,7 +26,7 @@ A first-pass multivocal review, read on 2026-11-11. It asks what a company must 
 | Claim | Grade | Where |
 |---|---|---|
 | Every organisation must solve four problems: task division, task allocation, reward and information | convention (original, pp. 165-166) | review.md Strand 2 |
-| Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance | measured (secondary) | review.md Strand 2, against.md |
+| Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance | measured (secondary) | against.md, state-of-the-art.md |
 | Delegation goes with a high value of local adaptation, centralisation with a high value of coordination | measured (secondary) | review.md Strand 2 |
 | Over 239 effect sizes from 65 studies, bundles of HR practices beat single practices | measured (secondary) | review.md Strand 2 |
 | An organisation of limited processors is efficient by their number and by the delay | measured, as a model (secondary) | review.md Strand 3 |

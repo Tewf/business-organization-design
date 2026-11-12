@@ -44,7 +44,7 @@ Grades are the standard's four. Measured, descriptive means a count or a model f
 | Coase 1937 | theory, the seminal paper | L1, opened by DOI | convention, opening read | review |
 | Cragg 2007 | survey of 66 firms | F44 | measured, descriptive, abstract read | review |
 | Cyert 1963 | book, the seminal one | F31 | convention, contents read | review |
-| Doty 1993 | empirical test | F12 | measured, abstract read | review, against |
+| Doty 1993 | empirical test | F12 | measured, abstract read | against, state of the art |
 | Eisenhardt 1989 | review | F4 | supported with caveat, abstract read | review |
 | Fama 1983 | theory | F17 | convention, located only | review |
 | Fang 2009 | simulation | F26 | measured, a simulation, abstract read | review |
@@ -108,7 +108,7 @@ Score is out of 20, then the groups in the order authority, methodology, objecti
 ## Left out, with the reason
 
 - The governance principles of an intergovernmental organisation: HTTP 403, so unread; two encyclopaedia pages: HTTP 404. The benchmarking association's classification page refused a reader too; its file was then read by the maintainer, as below.
-- Simon's Administrative Behavior (L12): located, and left out because the pool cites Simon 1962 and March 1958 for bounded rationality.
+- Simon's Administrative Behavior (L12): located, and left out because the pool already holds Simon's line through Simon 1962 (decomposition) and March 1958 (coordination), and Williamson 1985 for bounded rationality.
 - Titles that added a concept and were left out to keep the pool near 50, by string:
   - teams and absorptive capacity (F2); culture and institutions (F4); stakeholder bargaining and company law (F10);
   - contingency and choice (F14); firm scope and delegation in multimarket firms (F15); power in the firm (F17);

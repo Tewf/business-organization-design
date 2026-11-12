@@ -163,7 +163,7 @@ Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4
 
 ## 12. Forward pass
 
-- Stated before it ran, in the work's notes of 2026-11-12: the works citing each of the four sources B1's columns rest on, from OpenAlex's `cites:` filter.
+- Stated before it ran, in the work's notes of 2026-11-12: the works citing each of the four sources B1 rests on (three for its columns, Hansmann 2000 for its legal row), from OpenAlex's `cites:` filter.
 - Each seed's citing works were sorted by citations and the top 8 screened; a seed stopped after 5 results with no new concept; the criteria are those of section 7.
 - It is a step of its own, not counted against the 40-string cap of section 6, which was already broken.
 

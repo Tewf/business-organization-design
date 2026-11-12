@@ -9,3 +9,5 @@ A pin move is recorded here, not in decisions/.
 
 - Pinned reader-ergonomics v1.24.2 (`65e4247`), at the repository's start: the standard's pin, link, changelog and
   decision-record checks, which this skeleton is written to pass.
+- Pinned reader-ergonomics-review v0.1.1 (`39d3b25`), at the same start: the shapes of the review's files and their
+  headings in checks/config.toml.

@@ -54,7 +54,7 @@ digraph where_it_sits {
 </details>
 
 - **It links five members of the family** for what they hold and it does not: the model's building blocks ([business-model](https://github.com/Tewf/business-model)), cash and funding ([business-finance](https://github.com/Tewf/business-finance)), demand ([business-customer](https://github.com/Tewf/business-customer)), prices ([business-pricing](https://github.com/Tewf/business-pricing)) and markets ([business-market](https://github.com/Tewf/business-market)). It copies none of them.
-- **Its method is [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)'s**: scope, review, baseline and plan, and the registers of decisions and of provisional values. It does not depend on that repository's other parts.
+- **Its method is [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)'s**: scope, review, baseline and plan. The registers of decisions and of provisional values are the business family's rules ([business](https://github.com/Tewf/business)). It depends on no other part of either.
 - **It writes its review in the shapes of [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, the review as a genre; the shapes are that repository's.
 - **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) and runs its checks in CI.
 - **It links down only.** The family's map is [business](https://github.com/Tewf/business). A venture appears here as an example, never as the subject: a venture that personalises a product.
@@ -120,8 +120,8 @@ master also renders the site, [tewf.github.io/business-organization-design](http
 | Part | Summary |
 |---|---|
 | [evidence](evidence/) | the first review, a first pass of 64 sources, ending on the baseline B1, and the bibliography |
-| [shapes](shapes/) | the organisation description, B1's table for one organisation, with a fixture and the check that reads it |
-| [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
+| [shapes](https://github.com/Tewf/business-organization-design/tree/master/shapes) | the organisation description, B1's table for one organisation, with a fixture and the check that reads it |
+| [decisions](https://github.com/Tewf/business-organization-design/tree/master/decisions) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence
 

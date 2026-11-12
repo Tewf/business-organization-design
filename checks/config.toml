@@ -14,7 +14,8 @@ stylesheets = []
 stylesheets = []
 
 # The headings the standard's decision-record shape requires (reader-ergonomics v1.24.2, shapes/decision-record.md),
-# and the headings each shape of a review's files asks (reader-ergonomics-review v0.1.1, shapes/*.md).
+# and, for each shape of a review's files, the headings the check requires, a subset of the shape's own
+# (reader-ergonomics-review v0.1.1, shapes/*.md).
 [shape_conformance]
 shapes = [
   { name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] },

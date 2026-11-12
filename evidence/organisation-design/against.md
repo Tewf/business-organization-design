@@ -13,7 +13,7 @@ The evidence against what the front page assumes, and the disagreements. Sources
 
 ## Against "four problems describe the human architecture"
 
-- The four problems are claimed sufficient for an organisation to exist, not to endure: adaptation to the environment is a further problem outside them (Martela 2019, full text, reading Puranam 2014). Convention.
+- The four problems are claimed sufficient for an organisation to exist, not to endure. Adaptation to the environment is a further problem outside them (Martela 2019, first half of the full text, reading Puranam 2014). Convention.
 - The best-known description of structure, Mintzberg's five ideal types, did not predict effectiveness in a formal test, while Miles and Snow's types predicted 24% of its variance (Doty 1993, abstract, secondary). Measured.
 
 ## Against "an organisation can be written as an information-processing system"

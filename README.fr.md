@@ -54,7 +54,7 @@ digraph where_it_sits {
 </details>
 
 - **Il renvoie à cinq membres de la famille** pour ce qu'ils tiennent et que lui ne tient pas. Ce sont les briques du modèle ([business-model](https://github.com/Tewf/business-model)), la trésorerie et le financement ([business-finance](https://github.com/Tewf/business-finance)), la demande ([business-customer](https://github.com/Tewf/business-customer)), les prix ([business-pricing](https://github.com/Tewf/business-pricing)) et les marchés ([business-market](https://github.com/Tewf/business-market)). Il n'en copie aucun.
-- **Sa méthode est celle d'[ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** : périmètre, revue, référence et plan, et les registres des décisions et des valeurs provisoires.
+- **Sa méthode est celle d'[ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** : périmètre, revue, référence et plan. Les registres des décisions et des valeurs provisoires sont les règles de la famille économie ([business](https://github.com/Tewf/business)). Il ne dépend d'aucune autre partie de l'un ni de l'autre.
 - **Il écrit sa revue dans les formes de [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, la revue comme genre.
 - **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) et lance ses vérifications en CI.
 - **Il ne renvoie que vers le bas.** La carte de la famille est [business](https://github.com/Tewf/business). Une entreprise n'y paraît qu'en exemple, jamais en sujet : une jeune entreprise qui personnalise un produit.
@@ -120,8 +120,8 @@ master construit aussi le site, [tewf.github.io/business-organization-design](ht
 | Partie | Résumé |
 |---|---|
 | [evidence](evidence/) | la première revue, en première passe de 64 sources, finie sur la référence B1, et la bibliographie |
-| [shapes](shapes/) | la description d'une organisation, la table de B1 pour une organisation, avec un exemple fictif et le contrôle qui la lit |
-| [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
+| [shapes](https://github.com/Tewf/business-organization-design/tree/master/shapes) | la description d'une organisation, la table de B1 pour une organisation, avec un exemple fictif et le contrôle qui la lit |
+| [decisions](https://github.com/Tewf/business-organization-design/tree/master/decisions) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence
 

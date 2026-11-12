@@ -44,14 +44,19 @@ and a program reads it.
 | Part | Evidence | Grade |
 |---|---|---|
 | One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), the cross-industry classification used in 66 small firms (Cragg 2007) | convention; measured, descriptive, for its use |
-| The rows' names | the classification's level-1 categories, read at source before use (baseline, item 1) | PROVISIONAL: the categories are not read yet; `rows` in checks/config.toml stays empty until they are |
+| The rows' names | the classification's level-1 categories, read at source before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | PROVISIONAL: the categories are not read yet; `rows` in checks/config.toml stays empty until they are |
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, page 166, as quoted in Martela 2019) | convention |
 | Decides and Controls, apart | decision management and decision control are separated (Fama 1983) | convention |
 | Delegated | delegation follows the value of local adaptation (McElheran 2014); information and communication tools move it in opposite directions (Bloom 2014) | measured |
 | A role apart from the person | practice writes a role with a purpose and its domains (HolacracyOne 2026 Constitution, an example of practice only) | convention |
-| The org chart beside it | the practice B1 is compared with (baseline, item 6) | convention |
-| Empty cells counted by a program | B1's two measures, coverage and completeness (baseline, How it is measured) | convention |
+| The org chart beside it | the practice B1 is compared with ([baseline](../evidence/organisation-design/baseline.md), item 6) | convention |
+| Empty cells counted by a program | B1's two measures, coverage and completeness ([baseline](../evidence/organisation-design/baseline.md#how-it-is-measured)) | convention |
+
+## Where the file goes
+
+One organisation is one file, `organisations/<name>/organisation.md`; the check reads every file that matches
+`[organisation_description] files` in `checks/config.toml`, which also holds the worked example's folder.
 
 ## Worked example
 

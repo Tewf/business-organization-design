@@ -47,7 +47,7 @@ and a program reads it.
 | The rows' names | the classification's level-1 categories, read at source before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | PROVISIONAL: the categories are not read yet; `rows` in checks/config.toml stays empty until they are |
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, page 166, as quoted in Martela 2019) | convention |
-| Decides and Controls, apart | decision management and decision control are separated (Fama 1983) | convention |
+| Decides and Controls, apart | ownership and control are separated (Fama 1983, located only, title); B1 keeps deciding and controlling apart on that reading ([baseline](../evidence/organisation-design/baseline.md), item 4) | convention, from a title |
 | Delegated | delegation follows the value of local adaptation (McElheran 2014); information and communication tools move it in opposite directions (Bloom 2014) | measured |
 | A role apart from the person | practice writes a role with a purpose and its domains (HolacracyOne 2026 Constitution, an example of practice only) | convention |
 | The org chart beside it | the practice B1 is compared with ([baseline](../evidence/organisation-design/baseline.md), item 6) | convention |
@@ -65,10 +65,11 @@ One organisation is one file, `organisations/<name>/organisation.md`; the check 
 ## The rules
 
 1. The Processes table has the eight columns in the order of the skeleton.
-2. One row holds the legal person.
-3. Who, Decides and Controls name roles from the Roles table, never a person.
-4. Delegated is yes, no, in part, or left empty.
-5. An empty cell is left blank or written `?`; a program counts it, and the count is the description's first finding.
+2. One row holds the legal person, and its Process name contains the words "legal person".
+3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
+   the table has at least one role.
+4. Delegated is yes, no, in part, or left empty; case is not significant.
+5. An empty cell is left blank or written `?` or `-`; a program counts it, and the count is the description's first finding.
 
 ## The principles it applies
 

@@ -10,7 +10,8 @@ problems of organizing with its roles defined once, and a program checks its col
 - The first review ends on B1: one row per process, a column for each of the four problems of organizing, two for
   who decides and who controls, one for delegation ([baseline](../evidence/organisation-design/baseline.md)).
 - Its next work, named there: a shape for one organisation's description, a check that counts empty cells, a fixture.
-- The forward pass of 2026-11-12 moved no column ([protocol](../evidence/organisation-design/protocol.md), section 12).
+- The forward pass of 2026-11-12 added five sources ([protocol](../evidence/organisation-design/protocol.md), section 12);
+  this record adds no column for them.
 - The classification's categories are not read: its page refused an automated reader.
 - The maintainer has not yet accepted B1; this record waits on that, and becomes accepted with it.
 

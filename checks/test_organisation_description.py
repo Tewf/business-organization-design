@@ -56,16 +56,16 @@ class OrganisationDescriptionTest(unittest.TestCase):
         self.assertEqual(run(GOOD), [])
 
     def test_missing_column_fails(self):
-        self.assertTrue(errors(run(GOOD.replace("| Reward ", "| Pay "))))
+        self.assertTrue(any("header" in f.message for f in errors(run(GOOD.replace("| Reward ", "| Pay ")))))
 
     def test_missing_legal_row_fails(self):
-        self.assertTrue(errors(run(GOOD.replace("Hold assets as a legal person", "Own things"))))
+        self.assertTrue(any("legal person" in f.message for f in errors(run(GOOD.replace("Hold assets as a legal person", "Own things")))))
 
     def test_undefined_role_fails(self):
-        self.assertTrue(errors(run(GOOD.replace("| founder and maker |", "| founder and Alice |"))))
+        self.assertTrue(any("'Alice'" in f.message for f in errors(run(GOOD.replace("| founder and maker |", "| founder and Alice |")))))
 
     def test_bad_delegated_fails(self):
-        self.assertTrue(errors(run(GOOD.replace("| yes |", "| maybe |"))))
+        self.assertTrue(any("Delegated" in f.message for f in errors(run(GOOD.replace("| yes |", "| maybe |")))))
 
     def test_empty_cells_are_counted_not_failed(self):
         findings = run(GOOD.replace("| cut, assemble |", "| ? |"))
@@ -74,10 +74,27 @@ class OrganisationDescriptionTest(unittest.TestCase):
 
     def test_configured_row_is_required(self):
         config = {"organisation_description": {"files": ["orgs/*.md"], "rows": ["Sell the product"]}}
-        self.assertTrue(errors(run(GOOD, config)))
+        self.assertTrue(any("Sell the product" in f.message for f in errors(run(GOOD, config))))
 
     def test_missing_roles_section_fails(self):
-        self.assertTrue(errors(run(GOOD.split("## Roles")[0])))
+        self.assertTrue(any("no Roles section" in f.message for f in errors(run(GOOD.split("## Roles")[0]))))
+
+    def test_a_role_defined_twice_fails(self):
+        twice = GOOD.replace("| maker | the product is made | one person |",
+                             "| maker | the product is made | one person |\n| maker | again | one person |")
+        self.assertTrue(any("defined twice" in f.message for f in errors(run(twice))))
+
+    def test_a_roles_table_with_no_role_fails_and_still_checks_names(self):
+        empty = GOOD.replace("| founder | the venture exists | one person |\n| maker | the product is made | one person |\n", "")
+        found = errors(run(empty))
+        self.assertTrue(any("defines no role" in f.message for f in found))
+        self.assertTrue(any("does not define" in f.message for f in found))
+
+    def test_files_come_from_the_shape_conformance_entry(self):
+        config = {"organisation_description": {"rows": []},
+                  "shape_conformance": {"shapes": [{"name": "organisation description", "files": ["orgs/*.md"]}]}}
+        self.assertEqual(run(GOOD, config), [])
+        self.assertTrue(errors(run(GOOD.replace("Hold assets as a legal person", "Own things"), config)))
 
 
 if __name__ == "__main__":

@@ -29,19 +29,19 @@ shapes = [
   { name = "baseline", files = ["evidence/*/baseline.md"], required = ["Compared with", "lacks", "measured", "finished"] },
 ]
 
-# Path questions are answered with their path quoted, so the quotes check stays strict.
 # Each shape links, or holds, a filled example of itself.
 [shape_example]
 files = ["shapes/*.md"]
 exempt = ["shapes/README.md", "shapes/examples/*"]
 example_headings = ["Worked example"]
 
-# The descriptions the local check organisation-description reads (record 0003). `rows` is the classification's
+# The local check organisation-description (record 0003). `rows` is the classification's
 # level-1 categories once read at source; PROVISIONAL and empty until then (baseline.md, item 1).
 [organisation_description]
-files = ["shapes/examples/*/organisation.md", "organisations/*/organisation.md"]
+# The files are those of the "organisation description" entry of [shape_conformance] above, read from there.
 rows = []
 
+# Path questions are answered with their path quoted, so the quotes check stays strict.
 [judgment_quotes]
 optional = []
 

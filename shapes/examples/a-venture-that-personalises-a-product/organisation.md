@@ -30,8 +30,9 @@ are read at source (PROVISIONAL, [baseline](../../../evidence/organisation-desig
 ## Compared with the org chart
 
 - The org chart has three boxes, founder above maker, and the accountant outside the line.
-- The table shows what the chart does not: the founder decides and controls the same five processes, so nobody
-  controls the founder.
+- The table shows what the chart does not: the founder decides four processes and controls five.
+- The founder both decides and controls two of them, learning what customers want and holding the assets; of the
+  processes the founder decides, only the hiring has another control, the accountant's.
 - The selling row has empty cells, which the chart cannot show as empty.
 
 ## Limits

@@ -1,10 +1,12 @@
 """Organisation description: one row per process, one column per problem of organizing, each role defined once.
 
-A file matched by `[organisation_description] files` of checks/config.toml must hold:
+A file matched by the files of the "organisation description" entry of `[shape_conformance] shapes` in
+checks/config.toml (or `[organisation_description] files`, when set) must hold:
 - a `Processes` section with a table whose header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
 - a row whose Process names the legal person (Hansmann 2000), since a process list may not hold it;
-- a `Roles` section with a table whose first column is Role: a role is defined apart from the person who fills it;
+- a `Roles` section with a table whose first column is Role, at least one role, each once: a role is defined apart from
+  the person who fills it;
 - in Who, Decides and Controls, only roles from that table (several joined by "and" or a comma), or an empty cell;
 - in Delegated, yes, no, in part or an empty cell.
 An empty cell is blank, "?" or "-". When `rows` in the config is not empty, each of its names must be a Process row.
@@ -72,7 +74,10 @@ def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[
 def check(root: Path, config: dict) -> list[Finding]:
     """Errors for a missing column, row or role; one warning per file with its empty cells counted."""
     settings = config.get("organisation_description", {})
-    patterns, required_rows = settings.get("files", []), settings.get("rows", [])
+    patterns, required_rows = settings.get("files"), settings.get("rows", [])
+    if patterns is None:
+        shapes = config.get("shape_conformance", {}).get("shapes", [])
+        patterns = next((s.get("files", []) for s in shapes if s.get("name") == "organisation description"), [])
     findings: list[Finding] = []
     for path in files_in_scope(root, config, {".md"}):
         if not any(fnmatch.fnmatch(path, pattern) for pattern in patterns):
@@ -97,7 +102,16 @@ def check(root: Path, config: dict) -> list[Finding]:
             role_header, role_rows = table(roles[1])
             if not role_header or role_header[0] != "role":
                 fail(roles[0], "the Roles table's first column is not Role")
-            role_names = {cells[0].lower() for _, cells in role_rows if cells and cells[0]}
+            seen: set[str] = set()
+            for line, cells in role_rows:
+                name = cells[0].lower() if cells else ""
+                if name in seen:
+                    fail(line, f"the role {cells[0]!r} is defined twice in the Roles table")
+                elif name:
+                    seen.add(name)
+            role_names = seen
+            if not role_names:
+                fail(roles[0], "the Roles table defines no role: name at least one")
         if not any(LEGAL.search(cells[0]) for _, cells in rows if cells):
             fail(processes[0], "no row for the legal person: the firm holding assets apart from its owners (Hansmann 2000)")
         names = {cells[0].lower() for _, cells in rows if cells}
@@ -112,7 +126,7 @@ def check(root: Path, config: dict) -> list[Finding]:
             cell = dict(zip(COLUMNS, cells))
             for column in ROLE_COLUMNS:
                 value = cell[column]
-                if value in EMPTY or not role_names:
+                if value in EMPTY or roles is None:
                     continue
                 for name in filter(None, JOIN.split(value)):
                     if name.lower() not in role_names:

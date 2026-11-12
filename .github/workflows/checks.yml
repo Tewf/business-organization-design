@@ -1,7 +1,8 @@
 name: Check against reader-ergonomics
 
-# The checks live in Tewf/reader-ergonomics and are not copied here: CI checks out both
-# repositories and runs that one's checks on this one.
+# The standard's checks live in Tewf/reader-ergonomics and are not copied here: CI checks out both
+# repositories and runs that one's checks on this one. This repository's own check is in checks/local/,
+# and its unit tests run first.
 # Tiers program and meaning run on every push and pull request; syntax and the online
 # reference check run weekly, and on demand.
 on:

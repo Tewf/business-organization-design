@@ -56,7 +56,7 @@ Every work cited, once. A key is `Surname Year`; an organisation takes a title w
 | OpenGroup 2026 ArchiMate | The Open Group (2026). About the ArchiMate modeling language. Page read on 2026-11-11 | https://www.opengroup.org/archimate-forum/archimate-overview |
 | OpenGroup 2026 TOGAF | The Open Group (2026). The TOGAF Standard, 10th edition, home page. Page read on 2026-11-11 | https://www.opengroup.org/togaf |
 | Porter 1985 | Porter (1985). Competitive Advantage: creating and sustaining superior performance. Free Press. Publisher's blurb read | https://openalex.org/W3149395617 |
-| Puranam 2014 | Puranam, Alexy, Reitzig (2014). What's "new" about new forms of organizing? Academy of Management Review 39(2), 162-180. Abstract read; page 166 read as quoted in Martela 2019 | https://doi.org/10.5465/amr.2011.0436 |
+| Puranam 2014 | Puranam, Alexy, Reitzig (2014). What's "new" about new forms of organizing? Academy of Management Review 39(2), 162-180. Pages 165 and 166 read in the original, 12 Nov. 2026 | https://doi.org/10.5465/amr.2011.0436 |
 | Puranam 2018 | Puranam (2018). The Microstructure of Organizations. Oxford University Press. Abstract read | https://doi.org/10.1093/oso/9780199672363.001.0001 |
 | Radner 1993 | Radner (1993). The organization of decentralized information processing. Econometrica 61(5). Abstract read | https://doi.org/10.2307/2951495 |
 | Shleifer 1997 | Shleifer, Vishny (1997). A survey of corporate governance. Journal of Finance 52(2). Abstract read | https://doi.org/10.1111/j.1540-6261.1997.tb04820.x |

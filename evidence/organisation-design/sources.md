@@ -76,7 +76,7 @@ Grades are the standard's four. Measured, descriptive means a count or a model f
 | Mintzberg 1979 | book, a synthesis | L4 | convention, abstract read | review |
 | Nelson 1982 | book, the seminal one | L10 | convention, contents read | review |
 | Porter 1985 | book | L13 | convention, publisher's blurb read | review |
-| Puranam 2014 | theory | F13 | convention, abstract read; page 166 quoted in Martela 2019 | review |
+| Puranam 2014 | theory | F13 | convention, pages 165-166 read in the original | review |
 | Puranam 2018 | book | F13 | convention, abstract read | review |
 | Radner 1993 | model | F21 | measured, a model, abstract read | review |
 | Shleifer 1997 | survey | F16 | convention, abstract read | review |

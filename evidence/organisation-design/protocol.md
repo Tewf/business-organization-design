@@ -143,7 +143,7 @@ Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4
 - An abstract was read for each formal source with a figure; a figure from an abstract is marked (secondary) in [review](review.md).
 - A book indexed with its contents or its publisher's blurb is marked so, and gives no figure.
 - A work whose abstract the index did not hold is located only, and no figure is taken from it.
-- One article was read in full text in its first half (Martela 2019); its quotations of Puranam 2014 are marked (secondary).
+- One article was read in full text in its first half (Martela 2019). Puranam 2014 was first read through its quotations, then in the original, pages 165-166, on 12 Nov. 2026.
 - Synthesis is narrative by question, traceable through [sources](sources.md).
 
 ## 10. Not searched, and limits

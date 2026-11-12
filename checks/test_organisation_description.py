@@ -62,7 +62,7 @@ class OrganisationDescriptionTest(unittest.TestCase):
         self.assertTrue(any("legal person" in f.message for f in errors(run(GOOD.replace("Hold assets as a legal person", "Own things")))))
 
     def test_undefined_role_fails(self):
-        self.assertTrue(any("'Alice'" in f.message for f in errors(run(GOOD.replace("| founder and maker |", "| founder and Alice |")))))
+        self.assertTrue(any("'alice'" in f.message for f in errors(run(GOOD.replace("| founder and maker |", "| founder and Alice |")))))
 
     def test_bad_delegated_fails(self):
         self.assertTrue(any("Delegated" in f.message for f in errors(run(GOOD.replace("| yes |", "| maybe |")))))
@@ -117,10 +117,10 @@ class OrganisationDescriptionTest(unittest.TestCase):
 
     def test_an_html_table_fails(self):
         text = GOOD.replace("\n## Roles", "\n<table><tr><td>Pay</td></tr></table>\n\n## Roles")
-        self.assertTrue(any("HTML table" in f.message for f in errors(run(text))))
+        self.assertTrue(any("HTML" in f.message for f in errors(run(text))))
 
     def test_a_role_cell_naming_no_role_fails(self):
-        self.assertTrue(any("names no role" in f.message for f in errors(run(GOOD.replace("| maker | salary |", "| and | salary |")))))
+        self.assertTrue(any(("names no role" in f.message or "ends on a comma" in f.message) for f in errors(run(GOOD.replace("| maker | salary |", "| and | salary |")))))
 
     def test_illegal_is_not_legal(self):
         text = GOOD.replace("Hold assets as a legal person", "Screen out illegal personnel")
@@ -134,7 +134,7 @@ class OrganisationDescriptionTest(unittest.TestCase):
         self.assertTrue(any("HTML comment" in f.message for f in errors(run(text))))
 
     def test_a_setext_heading_fails(self):
-        self.assertTrue(any("underlined" in f.message for f in errors(run(GOOD + "\nProcesses\n---------\n"))))
+        self.assertTrue(any("line of only" in f.message for f in errors(run(GOOD + "\nProcesses\n---------\n"))))
 
     def test_a_short_delimiter_second_table_fails(self):
         text = GOOD.replace("\n## Roles", "\n| Note | Text |\n|-|-|\n| a | b |\n\n## Roles")
@@ -151,6 +151,43 @@ class OrganisationDescriptionTest(unittest.TestCase):
     def test_a_repeated_process_row_fails(self):
         row = "| Make the product | cut, assemble | maker | salary | orders | maker | founder | yes |"
         self.assertTrue(any("second row for the process" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + row)))))
+
+    def test_a_row_without_its_leading_pipe_fails(self):
+        row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
+        self.assertTrue(any("neither a table row" in f.message for f in errors(run(GOOD.replace(row, row + "\nPay | pay | maker | none | x | maker | founder | no |")))))
+
+    def test_an_indented_heading_fails(self):
+        self.assertTrue(any("indented heading" in f.message for f in errors(run(GOOD + "\n   ## Processes\n"))))
+
+    def test_a_blockquote_fails(self):
+        self.assertTrue(any("blockquote" in f.message for f in errors(run(GOOD + "\n> ## Processes\n"))))
+
+    def test_a_pipe_line_above_a_dash_line_fails(self):
+        self.assertTrue(any("line of only" in f.message for f in errors(run(GOOD + "\nProcesses | more\n---\n"))))
+
+    def test_bold_names_are_the_same_names(self):
+        text = GOOD.replace("| maker | the product is made | one person |", "| maker | the product is made | one person |\n| *maker* | again | one person |")
+        self.assertTrue(any("emphasis" in f.message for f in errors(run(text))))
+
+    def test_two_spaces_in_legal_person_count(self):
+        row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
+        self.assertTrue(any("second row for the legal person" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + row.replace("legal person", "legal  person"))))))
+
+    def test_an_entity_fails(self):
+        self.assertTrue(any("entity" in f.message for f in errors(run(GOOD.replace("| cut, assemble |", "| &nbsp; |")))))
+
+    def test_an_indented_table_fails(self):
+        text = GOOD.replace("\n## Roles", "\n    | a | b |\n    |---|---|\n\n## Roles")
+        self.assertTrue(errors(run(text)))
+
+    def test_roles_joined_by_a_space_fail(self):
+        self.assertTrue(any("does not define" in f.message for f in errors(run(GOOD.replace("| founder and maker | no |", "| founder maker | no |")))))
+
+    def test_a_cell_ending_on_and_fails(self):
+        self.assertTrue(any("ends on a comma" in f.message for f in errors(run(GOOD.replace("| founder and maker | no |", "| founder and | no |")))))
+
+    def test_links_and_code_in_cells_are_read_as_their_text(self):
+        self.assertEqual(errors(run(GOOD.replace("| equity | accounts |", "| equity, [record](x.md) | `accounts` |"))), [])
 
     def test_coverage_and_completeness_are_reported(self):
         findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))

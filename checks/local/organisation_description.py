@@ -38,9 +38,13 @@ ROLE_COLUMNS = ["who", "decides", "controls"]
 EMPTY = {"", "?", "-"}
 DELEGATED = {"yes", "no", "in part"}
 HEADING = re.compile(r"^#{1,6}\s+(.*?)\s*$")
-LEGAL = re.compile(r"\blegal person\b", re.IGNORECASE)
+LEGAL = re.compile(r"\blegal\s+person\b", re.IGNORECASE)
+ENTITY = re.compile(r"&(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);")
+TAG = re.compile(r"<[A-Za-z/!]")
+EMPHASIS = re.compile(r"\*|~~|(?:^|\s)_\S|\S_(?:\s|$)")
+LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 DELIMITER = re.compile(r"^[\s>]*\|?\s*:?-+:?\s*(?:\|\s*:?-+:?\s*)*\|?\s*$")
-SETEXT = re.compile(r"^\s{0,3}(?:=+|-+)\s*$")
+SETEXT = re.compile(r"^\s*(?:=+|-+)\s*$")
 FENCE = re.compile(r"^\s{0,3}(?:```|~~~)")
 WORD = {"processes": re.compile(r"\bprocesses\b"), "roles": re.compile(r"\broles\b")}
 JOIN = re.compile(r"\s*(?:,|\band\b)\s*", re.IGNORECASE)
@@ -55,19 +59,31 @@ def split(line: str) -> list[str]:
     return [c.strip() for c in line.strip().strip("|").split("|")]
 
 
+def plain(cell: str) -> str:
+    """A cell as it reads: a link's text, inline code's text, spaces collapsed, lowercase. Names are compared so."""
+    return re.sub(r"\s+", " ", LINK.sub(r"\1", cell).replace("`", "")).strip().lower()
+
+
 def unread(lines: list[str]) -> list[tuple[int, str]]:
     """The (line, message) of every form this check does not read, so it refuses it rather than miss what is in it: a
-    code fence, an HTML comment or table, and a heading underlined with = or - (setext)."""
+    code fence, HTML (a tag or a comment), a character entity, a blockquote, an indented heading, and a line of only
+    = or - (a setext heading or a thematic break). What is left is the plain form the shape asks for."""
     problems = []
     for number, line in enumerate(lines, 1):
         if FENCE.match(line):
             problems.append((number, "a code fence in a description: the check reads nothing inside one; write without it"))
         if "<!--" in line:
             problems.append((number, "an HTML comment in a description: the check reads nothing inside one; write without it"))
-        if "<table" in line.lower():
-            problems.append((number, "an HTML table in a description: write tables in Markdown"))
-        if number > 1 and SETEXT.match(line) and lines[number - 2].strip() and "|" not in lines[number - 2]:
-            problems.append((number, "a heading underlined with = or -: write headings with #, which the check reads"))
+        elif TAG.search(line):
+            problems.append((number, "HTML in a description: write it in plain Markdown"))
+        if ENTITY.search(line):
+            problems.append((number, "a character entity such as &nbsp; in a description: write the character itself"))
+        if line.lstrip().startswith(">"):
+            problems.append((number, "a blockquote in a description: write its text as plain lines"))
+        if re.match(r"^\s+#{1,6}(\s|$)", line):
+            problems.append((number, "an indented heading: start a heading at the line's first column, with #"))
+        if SETEXT.match(line):
+            problems.append((number, "a line of only = or -: a setext heading or a break, which the check does not read; use #"))
     return problems
 
 
@@ -97,6 +113,15 @@ def extra(found: list) -> list[tuple[int, str]]:
             continue
         tables = 0
         for number, line in titled[0][2]:
+            stripped = line.rstrip()
+            if stripped and not (stripped.startswith("|") and stripped.endswith("|")) and ("|" in stripped or line[:1].isspace()):
+                problems.append((number, f"a line in the {name.capitalize()} section that is neither a table row, starting and "
+                                         "ending with |, nor prose without | at the line's first column"))
+            if stripped.startswith("|") and stripped.endswith("|") and not is_delimiter(stripped):
+                for cell in split(stripped):
+                    if EMPHASIS.search(LINK.sub(r"\1", cell).replace("`", "")):
+                        problems.append((number, f"emphasis in a cell of the {name.capitalize()} section ({cell!r}): write cells without * _ or ~~"))
+                        break
             if is_delimiter(line):
                 tables += 1
                 if line.lstrip().startswith(">"):
@@ -136,16 +161,19 @@ def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[
 
 def role_names_in(cell: str, roles: set[str]) -> list[str]:
     """The role names a cell holds, read from the left: the longest defined role the rest starts with, else the text up
-    to the next comma or "and"; so a role whose name holds "and" is matched whole, alone or beside others."""
-    names, rest = [], cell.strip()
+    to the next comma or "and"; so a role whose name holds "and" is matched whole, alone or beside others. Names are
+    joined by a comma or "and" only: a role followed by more text with no joiner comes back with that text, and a
+    cell ending on a joiner comes back with an empty name, so the caller reports both."""
+    names, rest = [], plain(cell)
     ordered = sorted(roles, key=len, reverse=True)
+    if re.search(r"(?:,|\band)\s*$", rest):
+        names.append("")
     while True:
         rest = re.sub(r"^(?:\s|,|\band\b)+", "", rest, flags=re.IGNORECASE)
         if not rest:
             return names
-        low = rest.lower()
-        match = next((r for r in ordered if low.startswith(r) and (len(low) == len(r) or not low[len(r)].isalnum())), None)
-        if match:
+        match = next((r for r in ordered if rest.startswith(r) and (len(rest) == len(r) or not rest[len(r)].isalnum())), None)
+        if match and re.match(r"^\s*(?:,|\band\b|$)", rest[len(match):]):
             names.append(rest[:len(match)])
             rest = rest[len(match):]
         else:
@@ -190,7 +218,7 @@ def check(root: Path, config: dict) -> list[Finding]:
                 fail(roles[0], "the Roles table's first column is not Role")
             seen: set[str] = set()
             for line, cells in role_rows:
-                name = cells[0].lower() if cells else ""
+                name = plain(cells[0]) if cells else ""
                 if name in seen:
                     fail(line, f"the role {cells[0]!r} is defined twice in the Roles table")
                 elif name:
@@ -205,11 +233,11 @@ def check(root: Path, config: dict) -> list[Finding]:
             fail(line, "a second row for the legal person: one row holds it")
         seen_rows: set[str] = set()
         for line, cells in rows:
-            if cells and cells[0].strip().lower() in seen_rows:
+            if cells and plain(cells[0]) in seen_rows:
                 fail(line, f"a second row for the process {cells[0]!r}: one row per process")
             elif cells:
-                seen_rows.add(cells[0].strip().lower())
-        names = {cells[0].lower() for _, cells in rows if cells}
+                seen_rows.add(plain(cells[0]))
+        names = {plain(cells[0]) for _, cells in rows if cells}
         for wanted in required_rows:
             if wanted.lower() not in names:
                 fail(processes[0], f"no row for the configured process {wanted!r}")
@@ -227,7 +255,9 @@ def check(root: Path, config: dict) -> list[Finding]:
                 if not names:
                     fail(number, f"{column.capitalize()} holds {value!r}, which names no role: write a role, or leave it empty")
                 for name in names:
-                    if name.lower() not in role_names:
+                    if not name:
+                        fail(number, f"{column.capitalize()} holds {value!r}, which ends on a comma or \"and\"")
+                    elif name not in role_names:
                         fail(number, f"{column.capitalize()} names {name!r}, which the Roles table does not define")
             if cell["delegated"].lower() not in DELEGATED | EMPTY:
                 fail(number, "Delegated is not yes, no, in part or empty")

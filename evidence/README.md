@@ -6,7 +6,7 @@ The review behind this repository, on what a company is as an organisation, and 
 
 | Part | Summary |
 |---|---|
-| [organisation-design](organisation-design/) | a first pass, 59 sources: functions and the boundary, the four problems of organizing and decision rights, information processing, adaptation, ending on the baseline B1 |
+| [organisation-design](organisation-design/) | a first pass, 64 sources: functions and the boundary, the four problems of organizing and decision rights, information processing, adaptation, ending on the baseline B1 |
 | [bibliography](bibliography.md) | every work cited, once, with a stable link |
 
 ## See also

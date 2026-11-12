@@ -7,7 +7,7 @@ Ce qu'est une entreprise en tant qu'organisation. Il tient les **fonctions** qu'
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-11) :** la première revue est écrite, en première passe de 59 sources, et se termine sur une
+> **État (2026-11-12) :** la première revue est écrite, en première passe de 64 sources, et se termine sur une
 > référence nommée, B1. Le nom est gardé après l'étape de cadrage
 > ([fiche 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)). Ce n'est ni une norme officielle, ni une
 > étude relue par des pairs, ni un résultat nouveau.
@@ -118,7 +118,7 @@ master construit aussi le site, [tewf.github.io/business-organisation](https://t
 
 | Partie | Résumé |
 |---|---|
-| [evidence](evidence/) | la première revue, en première passe de 59 sources, finie sur la référence B1, et la bibliographie |
+| [evidence](evidence/) | la première revue, en première passe de 64 sources, finie sur la référence B1, et la bibliographie |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

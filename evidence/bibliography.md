@@ -11,7 +11,9 @@ Every work cited, once. A key is `Surname Year`; an organisation takes a title w
 | Alchian 1972 | Alchian, Demsetz (1972). Production, information costs, and economic organization. American Economic Review 62(5). Abstract of the 1996 reprint read | https://doi.org/10.1093/oso/9780198774358.003.0005 |
 | Baldwin 2000 | Baldwin, Clark (2000). Design Rules, volume 1: the power of modularity. MIT Press. Publisher's blurb read | https://doi.org/10.7551/mitpress/2366.001.0001 |
 | Bloom 2010 | Bloom, Sadun, Van Reenen (2010). Recent advances in the empirics of organizational economics. Annual Review of Economics 2. Abstract read | https://doi.org/10.1146/annurev.economics.050708.143328 |
+| Bloom 2014 | Bloom, Garicano, Sadun, Van Reenen (2014). The distinct effects of information technology and communication technology on firm organization. Management Science. Abstract read | https://doi.org/10.1287/mnsc.2014.2013 |
 | Browning 2001 | Browning (2001). Applying the design structure matrix to system decomposition and integration problems: a review and new directions. IEEE Transactions on Engineering Management 48(3). Abstract read | https://doi.org/10.1109/17.946528 |
+| Chalmers 2020 | Chalmers, MacKenzie, Carter (2020). Artificial intelligence and entrepreneurship: implications for venture creation in the fourth industrial revolution. Entrepreneurship Theory and Practice. Abstract read | https://doi.org/10.1177/1042258720934581 |
 | Coase 1937 | Coase (1937). The nature of the firm. Economica 4(16). Opening read | https://doi.org/10.1111/j.1468-0335.1937.tb00002.x |
 | Cragg 2007 | Cragg, Tagliavini, Mills (2007). Evaluating the alignment of IT with business processes in SMEs. Journal of the Association for Information Systems. Abstract read | https://openalex.org/W1550712998 |
 | Cyert 1963 | Cyert, March (1963). A Behavioral Theory of the Firm. Prentice-Hall. Contents read | https://openalex.org/W2028436159 |
@@ -26,11 +28,14 @@ Every work cited, once. A key is `Surname Year`; an organisation takes a title w
 | Gavetti 2012 | Gavetti, Greve, Levinthal, Ocasio (2012). The behavioral theory of the firm: assessment and prospects. Academy of Management Annals 6(1). Abstract read | https://doi.org/10.5465/19416520.2012.656841 |
 | Gibbons 2012 | Gibbons, Roberts, eds (2012). The Handbook of Organizational Economics. Princeton University Press. Publisher's blurb read | https://doi.org/10.2307/j.ctt1r2ggg |
 | Greve 2003 | Greve (2003). A behavioral theory of R&D expenditures and innovations: evidence from shipbuilding. Academy of Management Journal 46(6). Abstract read | https://doi.org/10.5465/30040661 |
+| Guadalupe 2013 | Guadalupe, Li, Wulf (2013). Who lives in the C-suite? Organizational structure and the division of labor in top management. Management Science. Abstract read | https://doi.org/10.1287/mnsc.2013.1795 |
+| Guinnane 2007 | Guinnane, Harris, Lamoreaux, Rosenthal (2007). Putting the corporation in its place. Enterprise and Society. Abstract read | https://doi.org/10.1017/s1467222700006224 |
 | Hansmann 2000 | Hansmann, Kraakman (2000). The essential role of organizational law. Yale Law Journal 110(3). Abstract read | https://doi.org/10.2307/797521 |
 | Hansmann 2006 | Hansmann, Kraakman, Squire (2006). Law and the rise of the firm. Harvard Law Review 119(5). Abstract read | https://doi.org/10.2139/ssrn.873507 |
 | He 2004 | He, Wong (2004). Exploration vs. exploitation: an empirical test of the ambidexterity hypothesis. Organization Science 15(4). Abstract read | https://doi.org/10.1287/orsc.1040.0078 |
 | HolacracyOne 2026 Constitution | HolacracyOne (2026). Holacracy Constitution, version 5.0. Page read on 2026-11-11 | https://www.holacracy.org/constitution/5-0/ |
 | Jensen 1976 | Jensen, Meckling (1976). Theory of the firm: managerial behavior, agency costs and ownership structure. Journal of Financial Economics 3(4). Located only | https://doi.org/10.1016/0304-405X(76)90026-X |
+| Kellogg 2019 | Kellogg, Valentine, Christin (2019). Algorithms at work: the new contested terrain of control. Academy of Management Annals. Abstract read | https://doi.org/10.5465/annals.2018.0174 |
 | Kogut 1996 | Kogut, Zander (1996). What firms do? Coordination, identity, and learning. Organization Science 7(5). Abstract read | https://doi.org/10.1287/orsc.7.5.502 |
 | Lavie 2010 | Lavie, Stettner, Tushman (2010). Exploration and exploitation within and across organizations. Academy of Management Annals 4(1). Abstract read | https://doi.org/10.5465/19416521003691287 |
 | Lee 2021 | Lee (2021). The myth of the flat start-up: reconsidering the organizational structure of start-ups. Strategic Management Journal. Located only | https://doi.org/10.1002/smj.3333 |

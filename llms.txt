@@ -1,6 +1,6 @@
 # Organisation: what a company is
 
-> What a company is, as an organisation: the functions it must perform (economic, legal, technical, human), the roles and structure that perform them, its description as an information-processing system, and how it adapts. The first review is written, a first pass of 59 sources ending on the baseline B1.
+> What a company is, as an organisation: the functions it must perform (economic, legal, technical, human), the roles and structure that perform them, its description as an information-processing system, and how it adapts. The first review is written, a first pass of 64 sources ending on the baseline B1.
 
 Each page's markdown source is served at the same path with a .md extension. This index is written by hand; AGENTS.md says to keep it in step.
 

@@ -7,7 +7,7 @@ What a company is, as an organisation. It holds the **functions** a company must
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-11):** the first review is written, as a first pass of 59 sources, and ends on a named baseline,
+> **Status (2026-11-12):** the first review is written, as a first pass of 64 sources, and ends on a named baseline,
 > B1. The name is kept after the frame step ([record 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)).
 > It is not an official standard, not a peer-reviewed study and not a new result.
 >
@@ -117,7 +117,7 @@ master also renders the site, [tewf.github.io/business-organisation](https://tew
 
 | Part | Summary |
 |---|---|
-| [evidence](evidence/) | the first review, a first pass of 59 sources, ending on the baseline B1, and the bibliography |
+| [evidence](evidence/) | the first review, a first pass of 64 sources, ending on the baseline B1, and the bibliography |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

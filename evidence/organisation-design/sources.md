@@ -1,6 +1,6 @@
 # Sources: the pool
 
-59 sources: 53 formal and 6 grey, read on 2026-11-11. A grey source below 10 of 20 is an example of practice only. Searches are in [protocol](protocol.md).
+64 sources: 58 formal and 6 grey, read on 2026-11-11, five of them added by the forward pass of 2026-11-12. A grey source below 10 of 20 is an example of practice only. Searches are in [protocol](protocol.md).
 
 **Shape:** [sources](https://github.com/Tewf/reader-ergonomics-review/blob/39d3b25cd822a20277ee39c37b9e0130439802f2/shapes/sources.md)
 
@@ -12,16 +12,19 @@
 | Of which malformed, kept as run | 2 |
 | Screened by title | 374 |
 | Added a concept | 99 |
-| Included, formal | 53 |
+| Forward pass: seeds | 4 |
+| Forward pass: screened | 29 |
+| Forward pass: added a concept | 8 |
+| Included, formal | 58 |
 | Included, grey | 6 |
 | Grey below 10 of 20, examples only | 2 |
-| Formal read from the abstract (secondary) | 38 |
+| Formal read from the abstract (secondary) | 43 |
 | Formal read from the contents or the publisher's blurb | 6 |
 | Formal read in part, full text or opening | 2 |
 | Formal located only, not read | 7 |
 | Grey pages not read (403, 404) | 4 |
 
-- Garousi 2019 is cited for the method and is not part of the 59.
+- Garousi 2019 is cited for the method and is not part of the 64.
 
 ## Formal
 
@@ -34,7 +37,9 @@ Grades are the standard's four. Measured, descriptive means a count or a model f
 | Alchian 1972 | theory | L8, a reprint | convention, abstract read | review |
 | Baldwin 2000 | book | F43 | convention, publisher's blurb read | review |
 | Bloom 2010 | survey of empirics | F3 | measured, descriptive, abstract read | review |
+| Bloom 2014 | empirical study, firms in the US and seven European countries | FP4 | measured, abstract read | review |
 | Browning 2001 | review | F2 | convention, abstract read | review |
+| Chalmers 2020 | conceptual article | FP1 | convention, abstract read | review |
 | Coase 1937 | theory, the seminal paper | L1, opened by DOI | convention, opening read | review |
 | Cragg 2007 | survey of 66 firms | F44 | measured, descriptive, abstract read | review |
 | Cyert 1963 | book, the seminal one | F31 | convention, contents read | review |
@@ -48,10 +53,13 @@ Grades are the standard's four. Measured, descriptive means a count or a model f
 | Gavetti 2012 | review | F1 | convention, abstract read | review |
 | Gibbons 2012 | handbook | F3 | convention, publisher's blurb read | review |
 | Greve 2003 | empirical study | F31 | measured, abstract read | review |
+| Guadalupe 2013 | panel study of large US firms | FP4 | measured, descriptive, abstract read | review |
+| Guinnane 2007 | economic history of four countries | FP3 | measured, descriptive, abstract read | review |
 | Hansmann 2000 | legal theory | L11 | convention, abstract read | review |
 | Hansmann 2006 | legal history | F11 | supported with caveat, abstract read | review |
 | He 2004 | empirical study of 206 firms | F26 | measured, abstract read | review |
 | Jensen 1976 | theory | the family's bibliography | convention, located only | review |
+| Kellogg 2019 | review | FP1 | supported with caveat, abstract read | review |
 | Kogut 1996 | essay | F18 | convention, abstract read | review |
 | Lavie 2010 | review | F2 | supported with caveat, abstract read | review |
 | Lee 2021 | empirical study | F35 | located only | against |
@@ -108,3 +116,7 @@ Score is out of 20, then the groups in the order authority, methodology, objecti
   - a review of self-managing organisations and a constitution as a book (F35); process standards (F36); process mining as a book (F37);
   - a second enterprise ontology (F38); stakeholder theory and agency (F39); complex interdependence (F41); differentiation and integration (F42).
 - The business-model ontology found by F38: held by [business-model](https://github.com/Tewf/business-model).
+- Forward pass, titles that added a concept and were left out:
+  - a political theory of the corporation and the professional partnership as a form of governance (FP3): Guinnane 2007 carries the legal form as a choice for B1's legal row;
+  - delegation of capital allocation (FP4): no abstract is indexed, and McElheran 2014 and Bloom 2014 carry delegation.
+- Forward pass, titles that met the criteria and added no concept: a stakeholder theory of corporate governance (FP3), strategizing with new organisational forms (FP1), two studies of knowledge flows within firms (FP4).

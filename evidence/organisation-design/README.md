@@ -2,9 +2,9 @@
 
 A first-pass multivocal review, read on 2026-11-11. It asks what a company must do, what its human architecture must solve and who decides, how an organisation is written as an information-processing system, and how it adapts. It ends on a named baseline.
 
-- It holds 59 sources: 53 formal and 6 grey, two of the grey below the threshold and serving as examples of practice only.
-- Formal: 38 read from the abstract (secondary), 6 books from their contents or blurb, 2 in part, 7 located only. Most figures are marked (secondary).
-- A second rater from another model family agreed on 23 of 24 selection calls (kappa 0.90) and on the threshold side of all 6 grey scores.
+- It holds 64 sources: 58 formal and 6 grey, two of the grey below the threshold and serving as examples of practice only.
+- Formal: 43 read from the abstract (secondary), 6 books from their contents or blurb, 2 in part, 7 located only. Most figures are marked (secondary).
+- A second rater from another model family agreed on 23 of 24 selection calls (kappa 0.90) and on the threshold side of all 6 grey scores. On the forward pass of 2026-11-12, it agreed on 18 of 26 (kappa 0.41).
 - The business model, cash, demand, prices and markets are held by the neighbours and linked, not repeated.
 
 ## Files

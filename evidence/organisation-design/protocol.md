@@ -1,6 +1,6 @@
 # Protocol: how the pool was built
 
-A first pass, run on 2026-11-11 by one reviewer, with a second rater from another model family on the selection and the grey scores. Terms are in [frame](frame.md).
+A first pass, run on 2026-11-11 by one reviewer, with a second rater from another model family on the selection and the grey scores, and a forward pass on 2026-11-12 (section 12). Terms are in [frame](frame.md).
 
 **Shape:** [protocol](https://github.com/Tewf/reader-ergonomics-review/blob/39d3b25cd822a20277ee39c37b9e0130439802f2/shapes/protocol.md)
 
@@ -149,7 +149,7 @@ Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4
 ## 10. Not searched, and limits
 
 - Not searched: databases other than OpenAlex; Google Scholar; the company law of any country; labour law; the sociology of professions; organisational culture beyond one survey title; family firms.
-- Not searched: a forward pass on the citations of the seminal works.
+- Not searched: a forward pass on the seminal works other than the four B1 rests on (section 12).
 - Limits: one reviewer; the New concept letters are the reviewer's own call; OpenAlex returns by citations, which favours old work and books with many reviews.
 - A page that answered an error was not read, and its absence says nothing about the practice it holds.
 
@@ -160,3 +160,22 @@ Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4
 - Selection: 24 titles, 17 included by the reviewer and 7 excluded. The two agreed on 23 of 24 (96%), Cohen's kappa 0.90.
 - The one disagreement was the meta-analysis of human-resource bundles (Subramony 2009), excluded by the rater. A reread of the criterion settled it: how work is rewarded is in it, so the work stays.
 - Grey scores: the two agreed on the side of the threshold for all 6 pages. The mean absolute difference of the totals was 2.8 points of 20; the rater scored the two pages below the threshold lower still (4 and 4 against 8 and 8).
+
+## 12. Forward pass
+
+- Stated before it ran, in the work's notes of 2026-11-12: the works citing each of the four sources B1's columns rest on, from OpenAlex's `cites:` filter.
+- Each seed's citing works were sorted by citations and the top 8 screened; a seed stopped after 5 results with no new concept; the criteria are those of section 7.
+- It is a step of its own, not counted against the 40-string cap of section 6, which was already broken.
+
+| Id | Seed | Count | New concept |
+|---|---|---|---|
+| FP1 | Puranam 2014 | 653 | ynnnnynn |
+| FP2 | Fama 1983 | 19864 | nnnnn |
+| FP3 | Hansmann 2000 | 476 | yynnynnn |
+| FP4 | McElheran 2014 | 74 | nynynynn |
+
+- Counts are of 2026-11-12. Screened: 29 results, 3 of them already in the pool. 8 added a concept and 5 were kept ([sources](sources.md)).
+- Second rater, the same as in section 11, given section 7's criteria and the 26 new titles alone. Three titles past FP2's stop were put to it too, by mistake, and are left out of the count.
+- Before any reread, the two agreed on 18 of 26 (69%), Cohen's kappa 0.41, against 0.90 in the first pass. The rater included more: 15 against 9.
+- A reread of the abstracts settled three calls the rater's way: strategizing with new organisational forms (adaptation) and two studies of knowledge flows within firms (information provision) meet the criteria. They added no concept and are left out of the pool.
+- Five calls stay apart after the reread. The article on ventures and artificial intelligence is kept: its abstract names the organisational design of ventures, which its title does not. A review of digital transformation, lessons for information systems, a model of national cultures and strategic rents stay out, as not about the firm's own organisation.

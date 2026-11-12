@@ -1,6 +1,6 @@
 # Review: five strands
 
-Step 2 of the review, read on 2026-11-11. It groups the 59 sources by strand and answers Q1 to Q4 of [frame](frame.md). Surveys first in each strand.
+Step 2 of the review, read on 2026-11-11. It groups the 64 sources by strand and answers Q1 to Q4 of [frame](frame.md). Surveys first in each strand.
 
 **Shape:** [review](https://github.com/Tewf/reader-ergonomics-review/blob/39d3b25cd822a20277ee39c37b9e0130439802f2/shapes/review.md)
 
@@ -25,6 +25,7 @@ Step 2 of the review, read on 2026-11-11. It groups the 59 sources by strand and
 - Cooperative specialisation raises productivity, and a theory of economic organisation must say when its gains are better obtained inside a firm than across markets (Alchian 1972, abstract of a reprint, secondary). Convention.
 - Economic organisation is shaped by economising on transaction costs, under bounded rationality and opportunism; contracts are governed mainly by private ordering (Williamson 1985, abstract, secondary). Convention.
 - The law gives a set of standard-form legal entities. Their essential role, beyond default contract terms, is to partition assets: the firm holds assets and makes contracts as a person distinct from its owners (Hansmann 2000, abstract, secondary). Convention.
+- Offered an intermediate form, the private limited liability company, most firms in four countries chose it over the corporation; where it came late, the partnership was used longer (Guinnane 2007, abstract, secondary). Measured, descriptive.
 - Entity shielding, which protects the firm's assets from the owners' personal creditors, is economically and historically more significant than limited liability (Hansmann 2006, abstract, secondary). Supported with caveat.
 - A firm can be disaggregated into activities, the discrete functions or processes of its value chain (Porter 1985, publisher's blurb). Convention.
 - A process handbook organises examples of how organisations perform similar processes at several levels of abstraction, by inheritance and by the dependencies between activities (Malone 1999, abstract, secondary). Its online library holds over 5000 business activities (MIT 2003 Handbook, page read). Convention.
@@ -47,6 +48,9 @@ Step 2 of the review, read on 2026-11-11. It groups the 59 sources by strand and
 - Corporate governance rests on the legal protection of investors and on ownership concentration (Shleifer 1997, abstract, secondary). Convention.
 - Boards' makeup and actions are jointly endogenous, which complicates every study of what boards do (Adams 2010, abstract, secondary). Supported with caveat.
 - Most firms are neither fully centralised nor fully decentralised. A high value of local adaptation goes with delegation and a high value of coordination with centralisation, as team theory predicts (McElheran 2014, abstract, secondary). Measured.
+- The executive team of large US firms doubled in size from the mid-1980s, mainly through functional managers. Product and administrative functions changed differently, which the authors trace to the information each processes (Guadalupe 2013, abstract, secondary). Measured, descriptive.
+- Algorithms direct, evaluate and discipline workers through six mechanisms: restricting, recommending, recording, rating, replacing and rewarding; workers resist them (Kellogg 2019, abstract, secondary). Supported with caveat.
+- Artificial intelligence may augment and replace the tasks of idea production, selling and scaling in a new venture, with implications for its organisational design (Chalmers 2020, abstract, secondary). Convention.
 - Over 239 effect sizes from 65 studies, bundles of human-resource practices had larger effects on business outcomes than single practices (Subramony 2009, abstract, secondary). Measured.
 - Practice writes who decides what as a role, apart from the person who fills it. A role has a purpose, domains it controls and accountabilities (HolacracyOne 2026 Constitution, page read; an example of practice only). Convention.
 
@@ -59,6 +63,7 @@ Step 2 of the review, read on 2026-11-11. It groups the 59 sources by strand and
 - Managers are processors of limited capacity; an organisation is efficient by two measures, the number of processors and the delay between information and decision (Radner 1993, abstract, secondary). Measured, as a model.
 - In real-time decentralised processing, decentralisation does not always reduce delay, because processing a message precludes processing current data (Van Zandt 1999, abstract, secondary). Measured, as a model.
 - A knowledge-based hierarchy is a natural organisation when matching problems with those who can solve them is costly: workers learn the common problems and specialists the rare ones (Garicano 2000, abstract, secondary). Measured, as a model.
+- Information technology and communication technology act in opposite directions, in firms of the US and seven European countries. Better information tools went with more autonomy and wider spans of control; better communication networks went with less autonomy (Bloom 2014, abstract, secondary). Measured.
 - Coordination is the management of dependencies among activities; each kind of dependency has its coordination processes (Malone 1994, abstract, secondary). Convention.
 - The architecture of complex systems is the subject of the paper that the later work on decomposition and modularity starts from (Simon 1962, located only). Convention.
 - A computational model operationalises Galbraith's view, simulating the information processing of a project organisation and predicting its performance (Levitt 1999, abstract, secondary). Supported with caveat.

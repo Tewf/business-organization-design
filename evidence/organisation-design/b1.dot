@@ -4,11 +4,11 @@ digraph b1 {
   node  [shape=plaintext, fontname="Inter", fontsize=12, fontcolor="#1F2328"];
   edge  [fontname="Inter", fontsize=11, color="#3D434B", fontcolor="#55575F", penwidth=1.3, arrowsize=0.8];
   B1 [label=<<table border="1" cellborder="1" cellspacing="0" cellpadding="6" color="#7A4FA3" bgcolor="#F1EAF7">
-    <tr><td colspan="7"><b>B1: one row per process, one column per problem</b></td></tr>
-    <tr><td><b>process</b></td><td>tasks</td><td>who</td><td>reward</td><td>information</td><td>decides</td><td>controls</td></tr>
-    <tr><td>category 1</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
-    <tr><td>category 2</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
-    <tr><td>...</td><td colspan="6"><font color="#55575F">an empty cell is counted by a program</font></td></tr>
+    <tr><td colspan="8"><b>B1: one row per process, one column per problem</b></td></tr>
+    <tr><td><b>process</b></td><td>tasks</td><td>who</td><td>reward</td><td>information</td><td>decides</td><td>controls</td><td>delegated</td></tr>
+    <tr><td>category 1</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+    <tr><td>category 2</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td><td>.</td></tr>
+    <tr><td>...</td><td colspan="7"><font color="#55575F">an empty cell is counted by a program</font></td></tr>
   </table>>];
   OC [label=<<table border="1" cellborder="0" cellspacing="0" cellpadding="6" color="#6A6D77" bgcolor="#FFFFFF">
     <tr><td><b>the practice: an org chart</b></td></tr>

@@ -71,8 +71,9 @@ the worked example's folder.
    the table has at least one role. Several roles in one cell are joined by a comma or "and"; a role whose name holds
    "and" is matched whole first.
 4. Delegated is yes, no, in part, or left empty; case is not significant.
-5. An empty cell is left blank or written `?` or `-`; a program counts it and reports the count as a warning, with
-   coverage and completeness. A description with no empty cell gets no warning.
+5. An empty cell is left blank or written `?` or `-`. A program counts the empty cells of the six measured columns,
+   the four problems and the two rights. It reports the count as a warning, with coverage and completeness as B1
+   measures them; Delegated is read, not measured. A description with no empty measured cell gets no warning.
 
 ## The principles it applies
 

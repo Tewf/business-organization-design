@@ -211,6 +211,9 @@ class OrganisationDescriptionTest(unittest.TestCase):
     def test_code_in_delegated_is_read_as_its_text(self):
         self.assertEqual(errors(run(GOOD.replace("| maker | founder | yes |", "| maker | founder | `yes` |"))), [])
 
+    def test_an_invisible_character_fails(self):
+        self.assertTrue(any("invisible character" in f.message for f in errors(run(GOOD.replace("legal person", "legal\u200bperson")))))
+
     def test_coverage_and_completeness_are_reported(self):
         findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))
         self.assertIn("coverage 0.50, completeness 0.92", findings[0].message)

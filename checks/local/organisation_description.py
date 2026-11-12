@@ -83,6 +83,8 @@ def unread(lines: list[str]) -> list[tuple[int, str]]:
             problems.append((number, "an HTML comment in a description: the check reads nothing inside one; write without it"))
         elif TAG.search(line):
             problems.append((number, "HTML in a description: write it in plain Markdown"))
+        if re.search(r"[\u200b\u200c\u200d\u2060\ufeff\u00ad]", line):
+            problems.append((number, "an invisible character (a zero-width space or a soft hyphen) in a description: remove it"))
         if ENTITY.search(line):
             problems.append((number, "a character entity such as &nbsp; in a description: write the character itself"))
         if line.lstrip().startswith(">"):

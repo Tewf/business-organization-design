@@ -6,17 +6,24 @@ A fixture with no real venture, written on 2026-11-12 to show the shape and its 
 
 ## Processes
 
-The rows are the fixture's own, named after what such a venture does, until the classification's level-1 categories
-are read at source (PROVISIONAL, [baseline](../../../evidence/organisation-design/baseline.md), item 1).
+The rows are the classification's 13 level-1 categories, version 8.0, then the legal person
+([baseline](../../../evidence/organisation-design/baseline.md), items 1 and 2).
 
 | Process | Tasks | Who | Reward | Information | Decides | Controls | Delegated |
 |---|---|---|---|---|---|---|---|
-| Learn what customers want | interviews, a short survey | founder | equity | notes of past orders | founder | founder | no |
-| Design the personalised product | turn a customer's answers into a recipe | maker | salary | the customer's answers, the recipe book | maker | founder | yes |
-| Make and ship | assemble, pack, send | maker | salary | the day's orders | maker | founder | yes |
-| Sell and serve customers | answer messages, refund | founder | equity | ? | founder | ? | ? |
-| Hire and pay people | ? | founder | equity | ? | founder | accountant | no |
-| Keep the accounts | book entries, file returns | accountant | a fee | bank statements | accountant | founder | in part |
+| Develop Vision and Strategy | choose the market and the offer | founder | equity | notes of past orders | founder | founder | no |
+| Develop and Manage Products and Services | turn a customer's answers into a recipe | maker | salary | the customer's answers, the recipe book | maker | founder | yes |
+| Market and Sell Products and Services | interviews, a short survey, the shop page | founder | equity | ? | founder | ? | ? |
+| Manage Supply Chain for Physical Products | buy stock, assemble, pack, send | maker | salary | the day's orders | maker | founder | yes |
+| Deliver Services | - | - | - | - | - | - | - |
+| Manage Customer Service | answer messages, refund | founder | equity | ? | founder | ? | ? |
+| Develop and Manage Human Resources | ? | founder | equity | ? | founder | accountant | no |
+| Manage Information Technology (IT) | keep the shop page running | founder | equity | ? | founder | ? | no |
+| Manage Financial Resources | book entries, file returns | accountant | a fee | bank statements | accountant | founder | in part |
+| Acquire, Construct, and Manage Assets | ? | ? | ? | ? | ? | ? | ? |
+| Manage Enterprise Risk, Compliance, Remediation, and Resiliency | ? | ? | ? | ? | ? | ? | ? |
+| Manage External Relationships | ? | founder | equity | ? | founder | ? | ? |
+| Develop and Manage Business Capabilities | ? | ? | ? | ? | ? | ? | ? |
 | Hold assets as a legal person | sign contracts, own the stock | founder | equity | the company's register | founder | founder | no |
 
 ## Roles
@@ -30,10 +37,10 @@ are read at source (PROVISIONAL, [baseline](../../../evidence/organisation-desig
 ## Compared with the org chart
 
 - The org chart has three boxes, founder above maker, and the accountant outside the line.
-- The table shows what the chart does not: the founder decides four processes and controls five.
-- The founder both decides and controls two of them, learning what customers want and holding the assets; of the
-  processes the founder decides, only the hiring has another control, the accountant's.
-- The selling row has empty cells, which the chart cannot show as empty.
+- The table shows what the chart does not: the founder decides seven processes and controls five.
+- The founder both decides and controls two of them, the strategy and holding the assets. Of the seven the founder
+  decides, only human resources has another control, the accountant's; four have no control written.
+- Four categories have no answer at all (services, assets, risk, capabilities), which the chart cannot show as empty.
 
 ## Limits
 

@@ -36,10 +36,24 @@ exempt = ["shapes/README.md", "shapes/examples/*"]
 example_headings = ["Worked example"]
 
 # The local check organisation-description (record 0003). `rows` is the classification's
-# level-1 categories once read at source; PROVISIONAL and empty until then (baseline.md, item 1).
+# level-1 categories, version 8.0, read in its file on 2026-11-12 (baseline.md, item 1).
 [organisation_description]
 # The files are those of the "organisation description" entry of [shape_conformance] above, read from there.
-rows = []
+rows = [
+  "Develop Vision and Strategy",
+  "Develop and Manage Products and Services",
+  "Market and Sell Products and Services",
+  "Manage Supply Chain for Physical Products",
+  "Deliver Services",
+  "Manage Customer Service",
+  "Develop and Manage Human Resources",
+  "Manage Information Technology (IT)",
+  "Manage Financial Resources",
+  "Acquire, Construct, and Manage Assets",
+  "Manage Enterprise Risk, Compliance, Remediation, and Resiliency",
+  "Manage External Relationships",
+  "Develop and Manage Business Capabilities",
+]
 
 # Path questions are answered with their path quoted, so the quotes check stays strict.
 [judgment_quotes]

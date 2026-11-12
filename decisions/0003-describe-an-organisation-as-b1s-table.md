@@ -12,7 +12,8 @@ problems of organizing with its roles defined once, and a program checks its col
 - Its next work, named there: a shape for one organisation's description, a check that counts empty cells, a fixture.
 - The forward pass of 2026-11-12 added five sources ([protocol](../evidence/organisation-design/protocol.md), section 12);
   this record adds no column for them.
-- The classification's categories are not read: its page refused an automated reader.
+- The classification's 13 categories were read in its file, version 8.0, on 12 Nov. 2026, after its page refused an
+  automated reader.
 - Record 0002 names B1. Whether further work is built on it is asked of the maintainer; this record waits on that
   answer, and becomes accepted with it.
 
@@ -21,7 +22,7 @@ problems of organizing with its roles defined once, and a program checks its col
 - Write the shape [organisation-description](../shapes/organisation-description.md), with a fixture of a venture that
   personalises a product.
 - Add the local check `organisation-description` and its tests; CI runs the tests.
-- Keep the configured rows empty, PROVISIONAL, until the categories are read; the check then requires each one.
+- The configured rows are the 13 categories; the check requires each one, and the legal person beside them.
 - Name a role in the cells, never a person, so the same table survives a change of people. The check reads that the
   names are roles of the table; whether a role is a person's name is judgment.
 
@@ -29,8 +30,8 @@ problems of organizing with its roles defined once, and a program checks its col
 
 - An organisation's gaps are counted, not noticed: the fixture's first run reports its empty cells with B1's two
   measures.
-- **Bad:** the rows are the fixture's own until the classification is read, so no description can yet be checked for
-  completeness against it.
+- **Bad:** the rows are a practice list, not a tested one: a description complete against it may still miss a process
+  (baseline, What B1 lacks).
 - **Bad:** dependencies, delays and a rule for changing the design are not in the table (baseline, What B1 lacks).
 - **Bad:** proposed before the maintainer's answer on building on B1; if B1 changes, this record is superseded, not
   edited.

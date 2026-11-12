@@ -44,7 +44,7 @@ of the maintainer, and this shape waits on that answer ([record 0003](../decisio
 | Part | Evidence | Grade |
 |---|---|---|
 | One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), a 24-item instrument built from the cross-industry classification, used with 66 small firms (Cragg 2007) | convention; measured, descriptive, for its use |
-| The rows' names | the classification's level-1 categories, read at source before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | PROVISIONAL: the categories are not read yet; `rows` in checks/config.toml stays empty until they are |
+| The rows' names | the classification's 13 level-1 categories, read in its file before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | convention; version 8.0 read in its file on 12 Nov. 2026, and listed in `rows` in checks/config.toml |
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, pages 165-166, read in the original) | convention |
 | Decides and Controls, apart | ownership and control are separated (Fama 1983, located only, title); B1 keeps deciding and controlling apart on that reading ([baseline](../evidence/organisation-design/baseline.md), item 4) | convention, from a title |

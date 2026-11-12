@@ -43,4 +43,4 @@ scope and nothing more.
 
 ## See also
 
-[Decisions](README.md); [the front page](../README.md), where the scope and the first job are.
+[Decisions](./); [the front page](../), where the scope and the first job are.

@@ -37,4 +37,4 @@ record 0002 kept.
 
 ## See also
 
-[Decisions](README.md); [record 0002](0002-keep-the-name-and-name-the-baseline.md); [frame](../evidence/organisation-design/frame.md).
+[Decisions](./); [record 0002](0002-keep-the-name-and-name-the-baseline.md); [frame](../evidence/organisation-design/frame.md).

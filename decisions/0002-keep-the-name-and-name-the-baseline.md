@@ -15,7 +15,7 @@ before that answer. Its name part is superseded by [record 0004](0004-rename-to-
 ## Decision
 
 - Keep the name. The field splits the subject between economics and organisation theory, and "organisation" names the object both study; the subtitle restricts it to the firm.
-- Name the baseline B1 ([baseline](../evidence/organisation-design/baseline.md)): rows from the cross-industry process classification plus the legal person, columns for the four problems and for who decides and who controls.
+- Name the baseline B1 ([baseline](../evidence/organisation-design/baseline.md)): rows from the cross-industry process classification plus the legal person, columns for the four problems, for who decides and who controls, and for whether the decision is delegated.
 - Compare it with an org chart of the same venture, by coverage, completeness and the empty cells it finds.
 
 ## Options not taken
@@ -32,4 +32,4 @@ before that answer. Its name part is superseded by [record 0004](0004-rename-to-
 
 ## See also
 
-[Decisions](README.md); [baseline](../evidence/organisation-design/baseline.md); [record 0001](0001-a-repository-of-its-own.md).
+[Decisions](./); [baseline](../evidence/organisation-design/baseline.md); [record 0001](0001-a-repository-of-its-own.md).

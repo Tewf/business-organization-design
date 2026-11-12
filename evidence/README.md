@@ -11,4 +11,4 @@ The review behind this repository, on what a company is as an organisation, and 
 
 ## See also
 
-[The front page](../README.md).
+[The front page](../).

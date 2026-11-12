@@ -88,4 +88,4 @@ digraph b1 {
 
 ## The review is finished
 
-The baseline is named: B1. The next work is a shape for the description of one organisation as B1's table, with a check that counts its empty cells, filled first on a fixture of a venture that personalises a product.
+The next work, done on 12 Nov. 2026, is a shape for the description of one organisation as B1's table, with a check that counts its empty cells ([record 0003](../../decisions/0003-describe-an-organisation-as-b1s-table.md)). The baseline is named: B1.

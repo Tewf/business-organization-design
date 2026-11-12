@@ -36,5 +36,5 @@ problems of organizing with its roles defined once, and a program checks its col
 
 ## See also
 
-[Decisions](README.md); [record 0002](0002-keep-the-name-and-name-the-baseline.md);
+[Decisions](./); [record 0002](0002-keep-the-name-and-name-the-baseline.md);
 [baseline](../evidence/organisation-design/baseline.md).

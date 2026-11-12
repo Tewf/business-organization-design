@@ -14,4 +14,4 @@ decision in one sentence under its title, then its status, context, decision and
 
 ## See also
 
-[The front page](../README.md).
+[The front page](../).

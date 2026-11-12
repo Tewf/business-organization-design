@@ -128,7 +128,7 @@ answer = "They stay apart: the shape states the rules, and this file (`Describe 
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/against.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with evidence/organisation-design/against.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
@@ -146,13 +146,13 @@ answer = "They stay apart: the bibliography holds `Every work cited, once` for e
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/sources.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with evidence/organisation-design/sources.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with evidence/organisation-design/README.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "d5f5fedf13b4"
 answer = "They stay apart: the bibliography holds `Every work cited, once` and the review's front page says how far each source was read; a source read deeper changes both, by the family's layout."
 [[answer]]
@@ -164,7 +164,7 @@ answer = "They stay apart: the config holds the rows a program reads (`[organisa
 [[answer]]
 check = "co-change"
 path = "checks/config.toml"
-question = "changed together with shapes/examples/a-venture-that-personalises-a-product/organisation.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/examples/a-venture-that-personalises-a-product/organisation.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "7a5aa5d49b9b"
 answer = "They stay apart: the config lists the rows the check requires (`[organisation_description]`) and the fixture is one description checked against them; when the rows change, the fixture must follow, which is the check doing its work."
 [[answer]]
@@ -176,13 +176,13 @@ answer = "They stay apart: the config holds the rows (`[organisation_description
 [[answer]]
 check = "co-change"
 path = "decisions/0003-describe-an-organisation-as-b1s-table.md"
-question = "changed together with shapes/examples/a-venture-that-personalises-a-product/organisation.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/examples/a-venture-that-personalises-a-product/organisation.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "118f4c8ad606"
 answer = "They stay apart: the record decides the shape (`Describe an organisation as B1's table`) and the fixture shows it; the record links the shape, and the fixture follows each change of rows the record allows."
 [[answer]]
 check = "co-change"
 path = "shapes/examples/a-venture-that-personalises-a-product/organisation.md"
-question = "changed together with shapes/organisation-description.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/organisation-description.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "810d9d7a0c20"
 answer = "They already share a folder, shapes/, the fixture one level down in examples/ (`A fixture with no real venture`); the shape links the fixture as its worked example."
 [[answer]]
@@ -194,12 +194,36 @@ answer = "They stay apart: the citation names the repository (`repository-code`)
 [[answer]]
 check = "co-change"
 path = "README.fr.md"
-question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "ad09eee53b6a"
 answer = "They stay apart: the front page states the repository's state (`État (2026-11-12)`) and links the record; the record keeps the reasons, and the name and B1 changed both."
 [[answer]]
 check = "co-change"
 path = "README.md"
-question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "b199642bf31d"
 answer = "They stay apart: the front page states the repository's state (`Status (2026-11-12)`) and links the records; the record keeps the reasons, and the name and B1 changed both."
+[[answer]]
+check = "co-change"
+path = "README.fr.md"
+question = "changed together with evidence/organisation-design/sources.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "ad09eee53b6a"
+answer = "They stay apart: the front page summarises the review (`État (2026-11-12)`) and the sources file holds the pool; reading a source again changed both, and the page links the review rather than its counts."
+[[answer]]
+check = "co-change"
+path = "README.md"
+question = "changed together with evidence/organisation-design/sources.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "b199642bf31d"
+answer = "They stay apart: the front page summarises the review (`Status (2026-11-12)`) and the sources file holds the pool; reading a source again changed both, and the page links the review rather than its counts."
+[[answer]]
+check = "co-change"
+path = "evidence/bibliography.md"
+question = "changed together with evidence/organisation-design/baseline.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d5f5fedf13b4"
+answer = "They stay apart: the bibliography holds `Every work cited, once` and the baseline cites by key; reading the classification changed both, the notice kept once in the bibliography."
+[[answer]]
+check = "co-change"
+path = "evidence/bibliography.md"
+question = "changed together with evidence/organisation-design/frame.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d5f5fedf13b4"
+answer = "They stay apart: the bibliography holds `Every work cited, once` and the frame names the field's terms with their keys; a source read further changes its note and the frame's mention, by the family's layout."

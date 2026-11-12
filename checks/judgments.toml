@@ -59,21 +59,21 @@ answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`,
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
-question = "changed together with checks/test_organisation_description.py in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with checks/test_organisation_description.py in 6 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "963e29bfb2e7"
 answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; every reviewer's pass, and the lessons of the two real descriptions, changed both while the shape was proposed."
 
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
-question = "changed together with shapes/organisation-description.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/organisation-description.md in 6 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "963e29bfb2e7"
 answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
 path = "checks/test_organisation_description.py"
-question = "changed together with shapes/organisation-description.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/organisation-description.md in 6 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "02d6d1be5aa9"
 answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
@@ -101,3 +101,9 @@ path = "shapes/examples/a-venture-that-personalises-a-product/organisation.md"
 question = "changed together with shapes/organisation-description.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "810d9d7a0c20"
 answer = "They already share a folder, shapes/, the fixture one level down in examples/ (`A fixture with no real venture`); the shape links the fixture as its worked example."
+[[answer]]
+check = "co-change"
+path = "AGENTS.md"
+question = "changed together with checks/config.toml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4e20efb3be7b"
+answer = "They stay apart: AGENTS.md tells a contributor how to change the repository (`Contributing to this repository`) and the config sets what the checks read; the setup, the local check and a review pass each changed both, and AGENTS.md names the config rather than repeating it."

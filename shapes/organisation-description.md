@@ -28,7 +28,7 @@ and a program reads it.
 
 | Role | Purpose | Filled by |
 |---|---|---|
-| <a role> | <what it exists to achieve> | <a person, a contractor or a program> |
+| <a role> | <what it exists to achieve> | <a person, a contractor, an agent or a program> |
 
 ## Compared with the org chart
 
@@ -65,7 +65,8 @@ the worked example's folder.
 
 ## The rules
 
-1. The Processes table has the eight columns in the order of the skeleton.
+1. One Processes section holds one table, with the eight columns in the order of the skeleton; one Roles section
+   holds one table. A second table or section would hold rows no program reads.
 2. One row holds the legal person, and its Process name contains the words "legal person".
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
    the table has at least one role. Several roles in one cell are joined by a comma or "and"; a role whose name holds
@@ -84,6 +85,6 @@ the worked example's folder.
 
 ## Checked by
 
-`organisation-description` (exact): the eight columns, the legal row, roles defined and used by name, Delegated's
+`organisation-description` (exact): one Processes and one Roles table, the eight columns, one legal row, roles defined and used by name, Delegated's
 values, the configured rows; a warning gives the empty cells with coverage and completeness. Whether the rows are
 complete, the answers true, and a role in the Roles table a role rather than a person's name is judgment.

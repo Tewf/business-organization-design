@@ -91,9 +91,21 @@ class OrganisationDescriptionTest(unittest.TestCase):
         for cell in ("research and development, maker", "research and development and maker", "maker AND research and development"):
             self.assertEqual(errors(run(text.replace("| founder | founder and maker | no |", f"| founder | {cell} | no |"))), [], cell)
 
-    def test_a_second_table_in_processes_is_not_read_as_rows(self):
+    def test_a_second_table_in_processes_fails(self):
         text = GOOD.replace("\n## Roles", "\nNotes:\n\n| Note | Text |\n|---|---|\n| a | b |\n\n## Roles")
-        self.assertEqual(errors(run(text)), [])
+        self.assertTrue(any("second table" in f.message for f in errors(run(text))))
+
+    def test_a_second_processes_section_fails(self):
+        text = GOOD + "\n## Processes: finance\n\n| Process | Tasks |\n|---|---|\n| Pay | pay |\n"
+        self.assertTrue(any("second Processes section" in f.message for f in errors(run(text))))
+
+    def test_a_second_legal_row_fails(self):
+        row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
+        self.assertTrue(any("second row for the legal person" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + row)))))
+
+    def test_coverage_and_completeness_are_reported(self):
+        findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))
+        self.assertIn("coverage 0.50, completeness 0.92", findings[0].message)
 
     def test_a_role_defined_twice_fails(self):
         twice = GOOD.replace("| maker | the product is made | one person |",

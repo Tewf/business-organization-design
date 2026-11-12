@@ -2,10 +2,10 @@
 
 A file matched by the files of the "organisation description" entry of `[shape_conformance] shapes` in
 checks/config.toml (or `[organisation_description] files`, when set) must hold:
-- a `Processes` section with a table whose header is, in this order: Process, Tasks, Who, Reward, Information,
+- one `Processes` section, holding one table, whose header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
-- a row whose Process names the legal person (Hansmann 2000), since a process list may not hold it;
-- a `Roles` section with a table whose first column is Role, at least one role, each once: a role is defined apart from
+- one row whose Process names the legal person (Hansmann 2000), since a process list may not hold it;
+- one `Roles` section, holding one table, whose first column is Role, at least one role, each once: a role is defined apart from
   the person who fills it;
 - in Who, Decides and Controls, only roles from that table (several joined by "and" or a comma), or an empty cell;
 - in Delegated, yes, no, in part or an empty cell.
@@ -50,6 +50,28 @@ def sections(text: str) -> dict[str, tuple[int, list[tuple[int, str]]]]:
         elif current:
             found[current][1].append((number, line))
     return found
+
+
+def extra(found: dict) -> list[tuple[int, str]]:
+    """The (line, message) of a second Processes or Roles section, and of a second table inside one: a second table
+    would hold rows the check never reads."""
+    problems = []
+    for name in ("processes", "roles"):
+        titles = [t for t in found if t.startswith(name)]
+        for title in titles[1:]:
+            problems.append((found[title][0], f"a second {name.capitalize()} section, {title!r}: one per description"))
+        if titles:
+            tables, inside = 0, False
+            for number, line in found[titles[0]][1]:
+                if line.strip().startswith("|"):
+                    if not inside:
+                        tables += 1
+                        if tables == 2:
+                            problems.append((number, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
+                    inside = True
+                else:
+                    inside = False
+    return problems
 
 
 def section(found: dict, name: str):
@@ -113,6 +135,8 @@ def check(root: Path, config: dict) -> list[Finding]:
         def fail(line: int, message: str, kind: str = "error") -> None:
             findings.append(Finding(NAME, path, line, message, kind))
 
+        for line, message in extra(found):
+            fail(line, message)
         processes, roles = section(found, "processes"), section(found, "roles")
         if processes is None:
             fail(1, "no Processes section: one row per process, one column per problem (B1)")
@@ -138,8 +162,11 @@ def check(root: Path, config: dict) -> list[Finding]:
             role_names = seen
             if not role_names:
                 fail(roles[0], "the Roles table defines no role: name at least one")
-        if not any(LEGAL.search(cells[0]) for _, cells in rows if cells):
+        legal = [line for line, cells in rows if cells and LEGAL.search(cells[0])]
+        if not legal:
             fail(processes[0], "no row for the legal person: the firm holding assets apart from its owners (Hansmann 2000)")
+        for line in legal[1:]:
+            fail(line, "a second row for the legal person: one row holds it")
         names = {cells[0].lower() for _, cells in rows if cells}
         for wanted in required_rows:
             if wanted.lower() not in names:

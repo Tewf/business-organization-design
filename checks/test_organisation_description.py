@@ -103,6 +103,29 @@ class OrganisationDescriptionTest(unittest.TestCase):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
         self.assertTrue(any("second row for the legal person" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + row)))))
 
+    def test_a_repeated_processes_title_fails(self):
+        text = GOOD + "\n## Processes\n\n| Process | Tasks |\n|---|---|\n| a | b |\n"
+        self.assertTrue(any("second Processes section" in f.message for f in errors(run(text))))
+
+    def test_a_table_under_a_subheading_of_processes_fails(self):
+        text = GOOD.replace("\n## Roles", "\n### Finance\n\n| Process | Tasks |\n|---|---|\n| Pay | pay |\n\n## Roles")
+        self.assertTrue(any("second table" in f.message for f in errors(run(text))))
+
+    def test_a_table_without_leading_pipes_fails(self):
+        text = GOOD.replace("\n## Roles", "\nNote | Text\n--- | ---\na | b\n\n## Roles")
+        self.assertTrue(any("leading pipes" in f.message for f in errors(run(text))))
+
+    def test_an_html_table_fails(self):
+        text = GOOD.replace("\n## Roles", "\n<table><tr><td>Pay</td></tr></table>\n\n## Roles")
+        self.assertTrue(any("HTML table" in f.message for f in errors(run(text))))
+
+    def test_a_role_cell_naming_no_role_fails(self):
+        self.assertTrue(any("names no role" in f.message for f in errors(run(GOOD.replace("| maker | salary |", "| and | salary |")))))
+
+    def test_illegal_is_not_legal(self):
+        text = GOOD.replace("Hold assets as a legal person", "Screen out illegal personnel")
+        self.assertTrue(any("no row for the legal person" in f.message for f in errors(run(text))))
+
     def test_coverage_and_completeness_are_reported(self):
         findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))
         self.assertIn("coverage 0.50, completeness 0.92", findings[0].message)

@@ -66,7 +66,8 @@ the worked example's folder.
 ## The rules
 
 1. One Processes section holds one table, with the eight columns in the order of the skeleton; one Roles section
-   holds one table. A second table or section would hold rows no program reads.
+   holds one table. A second table or section would hold rows no program reads. Roles may come before Processes:
+   defining a term before its use argues for it, and the check reads either order.
 2. One row holds the legal person, and its Process name contains the words "legal person".
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
    the table has at least one role. Several roles in one cell are joined by a comma or "and"; a role whose name holds

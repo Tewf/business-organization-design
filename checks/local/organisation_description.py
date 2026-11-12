@@ -2,7 +2,8 @@
 
 A file matched by the files of the "organisation description" entry of `[shape_conformance] shapes` in
 checks/config.toml (or `[organisation_description] files`, when set) must hold:
-- one `Processes` section, holding one table, whose header is, in this order: Process, Tasks, Who, Reward, Information,
+- one `Processes` section (a subheading inside it belongs to it), holding one Markdown table and no other, whose
+  header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
 - one row whose Process names the legal person (Hansmann 2000), since a process list may not hold it;
 - one `Roles` section, holding one table, whose first column is Role, at least one role, each once: a role is defined apart from
@@ -15,7 +16,8 @@ The empty cells are counted, not forbidden: the file gets one warning with its c
 and its completeness (the share of the six cells Tasks to Controls that are filled), the two measures of B1.
 
 A run with no error guarantees: every description has B1's columns, the legal row, roles defined once and used by name.
-It does not guarantee the rows are complete or the answers true (judgment). Time O(text).
+It does not guarantee the rows are complete or the answers true (judgment). Time O(text x roles), roles being
+matched in each role cell.
 """
 from __future__ import annotations
 
@@ -34,51 +36,53 @@ ROLE_COLUMNS = ["who", "decides", "controls"]
 EMPTY = {"", "?", "-"}
 DELEGATED = {"yes", "no", "in part"}
 HEADING = re.compile(r"^#{1,6}\s+(.*?)\s*$")
-LEGAL = re.compile(r"legal person", re.IGNORECASE)
+LEGAL = re.compile(r"\blegal person\b", re.IGNORECASE)
+SEPARATOR = re.compile(r"^\s*\|?\s*:?-{3,}:?\s*(?:\|\s*:?-{3,}:?\s*)+\|?\s*$")
 JOIN = re.compile(r"\s*(?:,|\band\b)\s*", re.IGNORECASE)
 
 
-def sections(text: str) -> dict[str, tuple[int, list[tuple[int, str]]]]:
-    """Each heading's lowercase title mapped to its line number and its numbered body lines."""
-    found: dict[str, tuple[int, list[tuple[int, str]]]] = {}
-    current = None
-    for number, line in enumerate(text.splitlines(), 1):
-        match = HEADING.match(line)
-        if match:
-            current = match.group(1).lower()
-            found[current] = (number, [])
-        elif current:
-            found[current][1].append((number, line))
+def sections(text: str) -> list[tuple[str, int, list[tuple[int, str]]]]:
+    """Every heading as (lowercase title, line, body), its body running to the next heading of the same or a higher
+    level, so a subheading's lines belong to the section above it too."""
+    lines = text.splitlines()
+    heads = [(n, len(m.group(0)) - len(m.group(0).lstrip("#")), m.group(1).lower())
+             for n, line in enumerate(lines, 1) if (m := HEADING.match(line))]
+    found = []
+    for i, (number, level, title) in enumerate(heads):
+        end = next((n for n, lv, _ in heads[i + 1:] if lv <= level), len(lines) + 1)
+        found.append((title, number, [(n, lines[n - 1]) for n in range(number + 1, end)]))
     return found
 
 
-def extra(found: dict) -> list[tuple[int, str]]:
-    """The (line, message) of a second Processes or Roles section, and of a second table inside one: a second table
-    would hold rows the check never reads."""
+def extra(found: list) -> list[tuple[int, str]]:
+    """The (line, message) of every way a description could hold rows the check does not read: a second Processes or
+    Roles section (whatever its title says after the word), a second table inside one, a table written without its
+    leading pipes, or an HTML table."""
     problems = []
     for name in ("processes", "roles"):
-        titles = [t for t in found if t.startswith(name)]
-        for title in titles[1:]:
-            problems.append((found[title][0], f"a second {name.capitalize()} section, {title!r}: one per description"))
-        if titles:
-            tables, inside = 0, False
-            for number, line in found[titles[0]][1]:
-                if line.strip().startswith("|"):
-                    if not inside:
-                        tables += 1
-                        if tables == 2:
-                            problems.append((number, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
-                    inside = True
-                else:
-                    inside = False
+        titled = [(title, number, body) for title, number, body in found if title.startswith(name)]
+        for title, number, _ in titled[1:]:
+            problems.append((number, f"a second {name.capitalize()} section, {title!r}: one per description"))
+        if not titled:
+            continue
+        tables = 0
+        for number, line in titled[0][2]:
+            if "<table" in line.lower():
+                problems.append((number, f"an HTML table in the {name.capitalize()} section: write it as one Markdown table"))
+            if SEPARATOR.match(line):
+                tables += 1
+                if not line.strip().startswith("|"):
+                    problems.append((number, f"a table without its leading pipes in the {name.capitalize()} section: start each row with |"))
+                if tables == 2:
+                    problems.append((number, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
     return problems
 
 
-def section(found: dict, name: str):
+def section(found: list, name: str):
     """The (line, body) of the first heading starting with name, or None."""
-    for title, value in found.items():
+    for title, number, body in found:
         if title.startswith(name):
-            return value
+            return number, body
     return None
 
 
@@ -181,7 +185,10 @@ def check(root: Path, config: dict) -> list[Finding]:
                 value = cell[column]
                 if value in EMPTY or roles is None:
                     continue
-                for name in role_names_in(value, role_names):
+                names = role_names_in(value, role_names)
+                if not names:
+                    fail(number, f"{column.capitalize()} holds {value!r}, which names no role: write a role, or leave it empty")
+                for name in names:
                     if name.lower() not in role_names:
                         fail(number, f"{column.capitalize()} names {name!r}, which the Roles table does not define")
             if cell["delegated"].lower() not in DELEGATED | EMPTY:

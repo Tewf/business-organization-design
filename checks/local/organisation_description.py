@@ -27,6 +27,7 @@ from __future__ import annotations
 
 import fnmatch
 import re
+import unicodedata
 from pathlib import Path
 
 try:
@@ -45,31 +46,23 @@ ROLE_COLUMNS = ["who", "decides", "controls"]
 EMPTY = {"", "?", "-"}
 DELEGATED = {"yes", "no", "in part"}
 LEGAL = re.compile(r"\blegal\s+person\b", re.IGNORECASE)
-DELIMITER = re.compile(r"^[\s>]*\|?\s*:?-+:?\s*(?:\|\s*:?-+:?\s*)*\|?\s*$")
-WORD = {"processes": re.compile(r"\bprocesses\b"), "roles": re.compile(r"\broles\b")}
+WORD = {"processes": re.compile(r"^processes$"), "roles": re.compile(r"^roles$")}
+NUMBER = re.compile(r"^\d+(?:\.\d+)*\s+")
+_DOC: dict = {}  # the whole file as the parser read it, set by sections() and used by table() and extra()
 JOIN = re.compile(r"\s*(?:,|\band\b)\s*", re.IGNORECASE)
-
-
-def is_delimiter(line: str) -> bool:
-    """A table's delimiter row, as GitHub reads it: cells of hyphens, with a pipe somewhere on the line."""
-    return "|" in line and bool(DELIMITER.match(line))
-
-
-def split(line: str) -> list[str]:
-    return [c.strip() for c in line.strip().strip("|").split("|")]
 
 
 def plain(cell: str) -> str:
     """A rendered cell as it reads: invisible characters removed, spaces collapsed, lowercase. Names, empty markers and
     Delegated are compared so; the parser has already turned links, code, escapes and entities into their text."""
-    text = re.sub(r"[\u200b\u200c\u200d\u2060\ufeff\u00ad]", "", cell)
+    text = "".join(ch for ch in cell if unicodedata.category(ch) != "Cf" and ch != "\u034f")
     return re.sub(r"\s+", " ", text).strip().lower()
 
 
 def parsed(text: str) -> dict:
     """The blocks a reader sees, from the parser: headings and tables with their 1-based lines, whether each is at the
     top level (not inside a quote or a list), and the lines of HTML blocks that hold a table."""
-    tokens = MarkdownIt("commonmark").enable("table").parse(text)
+    tokens = MarkdownIt("commonmark").enable(["table", "strikethrough"]).parse(text)
     out = {"headings": [], "tables": [], "html_tables": []}
     depth, i = 0, 0
     while i < len(tokens):
@@ -78,6 +71,9 @@ def parsed(text: str) -> dict:
             depth += 1
         elif tok.type in ("blockquote_close", "bullet_list_close", "ordered_list_close"):
             depth -= 1
+        elif tok.type == "inline" and any(c.type == "html_inline" and re.match(r"<table\b", c.content, re.I)
+                                          for c in tok.children or []):
+            out["html_tables"].append(tok.map[0] + 1)
         elif tok.type == "heading_open":
             out["headings"].append((tok.map[0] + 1, int(tok.tag[1]), inline_text(tokens[i + 1]).lower(), depth == 0))
         elif tok.type == "html_block" and re.search(r"<table\b", tok.content, re.I):
@@ -105,15 +101,20 @@ def parsed(text: str) -> dict:
 
 
 def inline_text(token) -> str:
-    """The text a reader sees in an inline token: text and code as written, a break as a space, markup dropped."""
-    parts = []
+    """The text a reader sees in an inline token: text and code as written, a break as a space; markup, inline HTML,
+    struck text and images dropped, since a reader sees none of them as text."""
+    parts, struck = [], 0
     for child in token.children or []:
-        if child.type in ("text", "code_inline", "html_inline"):
+        if child.type == "s_open":
+            struck += 1
+        elif child.type == "s_close":
+            struck -= 1
+        elif struck:
+            continue
+        elif child.type in ("text", "code_inline"):
             parts.append(child.content)
         elif child.type in ("softbreak", "hardbreak"):
             parts.append(" ")
-        elif child.type == "image":
-            parts.append(inline_text(child))
     return "".join(parts)
 
 
@@ -132,7 +133,9 @@ def sections(text: str) -> list[tuple[str, int, list[tuple[int, str]]]]:
     """Every top-level heading the parser reads as (lowercase title, line, body), its body running to the next heading
     of the same or a higher level, so a subheading's lines belong to the section above it too."""
     lines = text.splitlines()
-    heads = [(n, level, title) for n, level, title, top in parsed(text)["headings"] if top]
+    _DOC.clear()
+    _DOC.update(parsed(text))
+    heads = [(n, level, plain(title)) for n, level, title, top in _DOC["headings"] if top]
     found = []
     for i, (number, level, title) in enumerate(heads):
         end = next((n for n, lv, _ in heads[i + 1:] if lv <= level), len(lines) + 1)
@@ -141,27 +144,42 @@ def sections(text: str) -> list[tuple[str, int, list[tuple[int, str]]]]:
 
 
 def extra(found: list) -> list[tuple[int, str]]:
-    """The (line, message) of every way a description could hold rows the check does not read: a second section whose
-    title holds the word Processes or Roles, a second table inside one, or a table there inside a quote or a list."""
+    """The (line, message) of every way a description could hold rows the check does not read: a second Processes or
+    Roles section, a Roles section nested in Processes, a second table inside one, or a table there inside a quote or a
+    list."""
     problems = []
+    spans = {}
     for name in ("processes", "roles"):
         titled = [(title, number, body) for title, number, body in found if WORD[name].search(title)]
         for title, number, _ in titled[1:]:
             problems.append((number, f"a second {name.capitalize()} section, {title!r}: one per description"))
-        if not titled or not titled[0][2]:
+        if titled:
+            spans[name] = (titled[0][1], titled[0][2][-1][0] if titled[0][2] else titled[0][1])
+    if "processes" in spans and "roles" in spans and spans["processes"][0] < spans["roles"][0] <= spans["processes"][1]:
+        problems.append((spans["roles"][0], "the Roles section is nested under Processes: give it a heading of the same level"))
+        return problems
+    for line, header, _, at_top in _DOC.get("tables", []):
+        if not at_top or any(start < line <= end for start, end in spans.values()):
             continue
-        body = titled[0][2]
-        offset = body[0][0] - 1
+        names = {plain(c) for c in header}
+        title = next((t for t, n, _ in reversed(found) if n < line), "")
+        if {"process", "who", "decides", "controls"} <= names:
+            problems.append((line, f"a Processes table under the heading {title!r}: every row belongs in the one Processes table"))
+        if {"role", "filled by"} <= names:
+            problems.append((line, f"a Roles table under the heading {title!r}: every role is defined in the one Roles table"))
+    for name in ("processes", "roles"):
+        titled = [(title, number, body) for title, number, body in found if WORD[name].search(title)]
+        if not titled:
+            continue
         top = 0
-        for line, _, _, at_top in parsed("\n".join(l for _, l in body))["tables"]:
+        for line, _, _, at_top in tables_in(titled[0][2]):
             if not at_top:
-                problems.append((line + offset, f"a table inside a quote or a list in the {name.capitalize()} section: write it as the section's table"))
+                problems.append((line, f"a table inside a quote or a list in the {name.capitalize()} section: write it as the section's table"))
                 continue
             top += 1
             if top == 2:
-                problems.append((line + offset, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
+                problems.append((line, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
     return problems
-
 
 def section(found: list, name: str):
     """The (line, body) of the first heading whose title holds the word name, or None."""
@@ -172,16 +190,20 @@ def section(found: list, name: str):
 
 
 def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[str]]]]:
-    """The section's first top-level table, as the parser reads it: its header and its rows, each cell's rendered text,
-    with the rows' lines in the file. No table gives an empty header."""
-    if not body:
-        return [], []
-    offset = body[0][0] - 1
-    for _, header, rows, top in parsed("\n".join(l for _, l in body))["tables"]:
+    """The section's first top-level table, from the whole file as the parser read it (so link definitions elsewhere
+    count): its header and its rows, each cell's rendered text, with the rows' lines in the file."""
+    for line, header, rows, top in tables_in(body):
         if top:
-            return [c.lower() for c in header], [(n + offset, cells) for n, cells in rows]
+            return [plain(c) for c in header], rows
     return [], []
 
+
+def tables_in(body: list[tuple[int, str]]) -> list:
+    """The tables of the whole file whose first line falls inside the body's lines."""
+    if not body:
+        return []
+    first, last = body[0][0], body[-1][0]
+    return [t for t in _DOC.get("tables", []) if first <= t[0] <= last]
 
 def role_names_in(cell: str, roles: set[str]) -> list[str]:
     """The role names a cell holds, read from the left: the longest defined role the rest starts with, else the text up
@@ -242,14 +264,14 @@ def check(root: Path, config: dict) -> list[Finding]:
             fail(1, "no Roles section: define each role once, apart from the person who fills it")
         else:
             role_header, role_rows = table(roles[1])
-            if not role_header or role_header[0] != "role":
+            if not role_header or plain(role_header[0]) != "role":
                 fail(roles[0], "the Roles table's first column is not Role")
             seen: set[str] = set()
             for line, cells in role_rows:
                 name = plain(cells[0]) if cells else ""
                 if name in seen:
                     fail(line, f"the role {cells[0]!r} is defined twice in the Roles table")
-                elif name:
+                elif name and name not in EMPTY:
                     seen.add(name)
             role_names = seen
             if not role_names:
@@ -261,13 +283,16 @@ def check(root: Path, config: dict) -> list[Finding]:
             fail(line, "a second row for the legal person: one row holds it")
         seen_rows: set[str] = set()
         for line, cells in rows:
+            if cells and plain(cells[0]) in EMPTY:
+                fail(line, "a row with no process named: name the process, or drop the row")
+                continue
             if cells and plain(cells[0]) in seen_rows:
                 fail(line, f"a second row for the process {cells[0]!r}: one row per process")
             elif cells:
                 seen_rows.add(plain(cells[0]))
-        names = {plain(cells[0]) for _, cells in rows if cells}
+        names = {NUMBER.sub("", plain(cells[0])) for _, cells in rows if cells}
         for wanted in required_rows:
-            if wanted.lower() not in names:
+            if plain(wanted) not in names:
                 fail(processes[0], f"no row for the configured process {wanted!r}")
         filled = total = with_who = 0
         for number, cells in rows:

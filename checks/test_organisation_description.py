@@ -95,9 +95,10 @@ class OrganisationDescriptionTest(unittest.TestCase):
         text = GOOD.replace("\n## Roles", "\nNotes:\n\n| Note | Text |\n|---|---|\n| a | b |\n\n## Roles")
         self.assertTrue(any("second table" in f.message for f in errors(run(text))))
 
-    def test_a_second_processes_section_fails(self):
-        text = GOOD + "\n## Processes: finance\n\n| Process | Tasks |\n|---|---|\n| Pay | pay |\n"
-        self.assertTrue(any("second Processes section" in f.message for f in errors(run(text))))
+    def test_a_processes_table_under_another_heading_fails(self):
+        text = GOOD + ("\n## Processes: finance\n\n| Process | Tasks | Who | Reward | Information | Decides | Controls | Delegated |\n"
+                       "|---|---|---|---|---|---|---|---|\n| Pay | pay | maker | none | bills | maker | founder | no |\n")
+        self.assertTrue(any("under the heading" in f.message for f in errors(run(text))))
 
     def test_a_second_legal_row_fails(self):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
@@ -144,9 +145,8 @@ class OrganisationDescriptionTest(unittest.TestCase):
         text = GOOD.replace("|---|---|---|---|---|---|---|---|", "|---|---|", 1)
         self.assertTrue(any("header is not" in f.message for f in errors(run(text))))
 
-    def test_another_section_holding_the_word_processes_fails(self):
-        text = GOOD + "\n## Other processes\n\nNone.\n"
-        self.assertTrue(any("second Processes section" in f.message for f in errors(run(text))))
+    def test_a_title_mentioning_processes_is_not_a_second_section(self):
+        self.assertEqual(errors(run(GOOD + "\n## Limits of the processes\n\nNone.\n")), [])
 
     def test_a_repeated_process_row_fails(self):
         row = "| Make the product | cut, assemble | maker | salary | orders | maker | founder | yes |"
@@ -164,16 +164,12 @@ class OrganisationDescriptionTest(unittest.TestCase):
     def test_a_processes_heading_in_a_quote_fails(self):
         self.assertTrue(any("inside a quote or a list" in f.message for f in errors(run(GOOD + "\n> ## Processes\n"))))
 
-    def test_a_pipe_line_above_a_dash_line_is_a_heading(self):
-        self.assertTrue(any("second Processes section" in f.message for f in errors(run(GOOD + "\nProcesses | more\n---\n"))))
+    def test_a_heading_that_only_holds_the_word_is_not_the_section(self):
+        self.assertEqual(errors(run(GOOD + "\nProcesses | more\n---\n")), [])
 
     def test_bold_names_are_the_same_names(self):
         text = GOOD.replace("| maker | the product is made | one person |", "| maker | the product is made | one person |\n| *maker* | again | one person |")
         self.assertTrue(any("defined twice" in f.message for f in errors(run(text))))
-
-    def test_an_html_table_in_a_section_fails(self):
-        text = GOOD.replace("\n## Roles", "\n<table><tr><td>Pay</td></tr></table>\n\n## Roles")
-        self.assertTrue(any("HTML" in f.message for f in errors(run(text))))
 
     def test_two_spaces_in_legal_person_count(self):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
@@ -226,6 +222,41 @@ class OrganisationDescriptionTest(unittest.TestCase):
     def test_coverage_and_completeness_are_reported(self):
         findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))
         self.assertIn("coverage 0.50, completeness 0.92", findings[0].message)
+
+    def test_inline_html_is_read_as_github_shows_it(self):
+        self.assertTrue(any("no row for the legal person" in f.message for f in errors(run(GOOD.replace("| Hold assets as a legal person |", "| Own things <!-- legal person --> |")))))
+        self.assertIn("1 empty cells", run(GOOD.replace("| cut, assemble |", "| <br> |"))[0].message)
+        self.assertEqual(errors(run(GOOD.replace("| founder and maker | no |", "| <b>founder</b> and maker | no |"))), [])
+
+    def test_an_image_is_not_text(self):
+        self.assertTrue(any("no row for the legal person" in f.message for f in errors(run(GOOD.replace("| Hold assets as a legal person |", "| ![legal person](x.png) |")))))
+
+    def test_a_reference_link_is_read_with_its_definition_elsewhere(self):
+        text = GOOD.replace("| Hold assets as a legal person |", "| [Own things][legal person] |") + "\n## Limits\n\n[legal person]: https://example.org\n"
+        self.assertTrue(any("no row for the legal person" in f.message for f in errors(run(text))))
+
+    def test_an_html_table_inside_a_paragraph_fails(self):
+        text = GOOD.replace("\n## Roles", "\nMore rows: <table><tr><td>Pay</td></tr></table>\n\n## Roles")
+        self.assertTrue(any("HTML" in f.message for f in errors(run(text))))
+
+    def test_empty_markers_define_no_role(self):
+        text = GOOD.replace("| founder | the venture exists | one person |\n| maker | the product is made | one person |", "| - | - | - |")
+        self.assertTrue(any("defines no role" in f.message for f in errors(run(text))))
+
+    def test_any_format_character_is_invisible(self):
+        text = GOOD.replace("| maker | the product is made | one person |", "| maker | the product is made | one person |\n| maker\u200e | again | one person |")
+        self.assertTrue(any("defined twice" in f.message for f in errors(run(text))))
+
+    def test_struck_text_is_not_read(self):
+        self.assertEqual(errors(run(GOOD.replace("| maker | founder | yes |", "| maker | founder | ~~no~~ yes |"))), [])
+
+    def test_a_row_with_no_process_fails_and_numbers_are_dropped(self):
+        self.assertTrue(any("no process named" in f.message for f in errors(run(GOOD.replace("| Make the product |", "| ? |")))))
+        config = {"organisation_description": {"files": ["orgs/*.md"], "rows": ["Make the product"]}}
+        self.assertEqual(errors(run(GOOD.replace("| Make the product |", "| 1.0 Make the product |"), config)), [])
+
+    def test_a_roles_section_nested_in_processes_fails(self):
+        self.assertTrue(any("nested under Processes" in f.message for f in errors(run(GOOD.replace("## Roles", "### Roles")))))
 
     def test_a_role_defined_twice_fails(self):
         twice = GOOD.replace("| maker | the product is made | one person |",

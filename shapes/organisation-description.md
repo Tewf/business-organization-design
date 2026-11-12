@@ -43,7 +43,7 @@ and a program reads it.
 
 | Part | Evidence | Grade |
 |---|---|---|
-| One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), a 24-item instrument built from the cross-industry classification, used with 66 small firms (Cragg 2007) | convention; measured, descriptive, for its use |
+| One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), a 24-item instrument built from the cross-industry classification, used with 66 small firms (Cragg 2007, secondary) | convention; measured, descriptive, for its use |
 | The rows' names | the classification's 13 level-1 categories, read in its file before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | convention; version 8.0 read in its file on 12 Nov. 2026, and listed in `rows` in checks/config.toml |
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, pages 165-166, read in the original) | convention |
@@ -55,9 +55,10 @@ and a program reads it.
 
 ## Where the file goes
 
-One organisation is one file, `organisations/<name>/organisation.md`; the check reads every file that matches
-the files of the "organisation description" entry of `[shape_conformance]` in `checks/config.toml`, which also lists
-the worked example's folder.
+A real company's description lives in the company's own repository, never in this public one, which holds only the
+worked example. To check it there, copy three things: `checks/local/organisation_description.py`, the `rows` list of
+`checks/config.toml` and its files pattern, and install markdown-it-py 4.2.0. The check reads every file that matches
+the files of the "organisation description" entry of `[shape_conformance]`.
 
 ## Worked example
 
@@ -65,21 +66,28 @@ the worked example's folder.
 
 ## The rules
 
-1. One Processes section holds one table, with the eight columns in the order of the skeleton; one Roles section
-   holds one table. A second table or section would hold rows no program reads. Roles may come before Processes:
+1. One section titled exactly Processes holds one table, with the eight columns in the order of the skeleton; one
+   section titled exactly Roles holds one table. A heading that only mentions processes or roles is another section.
+   A table with the Processes or the Roles columns under any other heading is refused. A second table or section would hold rows no program reads. Roles may come before Processes:
    defining a term before its use argues for it, and the check reads either order.
 2. One row holds the legal person, and its Process name contains the words "legal person".
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
    the table has at least one role. Several roles in one cell are joined by a comma or "and"; a role whose name holds
    "and" is matched whole first.
-4. Delegated is yes, no, in part, or left empty; case is not significant.
+4. Delegated is yes, no, in part, or left empty; case is not significant. It says whether the role in Decides holds
+   the decision by delegation from those who hold the company, the members, rather than as one of them: yes, no, or
+   shared with them (in part). Controls names the role that ratifies and monitors the decision, as against initiating
+   and carrying it out, on the reading of Fama 1983 the review keeps (located only, title).
+4a. Each process category the configuration lists (`rows` in checks/config.toml) is a row, named as listed; a leading
+   number such as 1.0 is dropped before the names are compared.
 5. An empty cell is left blank or written `?` or `-`. A program counts the empty cells of the six measured columns,
    the four problems and the two rights. It reports the count as a warning, with coverage and completeness as B1
    measures them; Delegated is read, not measured. A description with no empty measured cell gets no warning.
-6. The description is read as GitHub renders it, by a GitHub-flavoured Markdown parser, so that what a program reads
-   is what a reader sees. Each of the Processes and Roles sections holds one Markdown table at its top level: not in
-   HTML, a quote or a list. A cell is read as its rendered text: a link, code, an escape or an entity counts as what
-   it shows.
+6. The description is read as GitHub renders it, by markdown-it-py with CommonMark, tables and strikethrough, so that
+   what a program reads is what a reader sees. Each of the Processes and Roles sections holds one Markdown table at
+   its top level: not in HTML, a quote or a list. A cell is read as its rendered text: a link, code, an escape or an
+   entity counts as what it shows; inline HTML, an image and struck text count as nothing. A footnote is read as
+   written, since GitHub's footnotes are outside that subset.
 
 ## The principles it applies
 

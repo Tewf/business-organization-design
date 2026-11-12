@@ -35,7 +35,7 @@ digraph b1 {
 
 </details>
 
-1. The rows are the level-1 categories of the cross-industry process classification, a practice list of what a company does; a 24-item instrument built from it was used with 66 small firms (Cragg 2007). That it is the most adopted such list is this review's label for the practice, not a count. Version 8.0, generated 25 Feb. 2026, read in its Excel file on 12 Nov. 2026 (APQC 2026 Classification; protocol, G7):
+1. The rows are the level-1 categories of the cross-industry process classification, a practice list of what a company does; a 24-item instrument built from it was used with 66 small firms (Cragg 2007, secondary). That it is the most adopted such list is this review's label for the practice, not a count. Version 8.0, generated 25 Feb. 2026, read in its Excel file on 12 Nov. 2026 (APQC 2026 Classification; protocol, G7):
    - 1.0 Develop Vision and Strategy
    - 2.0 Develop and Manage Products and Services
    - 3.0 Market and Sell Products and Services

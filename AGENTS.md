@@ -41,6 +41,7 @@ the checks both skip:
 ```sh
 rm -rf checks/out/standard && mkdir -p checks/out/standard
 git -C ../reader-ergonomics archive 65e4247 | tar -x -C checks/out/standard   # the commit checks.yml pins
+pip install markdown-it-py==4.2.0   # the organisation-description check reads with it (record 0005)
 python3 checks/out/standard/checks/run.py . --tiers program,meaning --judge flag   # the repository, as CI runs it
 ```
 

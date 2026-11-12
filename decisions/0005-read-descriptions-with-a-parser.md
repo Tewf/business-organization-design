@@ -1,7 +1,7 @@
 # 0005: Read an organisation description with a Markdown parser
 
-**Decision:** The check `organisation-description` reads a description with markdown-it-py, a GitHub-flavoured
-Markdown parser, instead of regular expressions.
+**Decision:** The check `organisation-description` reads a description with markdown-it-py (CommonMark with GitHub's
+tables and strikethrough), instead of regular expressions.
 
 **Status:** accepted, 2026-11-12. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
 
@@ -15,7 +15,8 @@ Markdown parser, instead of regular expressions.
 
 ## Decision
 
-- The check reads headings and tables from markdown-it-py 4.2.0, CommonMark with GitHub's tables. A cell is its
+- The check reads headings and tables from markdown-it-py 4.2.0, CommonMark with GitHub's tables and strikethrough,
+  parsing the whole file once. A cell is its
   rendered text: a link, code, an escape or an entity counts as what it shows.
 - It still refuses what a reader sees but it does not read: a table in HTML, and a Processes or Roles heading or
   table inside a quote or a list.
@@ -31,7 +32,9 @@ Markdown parser, instead of regular expressions.
 
 - The program tier has its first dependency: CI installs markdown-it-py, and a local run needs it in its environment;
   without it the check reports one error naming the package.
-- Forms the patterns refused are now read as GitHub shows them; 15 tests changed from "refused" to "read".
+- Forms the patterns refused are now read as GitHub shows them. 14 tests were rewritten to the parser's reading
+  and one added. A pass the same day added nine more, for what the parser first missed: inline HTML, link
+  definitions, empty roles, format characters.
 - **Bad:** the check is as right as markdown-it-py's tables are close to GitHub's.
 
 ## See also

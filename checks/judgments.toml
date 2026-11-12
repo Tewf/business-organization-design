@@ -54,14 +54,14 @@ check = "co-change"
 path = "checks/local/organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 7 commits (78% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "29f1712a9256"
-answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
+answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
 path = "checks/test_organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 7 commits (78% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "ede14d07f99f"
-answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
+answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
@@ -85,13 +85,41 @@ answer = "They already share a folder, shapes/, the fixture one level down in ex
 [[answer]]
 check = "co-change"
 path = ".github/workflows/checks.yml"
-question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with checks/config.toml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "4704003ac3cb"
 answer = "They stay apart: the workflow runs the checks the config sets up (`checks/config.toml`), so a check that needs a new table or package changes both, by design."
 
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
-question = "changed together with checks/test_organisation_description.py in 10 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6df79117bfda"
+question = "changed together with checks/test_organisation_description.py in 11 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "102a2dfcf4cb"
 answer = "They stay apart: the check sits where the runner loads local checks (`Organisation description`), its tests where unittest finds them; each change of the check changes its tests, by design."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/local/organisation_description.py in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4704003ac3cb"
+answer = "They stay apart: the workflow installs and runs what the check needs (`pip install`), so the parser's decision changed the shape, its record, its tests and the workflow together, by design."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/test_organisation_description.py in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4704003ac3cb"
+answer = "They stay apart: the workflow installs and runs what the check needs (`pip install`), so the parser's decision changed the shape, its record, its tests and the workflow together, by design."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4704003ac3cb"
+answer = "They stay apart: the workflow installs and runs what the check needs (`pip install`), so the parser's decision changed the shape, its record, its tests and the workflow together, by design."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with shapes/organisation-description.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4704003ac3cb"
+answer = "They stay apart: the workflow installs and runs what the check needs (`pip install`), so the parser's decision changed the shape, its record, its tests and the workflow together, by design."

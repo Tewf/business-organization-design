@@ -189,6 +189,28 @@ class OrganisationDescriptionTest(unittest.TestCase):
     def test_links_and_code_in_cells_are_read_as_their_text(self):
         self.assertEqual(errors(run(GOOD.replace("| equity | accounts |", "| equity, [record](x.md) | `accounts` |"))), [])
 
+    def test_a_prose_line_glued_under_the_table_fails(self):
+        text = GOOD.replace("\n\n## Roles", "\nA note under the table\n\n## Roles")
+        self.assertTrue(any("directly under a table" in f.message for f in errors(run(text))))
+
+    def test_an_escaped_pipe_fails(self):
+        self.assertTrue(any("escaped pipe" in f.message for f in errors(run(GOOD.replace("| cut, assemble |", "| cut \\| assemble |")))))
+
+    def test_a_legal_person_only_in_a_link_title_is_not_the_legal_row(self):
+        text = GOOD.replace("| Hold assets as a legal person |", '| [Own things](x.md "legal person") |')
+        self.assertTrue(any("no row for the legal person" in f.message for f in errors(run(text))))
+
+    def test_markers_in_code_count_as_empty(self):
+        findings = run(GOOD.replace("| cut, assemble |", "| `?` |"))
+        self.assertIn("1 empty cells of 12", findings[0].message)
+
+    def test_an_escaped_name_is_the_same_name(self):
+        text = GOOD.replace("| maker | the product is made | one person |", "| maker | the product is made | one person |\n| m\\aker | again | one person |")
+        self.assertTrue(any("defined twice" in f.message for f in errors(run(text))))
+
+    def test_code_in_delegated_is_read_as_its_text(self):
+        self.assertEqual(errors(run(GOOD.replace("| maker | founder | yes |", "| maker | founder | `yes` |"))), [])
+
     def test_coverage_and_completeness_are_reported(self):
         findings = run(GOOD.replace("| maker | salary |", "| ? | salary |"))
         self.assertIn("coverage 0.50, completeness 0.92", findings[0].message)

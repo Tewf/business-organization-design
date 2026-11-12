@@ -2,8 +2,11 @@
 
 A file matched by the files of the "organisation description" entry of `[shape_conformance] shapes` in
 checks/config.toml (or `[organisation_description] files`, when set) must hold:
-- the description in plain Markdown: no code fence, no HTML comment or table, headings written with #, so that what
-  the check reads is what a reader sees;
+- the description in the plain Markdown of the shape's rule 6, so that what the check reads is what a reader sees: no
+  code fence, HTML, character entity, blockquote, indented heading or line of only = or -; in the Processes and Roles
+  sections, only table rows and prose without |, a blank line under a table, no escaped pipe, no reference link, no
+  emphasis in a cell. Cells are compared as they read: a link's or code's text, escapes undone, invisible characters
+  dropped;
 - one section whose title holds the word Processes (a subheading inside it belongs to it), holding one Markdown table
   and no other, one row per process, whose header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
@@ -60,8 +63,12 @@ def split(line: str) -> list[str]:
 
 
 def plain(cell: str) -> str:
-    """A cell as it reads: a link's text, inline code's text, spaces collapsed, lowercase. Names are compared so."""
-    return re.sub(r"\s+", " ", LINK.sub(r"\1", cell).replace("`", "")).strip().lower()
+    """A cell as it reads: a link's text, inline code's text, backslash escapes undone, invisible characters removed,
+    spaces collapsed, lowercase. Names, empty markers and Delegated are compared so."""
+    text = LINK.sub(r"\1", cell).replace("`", "")
+    text = re.sub(r"\\(.)", r"\1", text)
+    text = re.sub(r"[\u200b\u200c\u200d\u2060\ufeff\u00ad]", "", text)
+    return re.sub(r"\s+", " ", text).strip().lower()
 
 
 def unread(lines: list[str]) -> list[tuple[int, str]]:
@@ -117,6 +124,15 @@ def extra(found: list) -> list[tuple[int, str]]:
             if stripped and not (stripped.startswith("|") and stripped.endswith("|")) and ("|" in stripped or line[:1].isspace()):
                 problems.append((number, f"a line in the {name.capitalize()} section that is neither a table row, starting and "
                                          "ending with |, nor prose without | at the line's first column"))
+            if "\\|" in stripped:
+                problems.append((number, f"an escaped pipe in the {name.capitalize()} section: GitHub shows it as text, so "
+                                         "the columns a reader sees differ from the ones read; reword the cell"))
+            if re.search(r"\]\[[^\]]*\]|^\s*\[[^\]]+\]:", stripped):
+                problems.append((number, f"a reference-style link in the {name.capitalize()} section: write the link inline"))
+            previous = next((l for n, l in titled[0][2] if n == number - 1), "")
+            if stripped and not stripped.startswith("|") and previous.strip().startswith("|"):
+                problems.append((number, f"a line directly under a table in the {name.capitalize()} section: GitHub reads "
+                                         "it as one more row; leave a blank line"))
             if stripped.startswith("|") and stripped.endswith("|") and not is_delimiter(stripped):
                 for cell in split(stripped):
                     if EMPHASIS.search(LINK.sub(r"\1", cell).replace("`", "")):
@@ -206,6 +222,7 @@ def check(root: Path, config: dict) -> list[Finding]:
             fail(1, "no Processes section: one row per process, one column per problem (B1)")
             continue
         header, rows = table(processes[1])
+        header = [plain(c) for c in header]
         if header != COLUMNS:
             fail(processes[0], "the Processes table's header is not: " + ", ".join(c.capitalize() for c in COLUMNS))
             continue
@@ -226,7 +243,7 @@ def check(root: Path, config: dict) -> list[Finding]:
             role_names = seen
             if not role_names:
                 fail(roles[0], "the Roles table defines no role: name at least one")
-        legal = [line for line, cells in rows if cells and LEGAL.search(cells[0])]
+        legal = [line for line, cells in rows if cells and LEGAL.search(plain(cells[0]))]
         if not legal:
             fail(processes[0], "no row for the legal person: the firm holding assets apart from its owners (Hansmann 2000)")
         for line in legal[1:]:
@@ -249,7 +266,7 @@ def check(root: Path, config: dict) -> list[Finding]:
             cell = dict(zip(COLUMNS, cells))
             for column in ROLE_COLUMNS:
                 value = cell[column]
-                if value in EMPTY or roles is None:
+                if plain(value) in EMPTY or roles is None:
                     continue
                 names = role_names_in(value, role_names)
                 if not names:
@@ -259,11 +276,11 @@ def check(root: Path, config: dict) -> list[Finding]:
                         fail(number, f"{column.capitalize()} holds {value!r}, which ends on a comma or \"and\"")
                     elif name not in role_names:
                         fail(number, f"{column.capitalize()} names {name!r}, which the Roles table does not define")
-            if cell["delegated"].lower() not in DELEGATED | EMPTY:
+            if plain(cell["delegated"]) not in DELEGATED | EMPTY:
                 fail(number, "Delegated is not yes, no, in part or empty")
             total += len(MEASURED)
-            filled += sum(cell[c] not in EMPTY for c in MEASURED)
-            with_who += cell["who"] not in EMPTY
+            filled += sum(plain(cell[c]) not in EMPTY for c in MEASURED)
+            with_who += plain(cell["who"]) not in EMPTY
         if rows and total:
             coverage, completeness = with_who / len(rows), filled / total
             if filled < total:

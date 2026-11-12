@@ -35,7 +35,7 @@ digraph b1 {
 
 </details>
 
-1. The rows are the level-1 categories of the cross-industry process classification, the most adopted list of what a company does (Cragg 2007). The maintainer reads them at their source before use, since its page refused an automated reader (protocol, G7).
+1. The rows are the level-1 categories of the cross-industry process classification, a practice list of what a company does; a 24-item instrument built from it was used with 66 small firms (Cragg 2007). That it is the most adopted such list is this review's label for the practice, not a count. The maintainer reads them at their source before use, since its page refused an automated reader (protocol, G7).
 2. One row is added for the legal function the classification may not hold: the firm as a person holding assets apart from its owners (Hansmann 2000).
 3. The columns are the four universal problems of organizing for that process: its tasks, who does them, how they are rewarded and what information they receive (Puranam 2014). The "who" is a role, defined apart from the person who fills it (HolacracyOne 2026 Constitution).
 4. Two more columns name who decides and who controls each process, kept apart (Fama 1983), and whether the decision is delegated (McElheran 2014).

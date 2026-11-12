@@ -35,7 +35,7 @@ EMPTY = {"", "?", "-"}
 DELEGATED = {"yes", "no", "in part"}
 HEADING = re.compile(r"^#{1,6}\s+(.*?)\s*$")
 LEGAL = re.compile(r"legal person", re.IGNORECASE)
-JOIN = re.compile(r"\s*(?:,|\band\b)\s*")
+JOIN = re.compile(r"\s*(?:,|\band\b)\s*", re.IGNORECASE)
 
 
 def sections(text: str) -> dict[str, tuple[int, list[tuple[int, str]]]]:
@@ -62,7 +62,13 @@ def section(found: dict, name: str):
 
 def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[str]]]]:
     """The first Markdown table of a section: its lowercase header and its (line, cells) rows."""
-    lines = [(n, l.strip()) for n, l in body if l.strip().startswith("|")]
+    lines, started = [], False
+    for n, l in body:
+        if l.strip().startswith("|"):
+            lines.append((n, l.strip()))
+            started = True
+        elif started:
+            break
     if len(lines) < 2:
         return [], []
     split = lambda l: [c.strip() for c in l.strip("|").split("|")]
@@ -72,10 +78,23 @@ def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[
 
 
 def role_names_in(cell: str, roles: set[str]) -> list[str]:
-    """The role names a cell holds: the whole cell when it is a role, else its parts split on commas and "and"."""
-    if cell.strip().lower() in roles:
-        return [cell.strip()]
-    return [name for name in JOIN.split(cell) if name]
+    """The role names a cell holds, read from the left: the longest defined role the rest starts with, else the text up
+    to the next comma or "and"; so a role whose name holds "and" is matched whole, alone or beside others."""
+    names, rest = [], cell.strip()
+    ordered = sorted(roles, key=len, reverse=True)
+    while True:
+        rest = re.sub(r"^(?:\s|,|\band\b)+", "", rest, flags=re.IGNORECASE)
+        if not rest:
+            return names
+        low = rest.lower()
+        match = next((r for r in ordered if low.startswith(r) and (len(low) == len(r) or not low[len(r)].isalnum())), None)
+        if match:
+            names.append(rest[:len(match)])
+            rest = rest[len(match):]
+        else:
+            part = JOIN.split(rest, maxsplit=1)
+            names.append(part[0].strip())
+            rest = part[1] if len(part) > 1 else ""
 
 
 def check(root: Path, config: dict) -> list[Finding]:

@@ -85,6 +85,16 @@ class OrganisationDescriptionTest(unittest.TestCase):
         text = text.replace("| cut, assemble | maker |", "| cut, assemble | research and development |")
         self.assertEqual(errors(run(text)), [])
 
+    def test_a_role_holding_and_beside_another_role(self):
+        text = GOOD.replace("| maker | the product is made | one person |",
+                            "| maker | the product is made | one person |\n| research and development | new recipes | one person |")
+        for cell in ("research and development, maker", "research and development and maker", "maker AND research and development"):
+            self.assertEqual(errors(run(text.replace("| founder | founder and maker | no |", f"| founder | {cell} | no |"))), [], cell)
+
+    def test_a_second_table_in_processes_is_not_read_as_rows(self):
+        text = GOOD.replace("\n## Roles", "\nNotes:\n\n| Note | Text |\n|---|---|\n| a | b |\n\n## Roles")
+        self.assertEqual(errors(run(text)), [])
+
     def test_a_role_defined_twice_fails(self):
         twice = GOOD.replace("| maker | the product is made | one person |",
                              "| maker | the product is made | one person |\n| maker | again | one person |")

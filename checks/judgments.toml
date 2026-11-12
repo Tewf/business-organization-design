@@ -83,3 +83,45 @@ path = ".github/workflows/checks.yml"
 question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "97af57e7b596"
 answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`, and the standard's runner reads checks/config.toml; they changed together when the pin moved and when the local check was added (`This repository's own check is in checks/local/`), and the workflow names the checks it runs."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/organisation_description.py"
+question = "changed together with checks/test_organisation_description.py in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "ba80b69587c3"
+answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; every reviewer's pass changed both while the shape was proposed."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/organisation_description.py"
+question = "changed together with decisions/0003-describe-an-organisation-as-b1s-table.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "ba80b69587c3"
+answer = "They stay apart: record 0003 decides the shape and its check, and this file (`Organisation description: one row per process`) is the check or its tests; they changed together through the reviewers' passes, and the record names the check."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/organisation_description.py"
+question = "changed together with shapes/organisation-description.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "ba80b69587c3"
+answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes on the proposal, and each links the shape."
+
+[[answer]]
+check = "co-change"
+path = "checks/test_organisation_description.py"
+question = "changed together with decisions/0003-describe-an-organisation-as-b1s-table.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "35a4e0988f81"
+answer = "They stay apart: record 0003 decides the shape and its check, and this file (`Tests of checks/local/organisation_description.py`) is the check or its tests; they changed together through the reviewers' passes, and the record names the check."
+
+[[answer]]
+check = "co-change"
+path = "checks/test_organisation_description.py"
+question = "changed together with shapes/organisation-description.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "35a4e0988f81"
+answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes on the proposal, and each links the shape."
+
+[[answer]]
+check = "co-change"
+path = "decisions/0003-describe-an-organisation-as-b1s-table.md"
+question = "changed together with shapes/organisation-description.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "d62b59eff214"
+answer = "They stay apart: the shape states the rules, and this file (`Describe an organisation as B1's table`) enforces, tests or decides them; they changed together through the reviewers' passes on the proposal, and each links the shape."

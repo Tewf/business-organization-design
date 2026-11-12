@@ -43,7 +43,7 @@ of the maintainer, and this shape waits on that answer ([record 0003](../decisio
 
 | Part | Evidence | Grade |
 |---|---|---|
-| One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), the cross-industry classification used in 66 small firms (Cragg 2007) | convention; measured, descriptive, for its use |
+| One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), a 24-item instrument built from the cross-industry classification, used with 66 small firms (Cragg 2007) | convention; measured, descriptive, for its use |
 | The rows' names | the classification's level-1 categories, read at source before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | PROVISIONAL: the categories are not read yet; `rows` in checks/config.toml stays empty until they are |
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, page 166, as quoted in Martela 2019) | convention |
@@ -80,7 +80,6 @@ the worked example's folder.
 |---|---|
 | One table for the whole organisation | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/page/signal-the-structure.md) |
 | A role defined once, used by name | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/collection/one-place-per-fact.md) |
-| The processes before the roles | [overview first](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/document/overview-first.md) |
 
 ## Checked by
 

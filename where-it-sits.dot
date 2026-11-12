@@ -1,9 +1,9 @@
-// Where business-organisation sits. Colours: business family purple, AI-augmented family green, reader-ergonomics family blue; this repository has the thick border.
+// Where business-organization-design sits. Colours: business family purple, AI-augmented family green, reader-ergonomics family blue; this repository has the thick border.
 digraph where_it_sits {
   graph [rankdir=LR, nodesep=0.45, ranksep=0.5, bgcolor="white", pad=0.2, fontname="Inter"];
   node  [shape=box, style="rounded,filled", fontname="Inter", fontsize=13, margin="0.2,0.1", penwidth=1.5, fontcolor="#1F2328"];
   edge  [fontname="Inter", fontsize=11, color="#3D434B", fontcolor="#55575F", penwidth=1.3, arrowsize=0.8];
-  ME [label=<<b>business-organisation</b><br/><font point-size="11" color="#55575F">what a company is: functions, roles, adaptation</font>>, fillcolor="#F1EAF7", color="#7A4FA3", penwidth=2.6];
+  ME [label=<<b>business-organization-design</b><br/><font point-size="11" color="#55575F">what a company is: functions, roles, adaptation</font>>, fillcolor="#F1EAF7", color="#7A4FA3", penwidth=2.6];
   business_model [label=<<b>business-model</b><br/><font point-size="11" color="#55575F">the model's building blocks</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
   business_finance [label=<<b>business-finance</b><br/><font point-size="11" color="#55575F">cash, runway, funding</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
   business_customer [label=<<b>business-customer</b><br/><font point-size="11" color="#55575F">customer discovery and demand</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];

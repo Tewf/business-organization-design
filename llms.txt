@@ -6,13 +6,13 @@ Each page's markdown source is served at the same path with a .md extension. Thi
 
 ## The repository
 
-- [Organisation: what a company is](https://tewf.github.io/business-organisation/README.md): the scope, what the review found and the baseline
-- [Evidence](https://tewf.github.io/business-organisation/evidence/README.md): the review and the bibliography
-- [Organisation design review](https://tewf.github.io/business-organisation/evidence/organisation-design/README.md): frame, protocol, sources, review, state of the art, position, against and the baseline B1
-- [Organisation description](https://tewf.github.io/business-organisation/shapes/organisation-description.md): proposed, B1's table for one organisation, with a fixture and the check that reads it
-- [Decisions](https://tewf.github.io/business-organisation/decisions/README.md): one record per choice that shapes the repository
+- [Organisation: what a company is](https://tewf.github.io/business-organization-design/README.md): the scope, what the review found and the baseline
+- [Evidence](https://tewf.github.io/business-organization-design/evidence/README.md): the review and the bibliography
+- [Organisation design review](https://tewf.github.io/business-organization-design/evidence/organisation-design/README.md): frame, protocol, sources, review, state of the art, position, against and the baseline B1
+- [Organisation description](https://tewf.github.io/business-organization-design/shapes/organisation-description.md): proposed, B1's table for one organisation, with a fixture and the check that reads it
+- [Decisions](https://tewf.github.io/business-organization-design/decisions/README.md): one record per choice that shapes the repository
 
 ## Contributing
 
-- [Contributing](https://tewf.github.io/business-organisation/AGENTS.md): rules for changing this repository
+- [Contributing](https://tewf.github.io/business-organization-design/AGENTS.md): rules for changing this repository
 - [Standard](https://tewf.github.io/reader-ergonomics/standard.md): the reader-ergonomics card this repository obeys

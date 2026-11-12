@@ -1,15 +1,15 @@
 # Organisation : ce qu'est une entreprise
 
-[![Vérifications contre reader-ergonomics](https://github.com/Tewf/business-organisation/actions/workflows/checks.yml/badge.svg)](https://github.com/Tewf/business-organisation/actions/workflows/checks.yml)
-[![Site](https://github.com/Tewf/business-organisation/actions/workflows/pages.yml/badge.svg)](https://tewf.github.io/business-organisation/)
+[![Vérifications contre reader-ergonomics](https://github.com/Tewf/business-organization-design/actions/workflows/checks.yml/badge.svg)](https://github.com/Tewf/business-organization-design/actions/workflows/checks.yml)
+[![Site](https://github.com/Tewf/business-organization-design/actions/workflows/pages.yml/badge.svg)](https://tewf.github.io/business-organization-design/)
 
 Ce qu'est une entreprise en tant qu'organisation. Il tient les **fonctions** qu'une entreprise doit remplir (économiques, juridiques, techniques, humaines) et les rôles et la structure qui les remplissent. Il demande comment écrire une entreprise comme un système qui traite l'information, et comment elle s'adapte.
 
 Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
 
 > **État (2026-11-12) :** la première revue est écrite, en première passe de 64 sources, et se termine sur une
-> référence nommée, B1, acceptée par le mainteneur comme base du travail suivant. Le nom est gardé après l'étape de
-> cadrage ([fiche 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)). La première forme bâtie sur B1, la
+> référence nommée, B1, acceptée par le mainteneur comme base du travail suivant. Le dépôt prend le nom du domaine,
+> organization design ([fiche 0004](decisions/0004-rename-to-business-organization-design.md)). La première forme bâtie sur B1, la
 > description d'une organisation avec son contrôle, suit ([fiche 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)). Ce n'est ni une norme officielle, ni une
 > étude relue par des pairs, ni un résultat nouveau.
 >
@@ -18,18 +18,18 @@ Cette page en anglais : [README.md](README.md). Les deux versions suivent le mê
 
 ## Où il se place
 
-![business-organisation dans la famille : ses liens vers cinq voisins, la méthode d'ai-augmented-project et les formes de revue de reader-ergonomics-review ; tous obéissent à la norme.](where-it-sits.svg)
+![business-organization-design dans la famille : ses liens vers cinq voisins, la méthode d'ai-augmented-project et les formes de revue de reader-ergonomics-review ; tous obéissent à la norme.](where-it-sits.svg)
 
 <details>
-<summary>Graphviz source</summary>
+<summary>Source Graphviz</summary>
 
 ```dot
-// Where business-organisation sits. Colours: business family purple, AI-augmented family green, reader-ergonomics family blue; this repository has the thick border.
+// Where business-organization-design sits. Colours: business family purple, AI-augmented family green, reader-ergonomics family blue; this repository has the thick border.
 digraph where_it_sits {
   graph [rankdir=LR, nodesep=0.45, ranksep=0.5, bgcolor="white", pad=0.2, fontname="Inter"];
   node  [shape=box, style="rounded,filled", fontname="Inter", fontsize=13, margin="0.2,0.1", penwidth=1.5, fontcolor="#1F2328"];
   edge  [fontname="Inter", fontsize=11, color="#3D434B", fontcolor="#55575F", penwidth=1.3, arrowsize=0.8];
-  ME [label=<<b>business-organisation</b><br/><font point-size="11" color="#55575F">what a company is: functions, roles, adaptation</font>>, fillcolor="#F1EAF7", color="#7A4FA3", penwidth=2.6];
+  ME [label=<<b>business-organization-design</b><br/><font point-size="11" color="#55575F">what a company is: functions, roles, adaptation</font>>, fillcolor="#F1EAF7", color="#7A4FA3", penwidth=2.6];
   business_model [label=<<b>business-model</b><br/><font point-size="11" color="#55575F">the model's building blocks</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
   business_finance [label=<<b>business-finance</b><br/><font point-size="11" color="#55575F">cash, runway, funding</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
   business_customer [label=<<b>business-customer</b><br/><font point-size="11" color="#55575F">customer discovery and demand</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
@@ -111,9 +111,9 @@ python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
 
 La CI lance les mêmes vérifications à chaque push, et un passage échoue sur toute erreur
-([checks.yml](https://github.com/Tewf/business-organisation/blob/master/.github/workflows/checks.yml)). Chaque push sur
-master construit aussi le site, [tewf.github.io/business-organisation](https://tewf.github.io/business-organisation/)
-([pages.yml](https://github.com/Tewf/business-organisation/blob/master/.github/workflows/pages.yml)).
+([checks.yml](https://github.com/Tewf/business-organization-design/blob/master/.github/workflows/checks.yml)). Chaque push sur
+master construit aussi le site, [tewf.github.io/business-organization-design](https://tewf.github.io/business-organization-design/)
+([pages.yml](https://github.com/Tewf/business-organization-design/blob/master/.github/workflows/pages.yml)).
 
 ## Contenu
 

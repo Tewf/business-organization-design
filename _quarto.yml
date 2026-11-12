@@ -12,8 +12,8 @@ project:
 
 website:
   title: "Organisation: what a company is"
-  site-url: "https://tewf.github.io/business-organisation/"
-  repo-url: "https://github.com/Tewf/business-organisation"
+  site-url: "https://tewf.github.io/business-organization-design/"
+  repo-url: "https://github.com/Tewf/business-organization-design"
   repo-actions: [source, issue]
   page-navigation: true
   navbar:

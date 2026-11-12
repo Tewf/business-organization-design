@@ -1,15 +1,15 @@
 # Organisation: what a company is
 
-[![Checks against reader-ergonomics](https://github.com/Tewf/business-organisation/actions/workflows/checks.yml/badge.svg)](https://github.com/Tewf/business-organisation/actions/workflows/checks.yml)
-[![Site](https://github.com/Tewf/business-organisation/actions/workflows/pages.yml/badge.svg)](https://tewf.github.io/business-organisation/)
+[![Checks against reader-ergonomics](https://github.com/Tewf/business-organization-design/actions/workflows/checks.yml/badge.svg)](https://github.com/Tewf/business-organization-design/actions/workflows/checks.yml)
+[![Site](https://github.com/Tewf/business-organization-design/actions/workflows/pages.yml/badge.svg)](https://tewf.github.io/business-organization-design/)
 
 What a company is, as an organisation. It holds the **functions** a company must perform (economic, legal, technical, human) and the roles and structure that perform them. It asks how a company is written down as an information-processing system, and how it adapts.
 
 This page in French: [README.fr.md](README.fr.md).
 
 > **Status (2026-11-12):** the first review is written, as a first pass of 64 sources, and ends on a named baseline,
-> B1, accepted by the maintainer as the baseline further work builds on. The name is kept after the frame step
-> ([record 0002](decisions/0002-keep-the-name-and-name-the-baseline.md)). The first shape built on B1, an organisation
+> B1, accepted by the maintainer as the baseline further work builds on. The repository takes the field's name, organization design
+> ([record 0004](decisions/0004-rename-to-business-organization-design.md)). The first shape built on B1, an organisation
 > description with its check, follows ([record 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)).
 > It is not an official standard, not a peer-reviewed study and not a new result.
 >
@@ -18,18 +18,18 @@ This page in French: [README.fr.md](README.fr.md).
 
 ## Where it sits
 
-![business-organisation links business-model, business-finance, business-customer, business-pricing and business-market for what they hold; it follows ai-augmented-project's method, writes its review in the shapes of reader-ergonomics-review, and obeys the standard.](where-it-sits.svg)
+![business-organization-design links business-model, business-finance, business-customer, business-pricing and business-market for what they hold; it follows ai-augmented-project's method, writes its review in the shapes of reader-ergonomics-review, and obeys the standard.](where-it-sits.svg)
 
 <details>
 <summary>Graphviz source</summary>
 
 ```dot
-// Where business-organisation sits. Colours: business family purple, AI-augmented family green, reader-ergonomics family blue; this repository has the thick border.
+// Where business-organization-design sits. Colours: business family purple, AI-augmented family green, reader-ergonomics family blue; this repository has the thick border.
 digraph where_it_sits {
   graph [rankdir=LR, nodesep=0.45, ranksep=0.5, bgcolor="white", pad=0.2, fontname="Inter"];
   node  [shape=box, style="rounded,filled", fontname="Inter", fontsize=13, margin="0.2,0.1", penwidth=1.5, fontcolor="#1F2328"];
   edge  [fontname="Inter", fontsize=11, color="#3D434B", fontcolor="#55575F", penwidth=1.3, arrowsize=0.8];
-  ME [label=<<b>business-organisation</b><br/><font point-size="11" color="#55575F">what a company is: functions, roles, adaptation</font>>, fillcolor="#F1EAF7", color="#7A4FA3", penwidth=2.6];
+  ME [label=<<b>business-organization-design</b><br/><font point-size="11" color="#55575F">what a company is: functions, roles, adaptation</font>>, fillcolor="#F1EAF7", color="#7A4FA3", penwidth=2.6];
   business_model [label=<<b>business-model</b><br/><font point-size="11" color="#55575F">the model's building blocks</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
   business_finance [label=<<b>business-finance</b><br/><font point-size="11" color="#55575F">cash, runway, funding</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
   business_customer [label=<<b>business-customer</b><br/><font point-size="11" color="#55575F">customer discovery and demand</font>>, fillcolor="#F1EAF7", color="#7A4FA3"];
@@ -111,9 +111,9 @@ python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
 
 CI runs the same checks on every push, and a run fails on any error
-([checks.yml](https://github.com/Tewf/business-organisation/blob/master/.github/workflows/checks.yml)). Every push to
-master also renders the site, [tewf.github.io/business-organisation](https://tewf.github.io/business-organisation/)
-([pages.yml](https://github.com/Tewf/business-organisation/blob/master/.github/workflows/pages.yml)).
+([checks.yml](https://github.com/Tewf/business-organization-design/blob/master/.github/workflows/checks.yml)). Every push to
+master also renders the site, [tewf.github.io/business-organization-design](https://tewf.github.io/business-organization-design/)
+([pages.yml](https://github.com/Tewf/business-organization-design/blob/master/.github/workflows/pages.yml)).
 
 ## Contents
 

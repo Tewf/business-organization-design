@@ -3,7 +3,7 @@
 **Decision:** An organisation is written in the shape organisation-description, B1's table of processes against the
 problems of organizing with its roles defined once, and a program checks its columns and counts its empty cells.
 
-**Status:** accepted, 2026-11-12, with B1 on [issue 1](https://github.com/Tewf/business-organisation/issues/1). **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
+**Status:** accepted, 2026-11-12, with B1 on [issue 1](https://github.com/Tewf/business-organization-design/issues/1). **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
 
 ## Context
 
@@ -14,7 +14,7 @@ problems of organizing with its roles defined once, and a program checks its col
   this record adds no column for them.
 - The classification's 13 categories were read in its file, version 8.0, on 12 Nov. 2026, after its page refused an
   automated reader.
-- Record 0002 names B1, which the maintainer accepted as the baseline further work builds on ([issue 1](https://github.com/Tewf/business-organisation/issues/1)).
+- Record 0002 names B1, which the maintainer accepted as the baseline further work builds on ([issue 1](https://github.com/Tewf/business-organization-design/issues/1)).
 
 ## Decision
 

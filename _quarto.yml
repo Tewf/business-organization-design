@@ -20,7 +20,7 @@ website:
   navbar:
     left:
       - text: Decisions
-        href: https://github.com/Tewf/business-organization-design/tree/master/decisions
+        href: decisions/index.qmd
     right:
       - text: The family
         href: https://tewf.github.io/business/

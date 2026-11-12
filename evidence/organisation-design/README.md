@@ -1,6 +1,6 @@
 # Organisation design: what a company is, as an organisation
 
-A first-pass multivocal review, read on 2026-11-11. It asks what a company must do, what its human architecture must solve and who decides, how an organisation is written as an information-processing system, and how it adapts. It ends on a named baseline.
+A first-pass multivocal review, read on 2026-11-11 and 2026-11-12. It asks what a company must do, what its human architecture must solve and who decides, how an organisation is written as an information-processing system, and how it adapts. It ends on a named baseline.
 
 - It holds 64 sources: 58 formal and 6 grey, two of the grey below the threshold and serving as examples of practice only.
 - Formal: 42 read from the abstract (secondary), 6 books from their contents or blurb, 3 in part, 7 located only. Most figures are marked (secondary).

@@ -37,13 +37,13 @@ answer = "No: each finding is one line with its figure and its source, grouped b
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/against.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with evidence/organisation-design/against.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "49c763083d1a"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
 check = "co-change"
 path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/protocol.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with evidence/organisation-design/protocol.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "49c763083d1a"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
 [[answer]]
@@ -58,3 +58,9 @@ path = "evidence/bibliography.md"
 question = "changed together with evidence/organisation-design/sources.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "49c763083d1a"
 answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
+[[answer]]
+check = "co-change"
+path = "evidence/bibliography.md"
+question = "changed together with evidence/organisation-design/README.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "49c763083d1a"
+answer = "They stay apart: the bibliography holds `Every work cited, once` and the review's front page says how far each source was read; a source read deeper changes both, by the family's layout."

@@ -5,7 +5,7 @@
 
 Ce qu'est une entreprise en tant qu'organisation. Il tient les **fonctions** qu'une entreprise doit remplir (économiques, juridiques, techniques, humaines) et les rôles et la structure qui les remplissent. Il demande comment écrire une entreprise comme un système qui traite l'information, et comment elle s'adapte.
 
-Cette page en anglais : [README.md](README.md). Les deux versions suivent le même état.
+Cette page en anglais : [README.md](https://github.com/Tewf/business-organization-design/blob/master/README.md). Les deux versions suivent le même état.
 
 > **État (2026-11-12) :** la première revue est écrite, en première passe de 64 sources, et se termine sur une
 > référence nommée, B1, acceptée par le mainteneur comme base du travail suivant. Le dépôt prend le nom du domaine,
@@ -107,6 +107,7 @@ Les sources et les questions ouvertes sont dans le [positionnement](evidence/org
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
+git -C reader-ergonomics checkout 65e42472e2d4cbfd994c2a86e95a47e5dc7301ca
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
 

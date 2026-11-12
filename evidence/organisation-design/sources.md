@@ -109,7 +109,7 @@ Score is out of 20, then the groups in the order authority, methodology, objecti
 
 - The governance principles of an intergovernmental organisation: HTTP 403, so unread; two encyclopaedia pages: HTTP 404. The benchmarking association's classification page refused a reader too; its file was then read by the maintainer, as below.
 - Simon's Administrative Behavior (L12): located, and left out because the pool already holds Simon's line through Simon 1962 (decomposition) and March 1958 (coordination), and Williamson 1985 for bounded rationality.
-- Titles that added a concept and were left out to keep the pool near 50, by string:
+- Titles that added a concept and were left out to keep the pool small (59 when they were cut, 64 after the forward pass), by string:
   - teams and absorptive capacity (F2); culture and institutions (F4); stakeholder bargaining and company law (F10);
   - contingency and choice (F14); firm scope and delegation in multimarket firms (F15); power in the firm (F17);
   - information richness (F19); mechanism design (F20); computational organization theory as a book (F23); agent-based surveys (F25);

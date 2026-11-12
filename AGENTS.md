@@ -49,7 +49,7 @@ python3 checks/out/standard/checks/run.py . --tiers program,meaning --judge flag
   a word or heading of its own file.
 - Nothing private: no company name, no partner, no internal plan and no figure of a real venture. The only example is
   a venture that personalises a product.
-- Keep [llms.txt](llms.txt), [README.md](README.md) and [README.fr.md](README.fr.md) in step.
+- Keep [llms.txt](llms.txt), `README.md` and `README.fr.md` in step.
 - A pin raise goes in [CHANGELOG.md](CHANGELOG.md), not in decisions/.
 
 ## House conventions

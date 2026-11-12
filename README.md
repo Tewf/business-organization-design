@@ -107,6 +107,7 @@ The sources and the open questions are in [position](evidence/organisation-desig
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
+git -C reader-ergonomics checkout 65e42472e2d4cbfd994c2a86e95a47e5dc7301ca
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```
 

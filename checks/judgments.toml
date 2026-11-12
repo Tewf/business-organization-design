@@ -11,7 +11,7 @@ answer = "Its role in one sentence: it records how the pool was built, from the 
 check = "logical-lines"
 path = "evidence/organisation-design/sources.md"
 question = "108 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
-file = "a12f99549803"
+file = "032993c51cd8"
 answer = "Its role in one sentence: it lists the pool, each source once with how far it was read; the flow, the two tables and the left-out list, the forward pass's rows among them, are parts of that one list, so it stays whole under `Sources`."
 
 [[answer]]
@@ -40,7 +40,7 @@ check = "tree-shape"
 path = "shapes/examples"
 question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
 file = ""
-answer = "It stays: `shapes/examples` is the folder the shape-example check reads for filled examples, one folder per example, as in business-customer."
+answer = "It stays: `shapes/examples` holds the filled examples the shape links, one folder per example, as in business-customer; the config exempts it from being read as a shape."
 
 [[answer]]
 check = "tree-shape"
@@ -60,21 +60,21 @@ answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`,
 check = "co-change"
 path = "checks/local/organisation_description.py"
 question = "changed together with checks/test_organisation_description.py in 7 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "1a276d9a949c"
+file = "1ccc82b15cfd"
 answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; every reviewer's pass, and the lessons of the two real descriptions, changed both, before and after the shape was accepted."
 
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "1a276d9a949c"
+file = "1ccc82b15cfd"
 answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
 path = "checks/test_organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "bf14ed76661c"
+file = "c1abbae59c9d"
 answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
 [[answer]]
@@ -105,5 +105,5 @@ answer = "They already share a folder, shapes/, the fixture one level down in ex
 check = "co-change"
 path = "AGENTS.md"
 question = "changed together with checks/config.toml in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "4e20efb3be7b"
+file = "eb5b3a135581"
 answer = "They stay apart: AGENTS.md tells a contributor how to change the repository (`Contributing to this repository`) and the config sets what the checks read; the setup, a link fix and a review pass each changed both, and AGENTS.md names the config rather than repeating it."

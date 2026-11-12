@@ -2,11 +2,10 @@
 
 A file matched by the files of the "organisation description" entry of `[shape_conformance] shapes` in
 checks/config.toml (or `[organisation_description] files`, when set) must hold:
-- the description in the plain Markdown of the shape's rule 6, so that what the check reads is what a reader sees: no
-  code fence, HTML, character entity, blockquote, indented heading or line of only = or -; in the Processes and Roles
-  sections, only table rows and prose without |, a blank line under a table, no escaped pipe, no reference link, no
-  emphasis in a cell. Cells are compared as they read: a link's or code's text, escapes undone, invisible characters
-  dropped;
+- the description read as GitHub renders it, by a GitHub-flavoured Markdown parser (markdown-it-py, CommonMark with
+  tables), so that what the check reads is what a reader sees (issue #2, decided 12 Nov. 2026). A table in HTML, or a
+  Processes or Roles table or heading inside a quote or a list, is refused: the check reads the top-level Markdown
+  tables only. Cells are compared as they read: their rendered text, invisible characters dropped;
 - one section whose title holds the word Processes (a subheading inside it belongs to it), holding one Markdown table
   and no other, one row per process, whose header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
@@ -30,6 +29,11 @@ import fnmatch
 import re
 from pathlib import Path
 
+try:
+    from markdown_it import MarkdownIt
+except ImportError:  # the check then reports one error naming the package
+    MarkdownIt = None
+
 from framework.check_api import Finding, files_in_scope
 
 NAME = "organisation-description"
@@ -40,15 +44,8 @@ MEASURED = ["tasks", "who", "reward", "information", "decides", "controls"]
 ROLE_COLUMNS = ["who", "decides", "controls"]
 EMPTY = {"", "?", "-"}
 DELEGATED = {"yes", "no", "in part"}
-HEADING = re.compile(r"^#{1,6}\s+(.*?)\s*$")
 LEGAL = re.compile(r"\blegal\s+person\b", re.IGNORECASE)
-ENTITY = re.compile(r"&(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);")
-TAG = re.compile(r"<[A-Za-z/!]")
-EMPHASIS = re.compile(r"\*|~~|(?:^|\s)_\S|\S_(?:\s|$)")
-LINK = re.compile(r"\[([^\]]*)\]\([^)]*\)")
 DELIMITER = re.compile(r"^[\s>]*\|?\s*:?-+:?\s*(?:\|\s*:?-+:?\s*)*\|?\s*$")
-SETEXT = re.compile(r"^\s*(?:=+|-+)\s*$")
-FENCE = re.compile(r"^\s{0,3}(?:```|~~~)")
 WORD = {"processes": re.compile(r"\bprocesses\b"), "roles": re.compile(r"\broles\b")}
 JOIN = re.compile(r"\s*(?:,|\band\b)\s*", re.IGNORECASE)
 
@@ -63,45 +60,79 @@ def split(line: str) -> list[str]:
 
 
 def plain(cell: str) -> str:
-    """A cell as it reads: a link's text, inline code's text, backslash escapes undone, invisible characters removed,
-    spaces collapsed, lowercase. Names, empty markers and Delegated are compared so."""
-    text = LINK.sub(r"\1", cell).replace("`", "")
-    text = re.sub(r"\\(.)", r"\1", text)
-    text = re.sub(r"[\u200b\u200c\u200d\u2060\ufeff\u00ad]", "", text)
+    """A rendered cell as it reads: invisible characters removed, spaces collapsed, lowercase. Names, empty markers and
+    Delegated are compared so; the parser has already turned links, code, escapes and entities into their text."""
+    text = re.sub(r"[\u200b\u200c\u200d\u2060\ufeff\u00ad]", "", cell)
     return re.sub(r"\s+", " ", text).strip().lower()
 
 
+def parsed(text: str) -> dict:
+    """The blocks a reader sees, from the parser: headings and tables with their 1-based lines, whether each is at the
+    top level (not inside a quote or a list), and the lines of HTML blocks that hold a table."""
+    tokens = MarkdownIt("commonmark").enable("table").parse(text)
+    out = {"headings": [], "tables": [], "html_tables": []}
+    depth, i = 0, 0
+    while i < len(tokens):
+        tok = tokens[i]
+        if tok.type in ("blockquote_open", "bullet_list_open", "ordered_list_open"):
+            depth += 1
+        elif tok.type in ("blockquote_close", "bullet_list_close", "ordered_list_close"):
+            depth -= 1
+        elif tok.type == "heading_open":
+            out["headings"].append((tok.map[0] + 1, int(tok.tag[1]), inline_text(tokens[i + 1]).lower(), depth == 0))
+        elif tok.type == "html_block" and re.search(r"<table\b", tok.content, re.I):
+            out["html_tables"].append(tok.map[0] + 1)
+        elif tok.type == "table_open":
+            header, rows, row, line = [], [], None, tok.map[0] + 1
+            j = i + 1
+            while tokens[j].type != "table_close":
+                t = tokens[j]
+                if t.type == "tr_open":
+                    row = (t.map[0] + 1, [])
+                elif t.type == "inline" and row is not None:
+                    row[1].append(inline_text(t))
+                elif t.type == "tr_close":
+                    if header:
+                        rows.append(row)
+                    else:
+                        header.extend(row[1])
+                    row = None
+                j += 1
+            out["tables"].append((line, header, rows, depth == 0))
+            i = j
+        i += 1
+    return out
+
+
+def inline_text(token) -> str:
+    """The text a reader sees in an inline token: text and code as written, a break as a space, markup dropped."""
+    parts = []
+    for child in token.children or []:
+        if child.type in ("text", "code_inline", "html_inline"):
+            parts.append(child.content)
+        elif child.type in ("softbreak", "hardbreak"):
+            parts.append(" ")
+        elif child.type == "image":
+            parts.append(inline_text(child))
+    return "".join(parts)
+
+
 def unread(lines: list[str]) -> list[tuple[int, str]]:
-    """The (line, message) of every form this check does not read, so it refuses it rather than miss what is in it: a
-    code fence, HTML (a tag or a comment), a character entity, a blockquote, an indented heading, and a line of only
-    = or - (a setext heading or a thematic break). What is left is the plain form the shape asks for."""
-    problems = []
-    for number, line in enumerate(lines, 1):
-        if FENCE.match(line):
-            problems.append((number, "a code fence in a description: the check reads nothing inside one; write without it"))
-        if "<!--" in line:
-            problems.append((number, "an HTML comment in a description: the check reads nothing inside one; write without it"))
-        elif TAG.search(line):
-            problems.append((number, "HTML in a description: write it in plain Markdown"))
-        if re.search(r"[\u200b\u200c\u200d\u2060\ufeff\u00ad]", line):
-            problems.append((number, "an invisible character (a zero-width space or a soft hyphen) in a description: remove it"))
-        if ENTITY.search(line):
-            problems.append((number, "a character entity such as &nbsp; in a description: write the character itself"))
-        if line.lstrip().startswith(">"):
-            problems.append((number, "a blockquote in a description: write its text as plain lines"))
-        if re.match(r"^\s+#{1,6}(\s|$)", line):
-            problems.append((number, "an indented heading: start a heading at the line's first column, with #"))
-        if SETEXT.match(line):
-            problems.append((number, "a line of only = or -: a setext heading or a break, which the check does not read; use #"))
+    """The (line, message) of what a reader sees but the check does not read: a table in HTML, and a Processes or
+    Roles heading or table inside a quote or a list. Everything else is read as GitHub renders it."""
+    blocks = parsed("\n".join(lines))
+    problems = [(n, "a table in HTML: the check reads Markdown tables; write it as one") for n in blocks["html_tables"]]
+    for n, _, title, top in blocks["headings"]:
+        if not top and (WORD["processes"].search(title) or WORD["roles"].search(title)):
+            problems.append((n, f"a heading {title!r} inside a quote or a list: write it at the top level"))
     return problems
 
 
 def sections(text: str) -> list[tuple[str, int, list[tuple[int, str]]]]:
-    """Every heading as (lowercase title, line, body), its body running to the next heading of the same or a higher
-    level, so a subheading's lines belong to the section above it too."""
+    """Every top-level heading the parser reads as (lowercase title, line, body), its body running to the next heading
+    of the same or a higher level, so a subheading's lines belong to the section above it too."""
     lines = text.splitlines()
-    heads = [(n, len(m.group(0)) - len(m.group(0).lstrip("#")), m.group(1).lower())
-             for n, line in enumerate(lines, 1) if (m := HEADING.match(line))]
+    heads = [(n, level, title) for n, level, title, top in parsed(text)["headings"] if top]
     found = []
     for i, (number, level, title) in enumerate(heads):
         end = next((n for n, lv, _ in heads[i + 1:] if lv <= level), len(lines) + 1)
@@ -111,43 +142,24 @@ def sections(text: str) -> list[tuple[str, int, list[tuple[int, str]]]]:
 
 def extra(found: list) -> list[tuple[int, str]]:
     """The (line, message) of every way a description could hold rows the check does not read: a second section whose
-    title holds the word Processes or Roles, a second table inside one, or a table there written without its leading
-    pipes or inside a blockquote."""
+    title holds the word Processes or Roles, a second table inside one, or a table there inside a quote or a list."""
     problems = []
     for name in ("processes", "roles"):
         titled = [(title, number, body) for title, number, body in found if WORD[name].search(title)]
         for title, number, _ in titled[1:]:
             problems.append((number, f"a second {name.capitalize()} section, {title!r}: one per description"))
-        if not titled:
+        if not titled or not titled[0][2]:
             continue
-        tables = 0
-        for number, line in titled[0][2]:
-            stripped = line.rstrip()
-            if stripped and not (stripped.startswith("|") and stripped.endswith("|")) and ("|" in stripped or line[:1].isspace()):
-                problems.append((number, f"a line in the {name.capitalize()} section that is neither a table row, starting and "
-                                         "ending with |, nor prose without | at the line's first column"))
-            if "\\|" in stripped:
-                problems.append((number, f"an escaped pipe in the {name.capitalize()} section: GitHub shows it as text, so "
-                                         "the columns a reader sees differ from the ones read; reword the cell"))
-            if re.search(r"\]\[[^\]]*\]|^\s*\[[^\]]+\]:", stripped):
-                problems.append((number, f"a reference-style link in the {name.capitalize()} section: write the link inline"))
-            previous = next((l for n, l in titled[0][2] if n == number - 1), "")
-            if stripped and not stripped.startswith("|") and previous.strip().startswith("|"):
-                problems.append((number, f"a line directly under a table in the {name.capitalize()} section: GitHub reads "
-                                         "it as one more row; leave a blank line"))
-            if stripped.startswith("|") and stripped.endswith("|") and not is_delimiter(stripped):
-                for cell in split(stripped):
-                    if EMPHASIS.search(LINK.sub(r"\1", cell).replace("`", "")):
-                        problems.append((number, f"emphasis in a cell of the {name.capitalize()} section ({cell!r}): write cells without * _ or ~~"))
-                        break
-            if is_delimiter(line):
-                tables += 1
-                if line.lstrip().startswith(">"):
-                    problems.append((number, f"a table in a blockquote in the {name.capitalize()} section: write it as the section's table"))
-                elif not line.strip().startswith("|"):
-                    problems.append((number, f"a table without its leading pipes in the {name.capitalize()} section: start each row with |"))
-                if tables == 2:
-                    problems.append((number, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
+        body = titled[0][2]
+        offset = body[0][0] - 1
+        top = 0
+        for line, _, _, at_top in parsed("\n".join(l for _, l in body))["tables"]:
+            if not at_top:
+                problems.append((line + offset, f"a table inside a quote or a list in the {name.capitalize()} section: write it as the section's table"))
+                continue
+            top += 1
+            if top == 2:
+                problems.append((line + offset, f"a second table in the {name.capitalize()} section: keep one, put notes in another section"))
     return problems
 
 
@@ -160,20 +172,14 @@ def section(found: list, name: str):
 
 
 def table(body: list[tuple[int, str]]) -> tuple[list[str], list[tuple[int, list[str]]]]:
-    """The section's first Markdown table, read as GitHub reads it: the row above the first delimiter row is the
-    header, and the rows below, while they start with a pipe, are its rows. A delimiter row whose cells do not match
-    the header makes no table, and the header comes back empty."""
-    for i, (number, line) in enumerate(body):
-        if is_delimiter(line) and i > 0 and body[i - 1][1].strip().startswith("|"):
-            header = split(body[i - 1][1])
-            if len(split(line)) != len(header):
-                return [], []
-            rows = []
-            for n, l in body[i + 1:]:
-                if not l.strip().startswith("|"):
-                    break
-                rows.append((n, split(l)))
-            return [c.lower() for c in header], rows
+    """The section's first top-level table, as the parser reads it: its header and its rows, each cell's rendered text,
+    with the rows' lines in the file. No table gives an empty header."""
+    if not body:
+        return [], []
+    offset = body[0][0] - 1
+    for _, header, rows, top in parsed("\n".join(l for _, l in body))["tables"]:
+        if top:
+            return [c.lower() for c in header], [(n + offset, cells) for n, cells in rows]
     return [], []
 
 
@@ -208,6 +214,9 @@ def check(root: Path, config: dict) -> list[Finding]:
         shapes = config.get("shape_conformance", {}).get("shapes", [])
         patterns = next((s.get("files", []) for s in shapes if s.get("name") == "organisation description"), [])
     findings: list[Finding] = []
+    if MarkdownIt is None:
+        return [Finding(NAME, "checks/local/organisation_description.py", 1,
+                        "markdown-it-py is not installed: pip install markdown-it-py (the check reads Markdown with it)")]
     for path in files_in_scope(root, config, {".md"}):
         if not any(fnmatch.fnmatch(path, pattern) for pattern in patterns):
             continue

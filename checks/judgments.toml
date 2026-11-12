@@ -51,20 +51,6 @@ answer = "It stays: `shapes/examples/a-venture-that-personalises-a-product` is o
 
 [[answer]]
 check = "co-change"
-path = ".github/workflows/checks.yml"
-question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "97af57e7b596"
-answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`, and the standard's runner reads checks/config.toml; they changed together when the repository was set up, when the local check was added and when a review pass changed the check's settings (`This repository's own check is in checks/local/`), and the workflow names the checks it runs."
-
-[[answer]]
-check = "co-change"
-path = "checks/local/organisation_description.py"
-question = "changed together with checks/test_organisation_description.py in 10 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "29f1712a9256"
-answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; each change of the check, from the reviewers' passes and the two real descriptions, changed its tests too, before and after the shape was accepted."
-
-[[answer]]
-check = "co-change"
 path = "checks/local/organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 7 commits (78% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "29f1712a9256"
@@ -95,3 +81,17 @@ path = "shapes/examples/a-venture-that-personalises-a-product/organisation.md"
 question = "changed together with shapes/organisation-description.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "810d9d7a0c20"
 answer = "They already share a folder, shapes/, the fixture one level down in examples/ (`A fixture with no real venture`); the shape links the fixture as its worked example."
+
+[[answer]]
+check = "co-change"
+path = ".github/workflows/checks.yml"
+question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "4704003ac3cb"
+answer = "They stay apart: the workflow runs the checks the config sets up (`checks/config.toml`), so a check that needs a new table or package changes both, by design."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/organisation_description.py"
+question = "changed together with checks/test_organisation_description.py in 10 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "6df79117bfda"
+answer = "They stay apart: the check sits where the runner loads local checks (`Organisation description`), its tests where unittest finds them; each change of the check changes its tests, by design."

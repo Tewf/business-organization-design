@@ -48,6 +48,8 @@ jobs:
           key: fastembed-${{ hashFiles('standard/checks/meaning/requirements.txt') }}
       - name: Install the meaning tier
         run: pip install -r standard/checks/meaning/requirements.txt
+      - name: Install the Markdown parser the organisation-description check reads with
+        run: pip install markdown-it-py==4.2.0
       - name: Clone the family beside this repository, for bibliography-keys
         run: |
           for name in $(python3 -c "import tomllib; print(*tomllib.load(open('repository/checks/config.toml', 'rb'))['bibliography_keys']['family'])"); do

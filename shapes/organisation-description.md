@@ -76,10 +76,10 @@ the worked example's folder.
 5. An empty cell is left blank or written `?` or `-`. A program counts the empty cells of the six measured columns,
    the four problems and the two rights. It reports the count as a warning, with coverage and completeness as B1
    measures them; Delegated is read, not measured. A description with no empty measured cell gets no warning.
-6. The description is written in plain Markdown, so that what a program reads is what a reader sees. Headings start
-   at the first column with #. The Processes and Roles sections hold only table rows that start and end with |, and
-   prose without |. Cells hold no emphasis, though a link or inline code may stand in one. A code fence, HTML, a
-   character entity, a blockquote, an indented heading and a line of only = or - are refused.
+6. The description is read as GitHub renders it, by a GitHub-flavoured Markdown parser, so that what a program reads
+   is what a reader sees. Each of the Processes and Roles sections holds one Markdown table at its top level: not in
+   HTML, a quote or a list. A cell is read as its rendered text: a link, code, an escape or an entity counts as what
+   it shows.
 
 ## The principles it applies
 
@@ -90,7 +90,7 @@ the worked example's folder.
 
 ## Checked by
 
-`organisation-description` (exact): the plain form of rule 6. Then one Processes and one Roles table, the eight
+`organisation-description` (exact): rule 6, read with markdown-it-py. Then one Processes and one Roles table, the eight
 columns, one legal row, roles defined and used by name, Delegated's
 values, the configured rows; a warning gives the empty cells with coverage and completeness. Whether the rows are
 complete, the answers true, and a role in the Roles table a role rather than a person's name is judgment.

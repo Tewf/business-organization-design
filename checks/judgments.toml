@@ -59,21 +59,21 @@ answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`,
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
-question = "changed together with checks/test_organisation_description.py in 7 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with checks/test_organisation_description.py in 8 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "1ccc82b15cfd"
 answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; every reviewer's pass, and the lessons of the two real descriptions, changed both, before and after the shape was accepted."
 
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
-question = "changed together with shapes/organisation-description.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/organisation-description.md in 7 commits (88% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "1ccc82b15cfd"
 answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
 path = "checks/test_organisation_description.py"
-question = "changed together with shapes/organisation-description.md in 6 commits (86% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+question = "changed together with shapes/organisation-description.md in 7 commits (88% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "c1abbae59c9d"
 answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 

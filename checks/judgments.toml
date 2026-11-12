@@ -34,3 +34,31 @@ path = "evidence/organisation-design/review.md"
 question = "a long text with no figure, table or diagram: is a relation, set, quantity or process described only in words?"
 file = "186eead30d95"
 answer = "No: each finding is one line with its figure and its source, grouped by the question it answers, as in `Strand 2`; the one structure the review leads to, B1's table, is drawn in baseline.md, and a figure here would restate the lists."
+
+[[answer]]
+check = "tree-shape"
+path = "checks/local"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `checks/local` is where the standard's runner loads a repository's own checks (reader-ergonomics extending.md), and business-customer keeps its check there too."
+
+[[answer]]
+check = "tree-shape"
+path = "shapes"
+question = "2 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `shapes` is the folder of this repository's shapes, as in every member of the family; it holds one shape and its examples now, and grows one file per shape."
+
+[[answer]]
+check = "tree-shape"
+path = "shapes/examples"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `shapes/examples` is the folder the shape-example check reads for filled examples, one folder per example, as in business-customer."
+
+[[answer]]
+check = "tree-shape"
+path = "shapes/examples/a-venture-that-personalises-a-product"
+question = "1 entries: fold into the parent folder, unless this folder is one record of a collection (a job, a chapter, a topic)."
+file = ""
+answer = "It stays: `shapes/examples/a-venture-that-personalises-a-product` is one record of a collection, the fixture of one venture, and a fixture grows a second file when its org chart is drawn."

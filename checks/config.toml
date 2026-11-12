@@ -18,6 +18,7 @@ stylesheets = []
 [shape_conformance]
 shapes = [
   { name = "decision record", files = ["decisions/0*.md"], required = ["Context", "Decision", "Consequences", "See also"] },
+  { name = "organisation description", files = ["shapes/examples/*/organisation.md", "organisations/*/organisation.md"], required = ["Processes", "Roles", "Compared with the org chart", "Limits"] },
   { name = "frame", files = ["evidence/*/frame.md"], required = ["The problem in one sentence", "What the field calls it", "What practice calls it", "Does the repository's name match", "Sub-questions"] },
   { name = "protocol", files = ["evidence/*/protocol.md"], required = ["Why grey literature", "Questions", "Existing reviews", "Formal search", "Grey search", "Stopping rule", "Selection", "Quality of grey sources", "Extraction and synthesis", "Not searched"] },
   { name = "sources", files = ["evidence/*/sources.md"], required = ["Flow", "Formal", "Grey", "Left out"] },
@@ -29,6 +30,18 @@ shapes = [
 ]
 
 # Path questions are answered with their path quoted, so the quotes check stays strict.
+# Each shape links, or holds, a filled example of itself.
+[shape_example]
+files = ["shapes/*.md"]
+exempt = ["shapes/README.md", "shapes/examples/*"]
+example_headings = ["Worked example"]
+
+# The descriptions the local check organisation-description reads (record 0003). `rows` is the classification's
+# level-1 categories once read at source; PROVISIONAL and empty until then (baseline.md, item 1).
+[organisation_description]
+files = ["shapes/examples/*/organisation.md", "organisations/*/organisation.md"]
+rows = []
+
 [judgment_quotes]
 optional = []
 

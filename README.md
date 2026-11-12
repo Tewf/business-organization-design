@@ -118,6 +118,7 @@ master also renders the site, [tewf.github.io/business-organisation](https://tew
 | Part | Summary |
 |---|---|
 | [evidence](evidence/) | the first review, a first pass of 64 sources, ending on the baseline B1, and the bibliography |
+| [shapes](shapes/) | proposed: the organisation description, B1's table for one organisation, with a fixture and the check that reads it |
 | [decisions](decisions/) | one record per choice that shapes this repository, each opening with the decision in one sentence |
 
 ## Licence

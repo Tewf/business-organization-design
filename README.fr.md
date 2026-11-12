@@ -119,6 +119,7 @@ master construit aussi le site, [tewf.github.io/business-organisation](https://t
 | Partie | Résumé |
 |---|---|
 | [evidence](evidence/) | la première revue, en première passe de 64 sources, finie sur la référence B1, et la bibliographie |
+| [shapes](shapes/) | proposé : la description d'une organisation, la table de B1 pour une organisation, avec un exemple fictif et le contrôle qui la lit |
 | [decisions](decisions/) | une fiche par choix qui façonne ce dépôt, chacune ouvrant sur la décision en une phrase |
 
 ## Licence

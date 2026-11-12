@@ -52,6 +52,8 @@ jobs:
           for name in $(python3 -c "import tomllib; print(*tomllib.load(open('repository/checks/config.toml', 'rb'))['bibliography_keys']['family'])"); do
             git clone --quiet --depth 1 "https://github.com/Tewf/$name" "$name"
           done
+      - name: Test the local checks
+        run: READER_ERGONOMICS_CHECKS=standard/checks python3 -m unittest discover -s repository/checks
       - name: Check the repository, tiers program and meaning
         run: python3 standard/checks/run.py repository --tiers program,meaning --judge flag
       - name: List the questions left for judgment

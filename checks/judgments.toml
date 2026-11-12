@@ -4,7 +4,7 @@
 check = "logical-lines"
 path = "evidence/organisation-design/protocol.md"
 question = "139 logical lines, past the trigger of 80. State this file's role in one sentence. If the sentence needs 'and', split the file; if not, it may stay."
-file = "c0a863d4a2f3"
+file = "9992d4162998"
 answer = "Its role in one sentence: it records how the pool was built, from the strings to the forward pass, so that a reader can run the search again; it has no 'and' to split on, and `12. Forward pass` is one more step of that record, so it stays whole under `Protocol`."
 
 [[answer]]
@@ -18,7 +18,7 @@ answer = "Its role in one sentence: it lists the pool, each source once with how
 check = "figures-present"
 path = "evidence/organisation-design/review.md"
 question = "a long text with no figure, table or diagram: is a relation, set, quantity or process described only in words?"
-file = "deb42aca5e97"
+file = "67d7957787c3"
 answer = "No: each finding is one line with its figure and its source, grouped by the question it answers, as in `Strand 2`; the one structure the review leads to, B1's table, is drawn in baseline.md, and a figure here would restate the lists."
 
 [[answer]]
@@ -51,101 +51,43 @@ answer = "It stays: `shapes/examples/a-venture-that-personalises-a-product` is o
 
 [[answer]]
 check = "co-change"
-path = "README.fr.md"
-question = "changed together with decisions/README.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6a91631cf3a8"
-answer = "They stay apart: `decisions/README.md` lists every record, and `README.fr.md` links that folder; they changed together when a record was added and the front page reported it. The link already runs from the front page to the folder."
-
-[[answer]]
-check = "co-change"
-path = "README.md"
-question = "changed together with decisions/README.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6462dedf3f6c"
-answer = "They stay apart: `decisions/README.md` lists every record, and `README.md` links that folder; they changed together when a record was added and the front page reported it. The link already runs from the front page to the folder."
-
-[[answer]]
-check = "co-change"
 path = ".github/workflows/checks.yml"
 question = "changed together with checks/config.toml in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "97af57e7b596"
-answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`, and the standard's runner reads checks/config.toml; they changed together when the repository was set up and when the local check was added (`This repository's own check is in checks/local/`), and the workflow names the checks it runs."
+answer = "They stay apart: GitHub reads a workflow only in `.github/workflows/`, and the standard's runner reads checks/config.toml; they changed together when the repository was set up, when the local check was added and when a review pass changed the check's settings (`This repository's own check is in checks/local/`), and the workflow names the checks it runs."
 
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
 question = "changed together with checks/test_organisation_description.py in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "e60284221bb1"
-answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; every reviewer's pass changed both while the shape was proposed."
-
-[[answer]]
-check = "co-change"
-path = "checks/local/organisation_description.py"
-question = "changed together with decisions/0003-describe-an-organisation-as-b1s-table.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "e60284221bb1"
-answer = "They stay apart: record 0003 decides the shape and its check, and this file (`Organisation description: one row per process`) is the check or its tests; they changed together through the reviewers' passes, and the record names the check."
+file = "963e29bfb2e7"
+answer = "They stay apart: the check and its tests (`Organisation description: one row per process`) sit where the runner and unittest discovery find them; every reviewer's pass, and the lessons of the two real descriptions, changed both while the shape was proposed."
 
 [[answer]]
 check = "co-change"
 path = "checks/local/organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "e60284221bb1"
-answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes on the proposal, and the shape names the check that enforces it."
-
-[[answer]]
-check = "co-change"
-path = "checks/test_organisation_description.py"
-question = "changed together with decisions/0003-describe-an-organisation-as-b1s-table.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "657b9b050974"
-answer = "They stay apart: record 0003 decides the shape and its check, and this file (`Tests of checks/local/organisation_description.py`) is the check or its tests; they changed together through the reviewers' passes, and the record names the check."
+file = "963e29bfb2e7"
+answer = "They stay apart: the shape states the rules, and this file (`Organisation description: one row per process`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
 path = "checks/test_organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "657b9b050974"
-answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes on the proposal, and the shape names the check that enforces it."
+file = "02d6d1be5aa9"
+answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 
 [[answer]]
 check = "co-change"
 path = "decisions/0003-describe-an-organisation-as-b1s-table.md"
 question = "changed together with shapes/organisation-description.md in 5 commits (83% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "118f4c8ad606"
-answer = "They stay apart: the shape states the rules, and this file (`Describe an organisation as B1's table`) enforces, tests or decides them; they changed together through the reviewers' passes on the proposal, and the shape names the check that enforces it."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/against.md in 5 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/protocol.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/review.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/sources.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` for every review of the repository, and each step of a review cites by key; a source read deeper changes its note there and its use in the step, by the family's layout."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/README.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` and the review's front page says how far each source was read; a source read deeper changes both, by the family's layout."
+answer = "They stay apart: the shape states the rules, and this file (`Describe an organisation as B1's table`) enforces, tests or decides them; they changed together through the reviewers' passes and the lessons of the two real descriptions, and the shape names the check that enforces it."
 [[answer]]
 check = "co-change"
 path = "checks/config.toml"
 question = "changed together with shapes/examples/a-venture-that-personalises-a-product/organisation.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "a5ea573c8e9f"
+file = "3d6c9fb28b13"
 answer = "They stay apart: the config lists the rows the check requires (`[organisation_description]`) and the fixture is one description checked against them; when the rows change, the fixture must follow, which is the check doing its work."
 [[answer]]
 check = "co-change"
@@ -159,57 +101,3 @@ path = "shapes/examples/a-venture-that-personalises-a-product/organisation.md"
 question = "changed together with shapes/organisation-description.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "810d9d7a0c20"
 answer = "They already share a folder, shapes/, the fixture one level down in examples/ (`A fixture with no real venture`); the shape links the fixture as its worked example."
-[[answer]]
-check = "co-change"
-path = "CITATION.cff"
-question = "changed together with decisions/README.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "f3025ab47123"
-answer = "They stay apart: the citation names the repository (`repository-code`) and the decisions index lists the records; the setup and the rename each changed both, and the citation is a file a tool reads at the root."
-[[answer]]
-check = "co-change"
-path = "README.fr.md"
-question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6a91631cf3a8"
-answer = "They stay apart: the front page states the repository's state (`État (2026-11-12)`) and links the record; the record keeps the reasons, and the name and B1 changed both."
-[[answer]]
-check = "co-change"
-path = "README.md"
-question = "changed together with decisions/0002-keep-the-name-and-name-the-baseline.md in 4 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6462dedf3f6c"
-answer = "They stay apart: the front page states the repository's state (`Status (2026-11-12)`) and links the records; the record keeps the reasons, and the name and B1 changed both."
-[[answer]]
-check = "co-change"
-path = "README.fr.md"
-question = "changed together with evidence/organisation-design/sources.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6a91631cf3a8"
-answer = "They stay apart: the front page summarises the review (`État (2026-11-12)`) and the sources file holds the pool; reading a source again changed both; the page repeats one count, the total, and links the review for the rest."
-[[answer]]
-check = "co-change"
-path = "README.md"
-question = "changed together with evidence/organisation-design/sources.md in 4 commits (80% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6462dedf3f6c"
-answer = "They stay apart: the front page summarises the review (`Status (2026-11-12)`) and the sources file holds the pool; reading a source again changed both; the page repeats one count, the total, and links the review for the rest."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/baseline.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` and the baseline cites by key; reading the classification changed both, the notice kept once in the bibliography."
-[[answer]]
-check = "co-change"
-path = "evidence/bibliography.md"
-question = "changed together with evidence/organisation-design/frame.md in 3 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "d5f5fedf13b4"
-answer = "They stay apart: the bibliography holds `Every work cited, once` and the frame names the field's terms with their keys; a source read further changes its note and the frame's mention, by the family's layout."
-[[answer]]
-check = "co-change"
-path = "README.fr.md"
-question = "changed together with evidence/organisation-design/review.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6a91631cf3a8"
-answer = "They stay apart: the front page summarises the review (`État (2026-11-12)`) and the review holds the findings by strand; correcting what the review cites changed both, and the page links the review for the detail."
-[[answer]]
-check = "co-change"
-path = "README.md"
-question = "changed together with evidence/organisation-design/review.md in 3 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
-file = "6462dedf3f6c"
-answer = "They stay apart: the front page summarises the review (`Status (2026-11-12)`) and the review holds the findings by strand; correcting what the review cites changed both, and the page links the review for the detail."

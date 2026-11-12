@@ -1,6 +1,6 @@
 # Review: five strands
 
-Step 2 of the review, read on 2026-11-11. It groups by strand the 61 sources its findings rest on. Doty 1993, Lee 2021 and the TOGAF page, of the 64, are used in against, the state of the art and the frame and answers Q1 to Q4 of [frame](frame.md). Surveys first in each strand.
+Step 2 of the review, read on 2026-11-11. It groups by strand the 61 sources its findings rest on, and answers Q1 to Q4 of [frame](frame.md), surveys first in each strand. The other three of the 64 (Doty 1993, Lee 2021 and the TOGAF page) serve the case against, the state of the art and the frame.
 
 **Shape:** [review](https://github.com/Tewf/reader-ergonomics-review/blob/39d3b25cd822a20277ee39c37b9e0130439802f2/shapes/review.md)
 

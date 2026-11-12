@@ -11,7 +11,7 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2
    the first work built on it is the shape [organisation-description](shapes/organisation-description.md), with its
    check and an example ([record 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)).
 3. A fact that belongs to a neighbour is linked, never copied. A choice that shapes the repository gets a record in
-   [decisions/](decisions/).
+   [decisions/](https://github.com/Tewf/business-organization-design/tree/master/decisions).
 
 ## Rules for claims
 

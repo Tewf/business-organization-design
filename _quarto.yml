@@ -19,7 +19,7 @@ website:
   navbar:
     left:
       - text: Decisions
-        href: decisions/README.md
+        href: https://github.com/Tewf/business-organization-design/tree/master/decisions
     right:
       - text: The family
         href: https://tewf.github.io/business/

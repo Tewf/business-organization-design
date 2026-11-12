@@ -113,7 +113,7 @@ Database: OpenAlex, title and abstract, sorted by citations, the top 8 screened.
 | G4 | an industry standards body | the page of its business process notation, version 2.0.2 | included, 1 page read | y |
 | G5 | a university project | the home page of its process knowledge base | included, 1 page read | n |
 | G6 | an enterprise-architecture author's firm | the page on his classification framework | included, 1 page read | y |
-| G7 | a benchmarking association | the page of its cross-industry process classification | not read: HTTP 403; its Excel file, version 8.0, opened by the maintainer and read on 12 Nov. 2026 | read by the maintainer |
+| G7 | a benchmarking association | the page of its cross-industry process classification | not read: HTTP 403; its Excel file, version 8.0, opened by the maintainer and read on 12 Nov. 2026 | y |
 | G8 | an intergovernmental organisation | the page of its principles of corporate governance | not read: HTTP 403 | not run |
 | G9 | an encyclopaedia | a page on process classification frameworks | not read: HTTP 404 | not run |
 | G10 | an encyclopaedia | a page on the benchmarking association | not read: HTTP 404 | not run |

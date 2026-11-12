@@ -1,9 +1,11 @@
 # Merged onto reader-ergonomics' own config, table by table; a value here wins (extending.md, the interface).
 extends = "reader-ergonomics"
 
-# The standard's three, and the answers file: it changes with every file it answers for, so it co-changes by construction.
+# The standard's own list (reader-ergonomics v1.24.2, checks/config.toml): files built from, or shared by, many files,
+# with the answers file, which changes with every file it answers for.
 [co_change]
-exempt = ["standard.md", "llms.txt", "checks/judgments.toml"]
+exempt = ["standard.md", "llms.txt", "evidence/bibliography.md", "checks/*/README.md", "checks/judgments.toml",
+          "CHANGELOG.md", "CITATION.cff", "README.md", "README.fr.md", "checks/test_checks.py", "checks/test_figures.py"]
 
 # The site loads the standard's own stylesheet (_standard/site.css, checked out in pages.yml), so there is none here
 # to measure; reader-ergonomics extending.md asks such a repository to list none.

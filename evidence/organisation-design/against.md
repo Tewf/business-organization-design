@@ -9,7 +9,7 @@ The evidence against what the front page assumes, and the disagreements. Sources
 - No list of what every firm must do, derived from theory and tested for completeness, was found (review, Strand 1). Not found, in these searches.
 - The theory of the firm defines the firm by its boundary and its contracts, not by a list of functions (Coase 1937, Williamson 1985). Convention.
 - A firm's advantage rests on processes distinctive to it and on its path, which a generic list does not hold (Teece 1997, abstract, secondary). Supported with caveat.
-- The most adopted list is a practice taxonomy whose own page was not read here (protocol, G7). Its use in 66 small firms shows it can be applied, not that it is complete (Cragg 2007, abstract, secondary). Measured, descriptive.
+- The most adopted list is a practice taxonomy, read in its file, version 8.0 (protocol, G7). Its use in 66 small firms shows it can be applied, not that it is complete (Cragg 2007, abstract, secondary). Measured, descriptive.
 
 ## Against "four problems describe the human architecture"
 

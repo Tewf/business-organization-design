@@ -119,10 +119,10 @@ def inline_text(token) -> str:
     return "".join(parts)
 
 
-def unread(lines: list[str]) -> list[tuple[int, str]]:
+def unread(lines: list[str], text: str | None = None) -> list[tuple[int, str]]:
     """The (line, message) of what a reader sees but the check does not read: a table in HTML, and a Processes or
     Roles heading or table inside a quote or a list. Everything else is read as GitHub renders it."""
-    blocks = parsed("\n".join(lines))
+    blocks = parsed(text if text is not None else "\n".join(lines))   # the original text keeps its final newline
     problems = [(n, "a table in HTML: the check reads Markdown tables; write it as one") for n in blocks["html_tables"]]
     for n, _, title, top in blocks["headings"]:
         if not top and (WORD["processes"].search(title) or WORD["roles"].search(title)):
@@ -249,7 +249,7 @@ def check(root: Path, config: dict) -> list[Finding]:
         def fail(line: int, message: str, kind: str = "error") -> None:
             findings.append(Finding(NAME, path, line, message, kind))
 
-        for line, message in unread(text.splitlines()) + extra(found):
+        for line, message in unread(text.splitlines(), text) + extra(found):
             fail(line, message)
         processes, roles = section(found, "processes"), section(found, "roles")
         if processes is None:

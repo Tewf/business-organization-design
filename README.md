@@ -57,7 +57,7 @@ digraph where_it_sits {
 - **Its method is [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)'s**: scope, review, baseline and plan. The registers of decisions and of provisional values are the business family's rules ([business](https://github.com/Tewf/business)). It depends on no other part of either.
 - **It writes its review in the shapes of [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, the review as a genre; the shapes are that repository's.
 - **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) and runs its checks in CI.
-- **It links down only**: it never links to a repository that links back to it. The family's map is [business](https://github.com/Tewf/business). A venture appears here as an example, never as the subject: a venture that personalises a product.
+- **It links down to its neighbours and the method, and to the family's map**, [business](https://github.com/Tewf/business), which lists it in return: the map is the one link that goes back. A venture appears here as an example, never as the subject: a venture that personalises a product.
 
 ## Scope
 

@@ -162,6 +162,10 @@ class OrganisationDescriptionTest(unittest.TestCase):
         text = GOOD.replace("| Make the product |", "| 1.0 Make the product |")
         self.assertEqual([f for f in errors(run(text, config)) if "configured process" in f.message], [])
 
+    def test_a_file_ending_on_a_quoted_table_and_an_empty_quote_line_does_not_crash(self):
+        text = GOOD + "\n> | a | b |\n> |---|---|\n> | 1 | 2 |\n>\n"   # joined from splitlines() this raised IndexError
+        self.assertIsInstance(run(text), list)
+
     def test_a_row_without_its_leading_pipe_is_read_as_a_row(self):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
         text = GOOD.replace(row, row + "\nPay | pay | maker | none | x | maker | founder | no |")

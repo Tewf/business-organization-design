@@ -57,7 +57,7 @@ digraph where_it_sits {
 - **Sa méthode est celle d'[ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** : périmètre, revue, référence et plan. Les registres des décisions et des valeurs provisoires sont les règles de la famille business ([business](https://github.com/Tewf/business)). Il ne dépend d'aucune autre partie de l'un ni de l'autre.
 - **Il écrit sa revue dans les formes de [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, la revue comme genre ; les formes sont celles de reader-ergonomics-review.
 - **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) et lance ses vérifications en CI.
-- **Il ne renvoie que vers le bas.** La carte de la famille est [business](https://github.com/Tewf/business). Une entreprise n'y paraît qu'en exemple, jamais en sujet : une jeune entreprise qui personnalise un produit.
+- **Il renvoie vers ses voisins et vers la méthode, et vers la carte de la famille**, [business](https://github.com/Tewf/business), qui le liste en retour : la carte est le seul lien qui revient. Une entreprise n'y paraît qu'en exemple, jamais en sujet : une jeune entreprise qui personnalise un produit.
 
 ## Périmètre
 
@@ -82,7 +82,7 @@ digraph where_it_sits {
 - **Ce que fait une entreprise est listé par la pratique, pas par la théorie.** La liste de la pratique est une classification de processus commune aux secteurs, version 8.0 en 13 catégories. Un instrument de 24 items bâti sur son édition de 2006 a servi pour 66 petites et moyennes entreprises (Cragg 2007, secondaire). Un recueil range plus de 5000 activités par abstraction et par dépendance (Malone 1999 ; le chiffre vient de la page de son recueil de 2003). Aucune liste testée pour sa complétude n'a été trouvée.
 - **Quatre problèmes définissent une organisation.** La division des tâches, leur attribution, la récompense et l'information sont dites nécessaires et suffisantes (Puranam 2014, p. 165-166).
 - **La structure la plus connue a échoué à son test.** Les cinq types idéaux de Mintzberg n'ont pas prédit l'efficacité. Ceux de Miles et Snow en ont prédit 24 % de la variance (Doty 1993, secondaire).
-- **Les droits de décision se séparent, et la délégation est mesurée.** La délégation va avec une forte valeur de l'adaptation locale, la centralisation avec une forte valeur de la coordination (McElheran 2014, secondaire).
+- **Les droits de décision se séparent, et la délégation est mesurée.** La délégation va avec une forte valeur de l'adaptation locale, la centralisation avec une forte valeur de la coordination, mesurées pour une seule décision, les achats informatiques, dans des entreprises à plusieurs établissements (McElheran 2014, secondaire).
 - **L'adaptation est surtout simulée.** L'exploitation évince l'exploration (March 1991), la forme de départ persiste (Levinthal 1997), et une suite de structures bat une structure fixe (Siggelkow 2005), tous dans des modèles.
 
 ## Les questions, avec leur réponse
@@ -90,7 +90,7 @@ digraph where_it_sits {
 | Question | Réponse | Niveau |
 |---|---|---|
 | Besoins | une classification de processus de la pratique, plus la personne morale ; aucune liste montrée complète | convention |
-| Rôles | quatre problèmes universels ; propriété, contrôle et droits de décision séparés ; la délégation suit la valeur de l'adaptation | convention ; délégation mesurée |
+| Rôles | quatre problèmes universels ; propriété, contrôle et droits de décision séparés ; la délégation suit la valeur de l'adaptation | convention ; délégation mesurée pour les achats informatiques seulement |
 | Représentation | des processeurs limités, mesurés par leur nombre et leur délai, ou des modèles de processus dans une notation standard | mesuré, dans un modèle |
 | Adaptation | une recherche sur un paysage accidenté, où l'exploitation évince l'exploration | mesuré, par simulation |
 

@@ -122,8 +122,8 @@ Database: OpenAlex, title and abstract, sorted by citations, the top 8 screened.
 
 ## 6. Stopping rule
 
-- Stated before the search, in the work's notes: the top 8 results per string by citations (N = 8), and a string stops after 5 consecutive results that add no concept (k = 5).
-- Stated with it: the pool stops when a question's last three strings add no concept, or at 40 strings, whichever comes first.
+- Stated before the search, in the work's notes: the top 8 results per string by citations (N = 8), and a string stops after 5 consecutive results that add no concept (k = 5). PROVISIONAL: the review's own choice, from no source.
+- Stated with it: the pool stops when a question's last three strings add no concept, or at 40 strings, whichever comes first. PROVISIONAL: the review's own choice, from no source.
 - Applied: the per-string rule was applied on every row. No question reached saturation, so the cap decided. It was passed: F41 to F45 were run after the fortieth string, to reach Thompson's types of interdependence, differentiation and integration, modularity and the process classification. The cap is recorded as broken, not as met.
 - The grey pages were chosen by the reviewer from the practice named in [frame](frame.md), one page each, with no ranking by an engine.
 
@@ -136,7 +136,7 @@ Database: OpenAlex, title and abstract, sorted by citations, the top 8 screened.
 
 ## 8. Quality of grey sources
 
-Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4, date 1, position 1, novelty 2, impact 1, outlet 1. The threshold is 10 of 20. Scores are in [sources](sources.md).
+Garousi's 20 criteria in eight groups: authority 4, methodology 6, objectivity 4, date 1, position 1, novelty 2, impact 1, outlet 1. The threshold is 10 of 20 (PROVISIONAL: the review's own choice, from no source). Scores are in [sources](sources.md).
 
 ## 9. Extraction and synthesis
 

@@ -152,6 +152,11 @@ class OrganisationDescriptionTest(unittest.TestCase):
         row = "| Make the product | cut, assemble | maker | salary | orders | maker | founder | yes |"
         self.assertTrue(any("second row for the process" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + row)))))
 
+    def test_a_process_repeated_with_a_leading_number_fails(self):
+        row = "| Make the product | cut, assemble | maker | salary | orders | maker | founder | yes |"
+        numbered = row.replace("Make the product", "1.0 Make the product")
+        self.assertTrue(any("second row for the process" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + numbered)))))
+
     def test_a_row_without_its_leading_pipe_is_read_as_a_row(self):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
         text = GOOD.replace(row, row + "\nPay | pay | maker | none | x | maker | founder | no |")

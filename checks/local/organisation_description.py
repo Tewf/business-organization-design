@@ -6,7 +6,7 @@ checks/config.toml (or `[organisation_description] files`, when set) must hold:
   tables), so that what the check reads is what a reader sees (issue #2, decided 12 Nov. 2026). A table in HTML, or a
   Processes or Roles table or heading inside a quote or a list, is refused: the check reads the top-level Markdown
   tables only. Cells are compared as they read: their rendered text, invisible characters dropped;
-- one section whose title holds the word Processes (a subheading inside it belongs to it), holding one Markdown table
+- one section titled exactly Processes (a subheading inside it belongs to it), holding one Markdown table
   and no other, one row per process, whose header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
 - one row whose Process names the legal person (Hansmann 2000), since a process list may not hold it;
@@ -286,10 +286,10 @@ def check(root: Path, config: dict) -> list[Finding]:
             if cells and plain(cells[0]) in EMPTY:
                 fail(line, "a row with no process named: name the process, or drop the row")
                 continue
-            if cells and plain(cells[0]) in seen_rows:
-                fail(line, f"a second row for the process {cells[0]!r}: one row per process")
+            if cells and NUMBER.sub("", plain(cells[0])) in seen_rows:
+                fail(line, f"a second row for the process {cells[0]!r}: one row per process, a leading number dropped")
             elif cells:
-                seen_rows.add(plain(cells[0]))
+                seen_rows.add(NUMBER.sub("", plain(cells[0])))
         names = {NUMBER.sub("", plain(cells[0])) for _, cells in rows if cells}
         for wanted in required_rows:
             if plain(wanted) not in names:

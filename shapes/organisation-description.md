@@ -57,7 +57,7 @@ and a program reads it.
 
 A real company's description lives in the company's own repository, never in this public one, which holds only the
 worked example. To check it there, copy three things: `checks/local/organisation_description.py`, the `rows` list of
-`checks/config.toml` and its files pattern, and install markdown-it-py 4.2.0. The check reads every file that matches
+`checks/config.toml` and its files pattern, and install markdown-it-py 4.2.0. The check imports the standard's `framework.check_api`, so it runs only under the standard's `run.py` at the pinned commit, with its `[shape_conformance]` headings in `checks/config.toml`. The check reads every file that matches
 the files of the "organisation description" entry of `[shape_conformance]`.
 
 ## Worked example
@@ -68,7 +68,7 @@ the files of the "organisation description" entry of `[shape_conformance]`.
 
 1. One section titled exactly Processes holds one table, with the eight columns in the order of the skeleton; one
    section titled exactly Roles holds one table. A heading that only mentions processes or roles is another section.
-   A table with the Processes or the Roles columns under any other heading is refused. A second table or section would hold rows no program reads. Roles may come before Processes:
+   A table under any other heading whose header holds Process, Who, Decides and Controls, or Role and Filled by, is refused. A second table or section would hold rows no program reads. Roles may come before Processes:
    defining a term before its use argues for it, and the check reads either order.
 2. One row holds the legal person, and its Process name contains the words "legal person".
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and

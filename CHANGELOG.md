@@ -7,6 +7,7 @@ A pin move is recorded here, not in decisions/.
 
 ### Changed
 
+- The check requires a section titled exactly Processes, refuses a table inside a quote or a list in the Processes or Roles section, and reads `<br>` in a cell as a space; the legal-person rule says it reads words, not meaning.
 - The check compares process names after dropping a leading number, so `1.0 Strategy` and `Strategy` are two rows of one
   process and fail rule 4a.
 - The shape says its Delegated and Controls definitions are this repository's convention; Cragg 2007 is cited for 66 SMEs

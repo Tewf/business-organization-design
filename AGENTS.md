@@ -31,7 +31,7 @@ read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2
 ## Links
 
 - Down to reader-ergonomics: pinned to the release's commit, as CI is.
-- Up: the family's map, `business`, which lists this repository in return; no other.
+- Up: none, except the family's map, `business`, which this repository links as the one link that goes back.
 
 ## Before handing back
 

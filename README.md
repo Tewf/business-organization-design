@@ -7,7 +7,7 @@ What a company is, as an organisation. It holds the **functions** a company must
 
 This page in French: [README.fr.md](README.fr.md).
 
-> **Status (2026-11-12):** the first review is written, as a first pass of 64 sources, and ends on a named baseline,
+> **Status (2026-11-16):** the first review is written, as a first pass of 64 sources, and ends on a named baseline,
 > B1, accepted by the maintainer as the baseline further work builds on. The repository takes the field's name, organization design
 > ([record 0004](decisions/0004-rename-to-business-organization-design.md)). The first shape built on B1, an organisation
 > description with its check, follows ([record 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)).
@@ -91,7 +91,7 @@ digraph where_it_sits {
 |---|---|---|
 | Needs | a practice classification of processes, plus the legal person; no list shown complete | convention |
 | Roles | four universal problems; ownership, control and decision rights apart; delegation follows the value of adaptation | convention; delegation measured for I.T. purchasing only |
-| Representation | limited processors measured by their number and delay, or process models in a standard notation | measured, as a model |
+| Representation | limited processors measured by their number and delay, or process models in a standard notation | measured, as a model, for the processors; convention for the notation |
 | Adaptation | search on a rugged landscape, where exploitation crowds out exploration | measured, a simulation |
 
 The sources and the open questions are in [position](evidence/organisation-design/position.md).

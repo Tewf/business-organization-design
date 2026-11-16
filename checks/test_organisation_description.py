@@ -166,6 +166,10 @@ class OrganisationDescriptionTest(unittest.TestCase):
         text = GOOD + "\n> | a | b |\n> |---|---|\n> | 1 | 2 |\n>\n"   # joined from splitlines() this raised IndexError
         self.assertIsInstance(run(text), list)
 
+    def test_a_br_in_a_cell_is_read_as_a_space(self):
+        text = GOOD.replace("| maker | salary | orders | maker | founder |", "| maker<br>founder | salary | orders | maker | founder |")
+        self.assertEqual([f for f in errors(run(text)) if "makerfounder" in f.message], [])
+
     def test_a_row_without_its_leading_pipe_is_read_as_a_row(self):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
         text = GOOD.replace(row, row + "\nPay | pay | maker | none | x | maker | founder | no |")

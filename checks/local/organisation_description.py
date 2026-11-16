@@ -102,7 +102,7 @@ def parsed(text: str) -> dict:
 
 
 def inline_text(token) -> str:
-    """The text a reader sees in an inline token: text and code as written, a break as a space; markup, inline HTML,
+    """The text a reader sees in an inline token: text and code as written, a break, `<br>` included, as a space; markup, other inline HTML,
     struck text and images dropped, since a reader sees none of them as text."""
     parts, struck = [], 0
     for child in token.children or []:
@@ -114,7 +114,7 @@ def inline_text(token) -> str:
             continue
         elif child.type in ("text", "code_inline"):
             parts.append(child.content)
-        elif child.type in ("softbreak", "hardbreak"):
+        elif child.type in ("softbreak", "hardbreak") or (child.type == "html_inline" and re.match(r"<br\s*/?>$", child.content.strip(), re.I)):
             parts.append(" ")
     return "".join(parts)
 

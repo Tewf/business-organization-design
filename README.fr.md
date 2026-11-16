@@ -7,7 +7,7 @@ Ce qu'est une entreprise en tant qu'organisation. Il tient les **fonctions** qu'
 
 Cette page en anglais : [README.md](https://github.com/Tewf/business-organization-design/blob/master/README.md). Les deux versions suivent le même état.
 
-> **État (2026-11-12) :** la première revue est écrite, en première passe de 64 sources, et se termine sur une
+> **État (2026-11-16) :** la première revue est écrite, en première passe de 64 sources, et se termine sur une
 > référence nommée, B1, acceptée par le mainteneur comme base du travail suivant. Le dépôt prend le nom du domaine,
 > organization design ([fiche 0004](decisions/0004-rename-to-business-organization-design.md)). La première forme bâtie sur B1, la
 > description d'une organisation avec son contrôle, suit ([fiche 0003](decisions/0003-describe-an-organisation-as-b1s-table.md)). Ce n'est ni une norme officielle, ni une
@@ -57,7 +57,7 @@ digraph where_it_sits {
 - **Sa méthode est celle d'[ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** : périmètre, revue, référence et plan. Les registres des décisions et des valeurs provisoires sont les règles de la famille business ([business](https://github.com/Tewf/business)). Il ne dépend d'aucune autre partie de l'un ni de l'autre.
 - **Il écrit sa revue dans les formes de [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, la revue comme genre ; les formes sont celles de reader-ergonomics-review.
 - **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) et lance ses vérifications en CI.
-- **Il renvoie vers ses voisins et vers la méthode, et vers la carte de la famille**, [business](https://github.com/Tewf/business), qui le liste en retour : la carte est le seul lien qui revient. Une entreprise n'y paraît qu'en exemple, jamais en sujet : une jeune entreprise qui personnalise un produit.
+- **Il renvoie vers ses voisins et vers la méthode, et vers la carte de la famille**, [business](https://github.com/Tewf/business), qui le liste en retour : la carte est le seul lien qui revient. Une entreprise n'y paraît qu'en exemple, jamais en sujet : une entreprise qui personnalise un produit.
 
 ## Périmètre
 
@@ -91,7 +91,7 @@ digraph where_it_sits {
 |---|---|---|
 | Besoins | une classification de processus de la pratique, plus la personne morale ; aucune liste montrée complète | convention |
 | Rôles | quatre problèmes universels ; propriété, contrôle et droits de décision séparés ; la délégation suit la valeur de l'adaptation | convention ; délégation mesurée pour les achats informatiques seulement |
-| Représentation | des processeurs limités, mesurés par leur nombre et leur délai, ou des modèles de processus dans une notation standard | mesuré, dans un modèle |
+| Représentation | des processeurs limités, mesurés par leur nombre et leur délai, ou des modèles de processus dans une notation standard | mesuré, dans un modèle, pour les processeurs ; convention pour la notation |
 | Adaptation | une recherche sur un paysage accidenté, où l'exploitation évince l'exploration | mesuré, par simulation |
 
 Les sources et les questions ouvertes sont dans le [positionnement](evidence/organisation-design/position.md).
@@ -101,7 +101,7 @@ Les sources et les questions ouvertes sont dans le [positionnement](evidence/org
 **B1** est une liste de processus où les quatre problèmes d'organisation reçoivent une réponse pour chaque processus ([référence](evidence/organisation-design/baseline.md)).
 
 - Ses lignes sont les catégories de la classification de processus commune aux secteurs, plus la personne morale. Ses colonnes sont les tâches, qui, la récompense, l'information, qui décide, qui contrôle et si la décision est déléguée.
-- Elle est comparée à un organigramme de la même jeune entreprise, par les cases vides qu'elle trouve.
+- Elle est comparée à un organigramme de la même entreprise, par les cases vides qu'elle trouve.
 
 ## Vérifier
 

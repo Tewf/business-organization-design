@@ -29,7 +29,7 @@ Step 2 of the review, read on 2026-11-11 and 2026-11-12 (the forward pass, Puran
 - Entity shielding, which protects the firm's assets from the owners' personal creditors, is economically and historically more significant than limited liability (Hansmann 2006, abstract, secondary). Supported with caveat.
 - A firm can be disaggregated into activities, the discrete functions or processes of its value chain (Porter 1985, publisher's blurb). Convention.
 - A process handbook organises examples of how organisations perform similar processes at several levels of abstraction, by inheritance and by the dependencies between activities (Malone 1999, abstract, secondary). Its online library holds over 5000 business activities (MIT 2003 Handbook, page read). Convention.
-- A cross-industry process classification served to build a 24-item instrument of alignment between IT and business processes, used in interviews with managers of 66 small firms (Cragg 2007, abstract, secondary). Measured, descriptive.
+- A cross-industry process classification served to build a 24-item instrument of alignment between IT and business processes, used in interviews with managers of 66 SMEs (Cragg 2007, abstract, secondary). Measured, descriptive.
 - Process classification frameworks are treated in a handbook chapter of business process management (Aitken 2010, located only). Convention.
 - An enterprise ontology defines the terms relevant to business enterprises, as a basis for enterprise modelling (Uschold 1998, abstract, secondary). Convention.
 - Business process management rests on the process model, which may configure an information system or be used to analyse and improve a process (van der Aalst 2013, abstract, secondary). Convention.

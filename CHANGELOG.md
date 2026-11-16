@@ -3,6 +3,15 @@
 The releases this repository pins, newest first, in the form of [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 A pin move is recorded here, not in decisions/.
 
+## [Unreleased]
+
+### Changed
+
+- The check compares process names after dropping a leading number, so `1.0 Strategy` and `Strategy` are two rows of one
+  process and fail rule 1.
+- The shape says its Delegated and Controls definitions are this repository's convention; Cragg 2007 is cited for 66 SMEs
+  and the 2006 edition of the classification.
+
 ## [0.1.0] - 2026-11-12
 
 The first release: the shape, its check and its review, as the first real descriptions read them.

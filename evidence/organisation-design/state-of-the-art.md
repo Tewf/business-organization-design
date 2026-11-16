@@ -11,7 +11,7 @@ Step 3 of the review. For each question, the best evidence, kept apart from the 
 | Best evidence | Malone 1999 | processes organised at several levels of abstraction, by inheritance and by the dependencies between activities | convention |
 | Upper bound | MIT 2003 Handbook | one library of over 5000 business activities | convention |
 | Limit | none found | no list tested for completeness against a theory of the firm | not found |
-| Most adopted | Cragg 2007 | the cross-industry process classification, made into a 24-item instrument for 66 small firms | measured, descriptive |
+| Most adopted | Cragg 2007 | the cross-industry process classification, made into a 24-item instrument for 66 SMEs | measured, descriptive |
 | Best evidence, the legal need | Hansmann 2000 | the firm's essential legal function is asset partitioning, a person distinct from its owners | convention |
 
 ## Q2 What problems must its human architecture solve, and who decides?

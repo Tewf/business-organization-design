@@ -144,3 +144,31 @@ path = "checks/test_organisation_description.py"
 question = "changed together with shapes/organisation-description.md in 9 commits (75% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
 file = "810f63ae913c"
 answer = "They stay apart: the test imports the check (`organisation_description.py`), not the shape; it changes with the shape only through the rules the check carries over from it."
+
+[[answer]]
+check = "figures-present"
+path = "evidence/organisation-design/review.md"
+question = "a long text with no figure, table or diagram: is a relation, set, quantity or process described only in words?"
+file = "c0f5211e2dab"
+answer = "No: each finding is one line with its figure and its source, grouped by the question it answers, as in `Strand 2`; the one structure the review leads to, B1's table, is drawn in baseline.md, and a figure here would restate the lists."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/organisation_description.py"
+question = "changed together with checks/test_organisation_description.py in 13 commits (100% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "6c0db4132f66"
+answer = "They stay apart: the check lives in checks/local where the runner loads it, and its test is the unit-test file of that folder; this file (`Organisation description: one row per process`) is what the test runs, and they change together by design."
+
+[[answer]]
+check = "co-change"
+path = "checks/local/organisation_description.py"
+question = "changed together with shapes/organisation-description.md in 10 commits (77% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "6c0db4132f66"
+answer = "They stay apart: the shape states the rules, and the check (`Organisation description: one row per process`) enforces them; they changed together through the readers' passes, and the shape names the check that enforces it."
+
+[[answer]]
+check = "co-change"
+path = "checks/test_organisation_description.py"
+question = "changed together with shapes/organisation-description.md in 10 commits (77% of the rarer one's), from another folder: should they share a folder, or should one link to the other?"
+file = "3f44249554d0"
+answer = "They stay apart: the shape states the rules, and this file (`Tests of checks/local/organisation_description.py`) tests the check that enforces them; they changed together through the readers' passes, and the shape names that check."

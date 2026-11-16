@@ -43,7 +43,7 @@ and a program reads it.
 
 | Part | Evidence | Grade |
 |---|---|---|
-| One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), a 24-item instrument built from the cross-industry classification, used with 66 small firms (Cragg 2007, secondary) | convention; measured, descriptive, for its use |
+| One row per process | a list of what a firm does: the activities of a value chain (Porter 1985), a process handbook (Malone 1999), a 24-item instrument built from the cross-industry classification, used with 66 SMEs (Cragg 2007, secondary) | convention; measured, descriptive, for its use |
 | The rows' names | the classification's 13 level-1 categories, read in its file before use ([baseline](../evidence/organisation-design/baseline.md), item 1) | convention; version 8.0 read in its file on 12 Nov. 2026, and listed in `rows` in checks/config.toml |
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, pages 165-166, read in the original) | convention |
@@ -77,8 +77,9 @@ the files of the "organisation description" entry of `[shape_conformance]`.
 4. Delegated is yes, no, in part, or left empty; case is not significant. It says whether the role in Decides holds
    the decision by delegation from those who hold the company, the members, rather than as one of them: yes, no, or
    shared with them (in part). Controls names the role that ratifies and monitors the decision, as against initiating
-   and carrying it out, on the reading of Fama 1983 the review keeps (located only, title).
-4a. Each process category the configuration lists (`rows` in checks/config.toml) is a row, named as listed; a leading
+   and carrying it out. Both definitions are this repository's convention, not drawn from a source the review read:
+   Fama 1983 is located by its title only.
+4a. Each process category the configuration lists (`rows` in checks/config.toml) is a row, named as listed, case not significant; a leading
    number such as 1.0 is dropped before the names are compared.
 5. An empty cell is left blank or written `?` or `-`. A program counts the empty cells of the six measured columns,
    the four problems and the two rights. It reports the count as a warning, with coverage and completeness as B1

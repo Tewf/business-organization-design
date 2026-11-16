@@ -10,7 +10,7 @@ Step 4 of the review. What is known, what was not found, and what this repositor
 - The law makes a firm a person that holds assets apart from its owners (Hansmann 2000, Hansmann 2006).
 - What a firm does can be listed as processes at several levels of abstraction, and practice keeps such lists (Porter 1985, Malone 1999, Cragg 2007).
 - Every organisation must divide tasks, allocate them, reward and inform those who do them (Puranam 2014, Martela 2019).
-- Ownership, control and decision rights are separable, and delegation follows the value of local adaptation (Fama 1983, Jensen 1976, McElheran 2014).
+- Ownership, control and decision rights are separable, and delegation follows the value of local adaptation (Fama 1983 and Jensen 1976 located by title only, McElheran 2014 read in its abstract).
 - An organisation can be modelled as limited processors of information, and its efficiency measured by their number and by the delay (Galbraith 1974, Radner 1993, Garicano 2000).
 - Adaptation drifts towards exploitation, and the starting form persists on a rugged landscape (March 1991, Levinthal 1997).
 

@@ -57,7 +57,7 @@ digraph where_it_sits {
 - **Its method is [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)'s**: scope, review, baseline and plan. The registers of decisions and of provisional values are the business family's rules ([business](https://github.com/Tewf/business)). It depends on no other part of either.
 - **It writes its review in the shapes of [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, the review as a genre; the shapes are that repository's.
 - **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) and runs its checks in CI.
-- **It links down only.** The family's map is [business](https://github.com/Tewf/business). A venture appears here as an example, never as the subject: a venture that personalises a product.
+- **It links down only**: it never links to a repository that links back to it. The family's map is [business](https://github.com/Tewf/business). A venture appears here as an example, never as the subject: a venture that personalises a product.
 
 ## Scope
 
@@ -82,7 +82,7 @@ digraph where_it_sits {
 - **What a company does is listed in practice, not in theory.** A cross-industry process classification is the practice list, version 8.0 with 13 categories. A 24-item instrument built from its 2006 edition was used with 66 small and medium firms (Cragg 2007, secondary). A handbook organises over 5000 business activities by abstraction and dependency (Malone 1999; the figure from its 2003 handbook page). No list tested for completeness was found.
 - **Four problems define an organisation.** Task division, task allocation, reward and information are claimed necessary and sufficient (Puranam 2014, pp. 165-166).
 - **The best-known structure failed its test.** Mintzberg's five ideal types did not predict effectiveness; Miles and Snow's types predicted 24% of its variance (Doty 1993, secondary).
-- **Decision rights are separable and delegation is measured.** Delegation goes with a high value of local adaptation, centralisation with a high value of coordination (McElheran 2014, secondary).
+- **Decision rights are separable and delegation is measured.** Delegation goes with a high value of local adaptation, centralisation with a high value of coordination, measured for one decision, I.T. purchasing, in multi-establishment firms (McElheran 2014, secondary).
 - **Adaptation is mostly simulated.** Exploitation crowds out exploration (March 1991), the form at founding persists (Levinthal 1997), and a sequence of structures beats a fixed one (Siggelkow 2005), all in models.
 
 ## The questions, answered
@@ -90,7 +90,7 @@ digraph where_it_sits {
 | Question | Answer | Grade |
 |---|---|---|
 | Needs | a practice classification of processes, plus the legal person; no list shown complete | convention |
-| Roles | four universal problems; ownership, control and decision rights apart; delegation follows the value of adaptation | convention; delegation measured |
+| Roles | four universal problems; ownership, control and decision rights apart; delegation follows the value of adaptation | convention; delegation measured for I.T. purchasing only |
 | Representation | limited processors measured by their number and delay, or process models in a standard notation | measured, as a model |
 | Adaptation | search on a rugged landscape, where exploitation crowds out exploration | measured, a simulation |
 

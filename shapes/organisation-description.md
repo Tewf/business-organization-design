@@ -56,8 +56,8 @@ and a program reads it.
 ## Where the file goes
 
 A real company's description lives in the company's own repository, never in this public one, which holds only the
-worked example. To check it there, copy three things: `checks/local/organisation_description.py`, the `rows` list of
-`checks/config.toml` and its files pattern, and install markdown-it-py 4.2.0. The check imports the standard's `framework.check_api`, so it runs only under the standard's `run.py` at the pinned commit, with its `[shape_conformance]` headings in `checks/config.toml`. The check reads every file that matches
+worked example. To check it there, copy four things: `checks/local/organisation_description.py`, the `rows` list of
+`checks/config.toml`, its files pattern (or `[organisation_description] files`, which overrides the pattern of `[shape_conformance]`), and install markdown-it-py 4.2.0. The check imports the standard's `framework.check_api`, so it runs only under the standard's `run.py` at the pinned commit, with its `[shape_conformance]` headings in `checks/config.toml`. The check reads every file that matches
 the files of the "organisation description" entry of `[shape_conformance]`.
 
 ## Worked example
@@ -101,5 +101,6 @@ the files of the "organisation description" entry of `[shape_conformance]`.
 
 `organisation-description` (exact): rule 6, read with markdown-it-py. Then one Processes and one Roles table, the eight
 columns, one legal row, roles defined and used by name, Delegated's
-values, the configured rows; a warning gives the count of empty cells with coverage and completeness. Whether the rows are
+values, the configured rows, one row per process (rule 4a); a warning gives the count of empty cells with coverage and
+completeness. The shape-conformance check also requires the headings Compared with the org chart and Limits. Whether the rows are
 complete, the answers true, and a role in the Roles table a role rather than a person's name is judgment.

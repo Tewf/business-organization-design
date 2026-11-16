@@ -8,7 +8,7 @@ A pin move is recorded here, not in decisions/.
 ### Changed
 
 - The check compares process names after dropping a leading number, so `1.0 Strategy` and `Strategy` are two rows of one
-  process and fail rule 1.
+  process and fail rule 4a.
 - The shape says its Delegated and Controls definitions are this repository's convention; Cragg 2007 is cited for 66 SMEs
   and the 2006 edition of the classification.
 

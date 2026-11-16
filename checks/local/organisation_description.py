@@ -3,9 +3,10 @@
 A file matched by the files of the "organisation description" entry of `[shape_conformance] shapes` in
 checks/config.toml (or `[organisation_description] files`, when set) must hold:
 - the description read as GitHub renders it, by a GitHub-flavoured Markdown parser (markdown-it-py, CommonMark with
-  tables), so that what the check reads is what a reader sees (issue #2, decided 12 Nov. 2026). A table in HTML, or a
-  Processes or Roles table or heading inside a quote or a list, is refused: the check reads the top-level Markdown
-  tables only. Cells are compared as they read: their rendered text, invisible characters dropped;
+  tables), so that what the check reads is what a reader sees (issue #2, decided 12 Nov. 2026). A table in HTML, a Processes
+  or Roles heading inside a quote or a list, and a table inside a quote or a list in the Processes or Roles section are
+  refused. The check reads top-level Markdown tables only: a stray table inside a quote or a list under another
+  heading is not read, so a person checks that none holds rows. Cells are compared as they read: their rendered text, invisible characters dropped;
 - one section titled exactly Processes (a subheading inside it belongs to it), holding one Markdown table
   and no other, one row per process, whose header is, in this order: Process, Tasks, Who, Reward, Information,
   Decides, Controls, Delegated (B1 of evidence/organisation-design/baseline.md);
@@ -292,7 +293,7 @@ def check(root: Path, config: dict) -> list[Finding]:
                 seen_rows.add(NUMBER.sub("", plain(cells[0])))
         names = {NUMBER.sub("", plain(cells[0])) for _, cells in rows if cells}
         for wanted in required_rows:
-            if plain(wanted) not in names:
+            if NUMBER.sub("", plain(wanted)) not in names:
                 fail(processes[0], f"no row for the configured process {wanted!r}")
         filled = total = with_who = 0
         for number, cells in rows:

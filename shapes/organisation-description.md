@@ -48,7 +48,7 @@ and a program reads it.
 | The legal person, a row of its own | the firm holds assets apart from its owners (Hansmann 2000); a menu of legal forms, chosen (Guinnane 2007) | convention; measured, descriptive |
 | Tasks, Who, Reward, Information | the four [universal problems of organizing](../evidence/organisation-design/frame.md) (Puranam 2014, pages 165-166, read in the original) | convention |
 | Decides and Controls, apart | ownership and control are separated (Fama 1983, located only, title); B1 keeps deciding and controlling apart on that reading ([baseline](../evidence/organisation-design/baseline.md), item 4) | convention, from a title |
-| Delegated | delegation follows the value of local adaptation (McElheran 2014); information and communication tools move it in opposite directions (Bloom 2014) | measured |
+| Delegated | delegation follows the value of local adaptation (McElheran 2014); information and communication tools move it in opposite directions (Bloom 2014); the definition of the column is this repository's convention | convention; the two findings measured |
 | A role apart from the person | practice writes a role with a purpose and its domains (HolacracyOne 2026 Constitution, an example of practice only) | convention |
 | The org chart beside it | the practice B1 is compared with ([baseline](../evidence/organisation-design/baseline.md), item 6) | convention |
 | Empty cells counted by a program | B1's two measures, coverage and completeness ([baseline](../evidence/organisation-design/baseline.md#how-it-is-measured)) | convention |
@@ -68,7 +68,7 @@ the files of the "organisation description" entry of `[shape_conformance]`.
 
 1. One section titled exactly Processes holds one table, with the eight columns in the order of the skeleton; one
    section titled exactly Roles holds one table. A heading that only mentions processes or roles is another section.
-   A table under any other heading whose header holds Process, Who, Decides and Controls, or Role and Filled by, is refused. A second table or section would hold rows no program reads. Roles may come before Processes:
+   A top-level table under any other heading whose header holds Process, Who, Decides and Controls, or Role and Filled by, is refused. One inside a quote or a list under another heading is not read: a person checks that none holds rows. A second table or section would hold rows no program reads. Roles may come before Processes:
    defining a term before its use argues for it, and the check reads either order.
 2. One row holds the legal person, and its Process name contains the words "legal person". The check reads the words, not the meaning: another process whose name holds them would satisfy the rule, and a person reads that this row is the one Hansmann 2000 is cited for.
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
@@ -79,7 +79,7 @@ the files of the "organisation description" entry of `[shape_conformance]`.
    shared with them (in part). Controls names the role that ratifies and monitors the decision, as against initiating
    and carrying it out. Both definitions are this repository's convention, not drawn from a source the review read:
    Fama 1983 is located by its title only.
-4a. Each process category the configuration lists (`rows` in checks/config.toml) is a row, named as listed, case not significant; a leading
+4a. Each process has one row, and every row names its process. Each process category the configuration lists (`rows` in checks/config.toml) is a row, named as listed, case not significant; a leading
    number such as 1.0 is dropped before the names are compared.
 5. An empty cell is left blank or written `?` or `-`. A program counts the empty cells of the six measured columns,
    the four problems and the two rights. It reports the count as a warning, with coverage and completeness as B1
@@ -101,5 +101,5 @@ the files of the "organisation description" entry of `[shape_conformance]`.
 
 `organisation-description` (exact): rule 6, read with markdown-it-py. Then one Processes and one Roles table, the eight
 columns, one legal row, roles defined and used by name, Delegated's
-values, the configured rows; a warning gives the empty cells with coverage and completeness. Whether the rows are
+values, the configured rows; a warning gives the count of empty cells with coverage and completeness. Whether the rows are
 complete, the answers true, and a role in the Roles table a role rather than a person's name is judgment.

@@ -157,6 +157,11 @@ class OrganisationDescriptionTest(unittest.TestCase):
         numbered = row.replace("Make the product", "1.0 Make the product")
         self.assertTrue(any("second row for the process" in f.message for f in errors(run(GOOD.replace(row, row + "\n" + numbered)))))
 
+    def test_a_configured_row_with_a_leading_number_is_matched_by_its_name(self):
+        config = {"organisation_description": {"files": ["orgs/*.md"], "rows": ["1.0 Make the product"]}}
+        text = GOOD.replace("| Make the product |", "| 1.0 Make the product |")
+        self.assertEqual([f for f in errors(run(text, config)) if "configured process" in f.message], [])
+
     def test_a_row_without_its_leading_pipe_is_read_as_a_row(self):
         row = "| Hold assets as a legal person | sign, own | founder | equity | accounts | founder | founder and maker | no |"
         text = GOOD.replace(row, row + "\nPay | pay | maker | none | x | maker | founder | no |")

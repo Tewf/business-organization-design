@@ -70,7 +70,7 @@ the files of the "organisation description" entry of `[shape_conformance]`.
    section titled exactly Roles holds one table. A heading that only mentions processes or roles is another section.
    A table under any other heading whose header holds Process, Who, Decides and Controls, or Role and Filled by, is refused. A second table or section would hold rows no program reads. Roles may come before Processes:
    defining a term before its use argues for it, and the check reads either order.
-2. One row holds the legal person, and its Process name contains the words "legal person".
+2. One row holds the legal person, and its Process name contains the words "legal person". The check reads the words, not the meaning: another process whose name holds them would satisfy the rule, and a person reads that this row is the one Hansmann 2000 is cited for.
 3. Who, Decides and Controls name roles from the Roles table, never a person; each role appears once in that table, and
    the table has at least one role. Several roles in one cell are joined by a comma or "and"; a role whose name holds
    "and" is matched whole first.

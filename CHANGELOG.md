@@ -7,6 +7,7 @@ A pin move is recorded here, not in decisions/.
 
 ### Changed
 
+- Pinned reader-ergonomics v1.24.3 (`722cfa4`), from v1.24.2 (`65e4247`): the reference check reads a SICI DOI whole and warns on an HTTP 5xx instead of failing. The weekly reference run of 16 Nov. 2026 failed on the DOI `10.1002/(sici)1097-0266(199708)18:7<509::aid-smj882>3.0.co;2-z`, which v1.24.2 cut at the `<`; no other change was needed.
 - The check requires a section titled exactly Processes, refuses a table inside a quote or a list in the Processes or Roles section, and reads `<br>` in a cell as a space; the legal-person rule says it reads words, not meaning.
 - The check compares process names after dropping a leading number, so `1.0 Strategy` and `Strategy` are two rows of one
   process and fail rule 4a.

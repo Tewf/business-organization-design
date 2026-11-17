@@ -94,8 +94,8 @@ the files of the "organisation description" entry of `[shape_conformance]`.
 
 | Part | Principle |
 |---|---|
-| One table for the whole organisation | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/page/signal-the-structure.md) |
-| A role defined once, used by name | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/principles/collection/one-place-per-fact.md) |
+| One table for the whole organisation | [signal the structure](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/principles/page/signal-the-structure.md) |
+| A role defined once, used by name | [one place per fact](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/principles/collection/one-place-per-fact.md) |
 
 ## Checked by
 

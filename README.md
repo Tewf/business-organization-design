@@ -56,7 +56,7 @@ digraph where_it_sits {
 - **It links five members of the family** for what they hold and it does not: the model's building blocks ([business-model](https://github.com/Tewf/business-model)), cash and funding ([business-finance](https://github.com/Tewf/business-finance)), demand ([business-customer](https://github.com/Tewf/business-customer)), prices ([business-pricing](https://github.com/Tewf/business-pricing)) and markets ([business-market](https://github.com/Tewf/business-market)). It copies none of them.
 - **Its method is [ai-augmented-project](https://github.com/Tewf/ai-augmented-project)'s**: scope, review, baseline and plan. The registers of decisions and of provisional values are the business family's rules ([business](https://github.com/Tewf/business)). It depends on no other part of either.
 - **It writes its review in the shapes of [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, the review as a genre; the shapes are that repository's.
-- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) and runs its checks in CI.
+- **It obeys [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/standard.md)** (v1.24.3) and runs its checks in CI.
 - **It links down to its neighbours and the method, and to the family's map**, [business](https://github.com/Tewf/business), which lists it in return: the map is the one link that goes back. A venture appears here as an example, never as the subject: a venture that personalises a product.
 
 ## Scope
@@ -107,7 +107,7 @@ The sources and the open questions are in [position](evidence/organisation-desig
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
-git -C reader-ergonomics checkout 65e42472e2d4cbfd994c2a86e95a47e5dc7301ca
+git -C reader-ergonomics checkout 722cfa4b0ad65968e2c7e6fdc07057c9bab0e172
 pip install markdown-it-py==4.2.0
 python3 reader-ergonomics/checks/run.py path/to/this/repository
 ```

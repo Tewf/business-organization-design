@@ -1,11 +1,11 @@
 # Contributing to this repository
 
 For anyone changing this repository, person or language model. To apply the reader-ergonomics standard elsewhere,
-read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md); this file is about this repository only.
+read its [standard.md](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/standard.md); this file is about this repository only.
 
 ## Before writing
 
-1. Read the standard at the release this repository checks against (v1.24.2), and the front page's scope: what is in,
+1. Read the standard at the release this repository checks against (v1.24.3), and the front page's scope: what is in,
    what is out, and which neighbour holds what is out.
 2. The first review is in [evidence/organisation-design](evidence/organisation-design/) and names its baseline, B1;
    the first work built on it is the shape [organisation-description](shapes/organisation-description.md), with its
@@ -40,7 +40,7 @@ the checks both skip:
 
 ```sh
 rm -rf checks/out/standard && mkdir -p checks/out/standard
-git -C ../reader-ergonomics archive 65e4247 | tar -x -C checks/out/standard   # the commit checks.yml pins
+git -C ../reader-ergonomics archive 722cfa4 | tar -x -C checks/out/standard   # the commit checks.yml pins
 pip install markdown-it-py==4.2.0   # the organisation-description check reads with it (record 0005)
 python3 checks/out/standard/checks/run.py . --tiers program,meaning --judge flag   # the repository, as CI runs it
 ```

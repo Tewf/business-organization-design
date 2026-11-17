@@ -3,7 +3,7 @@
 **Decision:** The repository is named business-organization-design, after the field it reviews, replacing the name
 record 0002 kept.
 
-**Status:** accepted, 2026-11-12. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
+**Status:** accepted, 2026-11-12. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/shapes/decision-record.md).
 
 ## Context
 

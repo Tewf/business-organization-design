@@ -3,7 +3,7 @@
 **Decision:** What a company is, as an organisation, is one problem, so it gets one public repository, set up with its
 scope and nothing more.
 
-**Status:** accepted, 2026-11-11. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/shapes/decision-record.md).
+**Status:** accepted, 2026-11-11. **Shape:** [decision record](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/shapes/decision-record.md).
 
 ## Context
 
@@ -23,7 +23,7 @@ scope and nothing more.
   step tests against the field's names.
 - At its start it holds its scope, the questions its review must answer, the checks of reader-ergonomics in CI, a
   site, and this record. Nothing of the work itself.
-- It pins reader-ergonomics v1.24.2 by commit, and links down only.
+- It pins reader-ergonomics v1.24.3 by commit, and links down only.
 
 ## Options not taken
 

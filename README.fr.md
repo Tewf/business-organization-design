@@ -56,7 +56,7 @@ digraph where_it_sits {
 - **Il renvoie à cinq membres de la famille** pour ce qu'ils tiennent et que lui ne tient pas. Ce sont les briques du modèle ([business-model](https://github.com/Tewf/business-model)), la trésorerie et le financement ([business-finance](https://github.com/Tewf/business-finance)), la demande ([business-customer](https://github.com/Tewf/business-customer)), les prix ([business-pricing](https://github.com/Tewf/business-pricing)) et les marchés ([business-market](https://github.com/Tewf/business-market)). Il n'en copie aucun.
 - **Sa méthode est celle d'[ai-augmented-project](https://github.com/Tewf/ai-augmented-project)** : périmètre, revue, référence et plan. Les registres des décisions et des valeurs provisoires sont les règles de la famille business ([business](https://github.com/Tewf/business)). Il ne dépend d'aucune autre partie de l'un ni de l'autre.
 - **Il écrit sa revue dans les formes de [reader-ergonomics-review](https://github.com/Tewf/reader-ergonomics-review)**, la revue comme genre ; les formes sont celles de reader-ergonomics-review.
-- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/65e42472e2d4cbfd994c2a86e95a47e5dc7301ca/standard.md)** (v1.24.2) et lance ses vérifications en CI.
+- **Il obéit à [reader-ergonomics](https://github.com/Tewf/reader-ergonomics/blob/722cfa4b0ad65968e2c7e6fdc07057c9bab0e172/standard.md)** (v1.24.3) et lance ses vérifications en CI.
 - **Il renvoie vers ses voisins et vers la méthode, et vers la carte de la famille**, [business](https://github.com/Tewf/business), qui le liste en retour : la carte est le seul lien qui revient. Une entreprise n'y paraît qu'en exemple, jamais en sujet : une entreprise qui personnalise un produit.
 
 ## Périmètre
@@ -107,7 +107,7 @@ Les sources et les questions ouvertes sont dans le [positionnement](evidence/org
 
 ```sh
 git clone https://github.com/Tewf/reader-ergonomics
-git -C reader-ergonomics checkout 65e42472e2d4cbfd994c2a86e95a47e5dc7301ca
+git -C reader-ergonomics checkout 722cfa4b0ad65968e2c7e6fdc07057c9bab0e172
 pip install markdown-it-py==4.2.0
 python3 reader-ergonomics/checks/run.py chemin/vers/ce/depot
 ```
